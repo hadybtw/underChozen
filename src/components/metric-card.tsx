@@ -39,8 +39,8 @@ function AnimatedNumber({
   useEffect(() => {
     const unsub = rounded.on("change", setDisplay);
     const controls = animate(motionVal, value, {
-      duration: 1.5,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      duration: 1.2,
+      ease: [0.22, 1, 0.36, 1],
     });
     return () => {
       unsub();
@@ -68,38 +68,38 @@ export function MetricCard({
         "group relative overflow-hidden transition-all duration-500",
         className
       )}
-      initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+      initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
       animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       transition={{
         duration: 0.6,
         delay,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        ease: [0.22, 1, 0.36, 1],
       }}
     >
-      {/* Hover glow */}
+      {/* Hover gradient */}
       <div
         className={cn(
-          "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl",
-          accent === "negative" && "bg-gradient-to-b from-negative/5 to-transparent",
-          accent === "positive" && "bg-gradient-to-b from-positive/5 to-transparent",
-          accent === "default" && "bg-gradient-to-b from-accent/5 to-transparent"
+          "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl",
+          accent === "negative" && "bg-gradient-to-b from-negative/[0.04] to-transparent",
+          accent === "positive" && "bg-gradient-to-b from-positive/[0.04] to-transparent",
+          accent === "default" && "bg-gradient-to-b from-accent/[0.04] to-transparent"
         )}
       />
 
       <div className="relative z-10">
-        <div className="flex items-center gap-2 mb-2">
+        <div className="flex items-center gap-2 mb-3">
           {icon && (
-            <div className="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center">
+            <div className="w-6 h-6 rounded-lg bg-white/[0.04] flex items-center justify-center">
               {icon}
             </div>
           )}
-          <p className="text-xs font-medium tracking-wide uppercase text-muted">
+          <p className="text-[10px] sm:text-[11px] font-semibold tracking-[0.15em] uppercase text-muted/60">
             {label}
           </p>
         </div>
         <p
           className={cn(
-            "text-2xl md:text-3xl font-bold tracking-tight",
+            "text-xl sm:text-2xl font-bold tracking-tight",
             accent === "negative" && "text-negative",
             accent === "positive" && "text-positive"
           )}

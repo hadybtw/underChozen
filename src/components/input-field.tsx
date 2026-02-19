@@ -23,10 +23,12 @@ export function InputField({
 }: InputFieldProps) {
   return (
     <div className={cn("flex flex-col gap-1.5 sm:gap-2", className)}>
-      <label className="text-xs sm:text-sm text-muted font-medium">{label}</label>
-      <div className="relative">
+      <label className="text-[11px] sm:text-xs text-muted/80 font-medium tracking-wide uppercase">
+        {label}
+      </label>
+      <div className="relative group">
         {prefix && (
-          <span className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-muted text-sm">
+          <span className="absolute left-3 sm:left-3.5 top-1/2 -translate-y-1/2 text-muted/60 text-sm font-medium">
             {prefix}
           </span>
         )}
@@ -36,9 +38,11 @@ export function InputField({
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
           className={cn(
-            "w-full glass rounded-lg sm:rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-foreground bg-transparent",
-            "focus:outline-none focus:ring-2 focus:ring-accent/50",
-            "placeholder:text-muted/50",
+            "w-full rounded-xl px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm text-foreground",
+            "bg-white/[0.03] border border-white/[0.08]",
+            "focus:outline-none focus:bg-white/[0.05] transition-all duration-300",
+            "placeholder:text-muted/30",
+            "group-hover:border-white/12 group-hover:bg-white/[0.04]",
             prefix && "pl-7 sm:pl-8"
           )}
         />
