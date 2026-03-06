@@ -13,6 +13,7 @@ export interface SalaryInput {
   industry: string;
   currentSalary: number;
   companySize: string;
+  companyName?: string;
 }
 
 export interface SalaryAnalysis {

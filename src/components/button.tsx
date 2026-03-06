@@ -6,6 +6,7 @@ import { motion, type HTMLMotionProps } from "framer-motion";
 interface ButtonProps extends HTMLMotionProps<"button"> {
   variant?: "primary" | "secondary" | "ghost";
   size?: "sm" | "md" | "lg";
+  "aria-label"?: string;
 }
 
 export function Button({
@@ -13,15 +14,18 @@ export function Button({
   variant = "primary",
   size = "md",
   children,
+  disabled,
   ...props
 }: ButtonProps) {
   return (
     <motion.button
-      whileHover={{ scale: 1.02, y: -1 }}
-      whileTap={{ scale: 0.97 }}
+      whileHover={disabled ? undefined : { scale: 1.02, y: -1 }}
+      whileTap={disabled ? undefined : { scale: 0.97 }}
+      disabled={disabled}
+      aria-disabled={disabled || undefined}
       className={cn(
         "relative font-semibold rounded-xl transition-all duration-300 cursor-pointer",
-        "focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-offset-2 focus:ring-offset-background",
+        "focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         variant === "primary" &&
           "bg-gradient-to-r from-accent to-accent-blue text-white shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:brightness-110",
         variant === "secondary" &&

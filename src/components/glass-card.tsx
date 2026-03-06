@@ -6,6 +6,8 @@ import { motion, type HTMLMotionProps } from "framer-motion";
 interface GlassCardProps extends HTMLMotionProps<"div"> {
   glow?: boolean;
   elevated?: boolean;
+  role?: string;
+  "aria-label"?: string;
 }
 
 export function GlassCard({
@@ -18,7 +20,7 @@ export function GlassCard({
   return (
     <motion.div
       className={cn(
-        "rounded-2xl p-5 sm:p-6",
+        "rounded-2xl p-5 sm:p-6 card-3d",
         elevated ? "glass-elevated" : "glass",
         glow && "glow-accent",
         className

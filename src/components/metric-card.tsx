@@ -8,6 +8,7 @@ import type { ReactNode } from "react";
 
 interface MetricCardProps {
   label: string;
+  sublabel?: string;
   value: string;
   numericValue?: number;
   prefix?: string;
@@ -53,6 +54,7 @@ function AnimatedNumber({
 
 export function MetricCard({
   label,
+  sublabel,
   value,
   numericValue,
   prefix,
@@ -68,52 +70,52 @@ export function MetricCard({
         "group relative overflow-hidden transition-all duration-500",
         className
       )}
-      initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
-      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{
-        duration: 0.6,
+        duration: 0.5,
         delay,
         ease: [0.22, 1, 0.36, 1],
       }}
     >
-      {/* Hover gradient */}
       <div
         className={cn(
-          "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl",
-          accent === "negative" && "bg-gradient-to-b from-negative/[0.04] to-transparent",
-          accent === "positive" && "bg-gradient-to-b from-positive/[0.04] to-transparent",
-          accent === "default" && "bg-gradient-to-b from-accent/[0.04] to-transparent"
+          "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl",
+          accent === "negative" && "bg-gradient-to-b from-negative/[0.03] to-transparent",
+          accent === "positive" && "bg-gradient-to-b from-positive/[0.03] to-transparent",
+          accent === "default" && "bg-gradient-to-b from-accent/[0.03] to-transparent"
         )}
       />
 
       <div className="relative z-10">
-        <div className="flex items-center gap-2 mb-3">
+        <div className="flex items-center gap-2 mb-2.5 sm:mb-3">
           {icon && (
-            <div className="w-6 h-6 rounded-lg bg-white/[0.04] flex items-center justify-center">
+            <div className="w-5 h-5 rounded-md bg-white/[0.03] flex items-center justify-center group-hover:bg-white/[0.05] transition-colors duration-300">
               {icon}
             </div>
           )}
-          <p className="text-[10px] sm:text-[11px] font-semibold tracking-[0.15em] uppercase text-muted/60">
+          <p className="info-label">
             {label}
           </p>
         </div>
         <p
           className={cn(
-            "text-xl sm:text-2xl font-bold tracking-tight",
+            "text-lg sm:text-xl md:text-2xl font-semibold tracking-tight tabular-nums",
             accent === "negative" && "text-negative",
             accent === "positive" && "text-positive"
           )}
         >
           {numericValue !== undefined ? (
-            <AnimatedNumber
-              value={numericValue}
-              prefix={prefix}
-              suffix={suffix}
-            />
+            <AnimatedNumber value={numericValue} prefix={prefix} suffix={suffix} />
           ) : (
             value
           )}
         </p>
+        {sublabel && (
+          <p className="text-[11px] sm:text-xs text-muted/50 mt-1.5 font-light">
+            {sublabel}
+          </p>
+        )}
       </div>
     </GlassCard>
   );

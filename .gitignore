@@ -33,3 +33,6 @@ next-env.d.ts
 
 # playwright
 .playwright-mcp/
+
+# data storage
+.data/

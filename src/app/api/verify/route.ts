@@ -1,25 +1,31 @@
 import { NextResponse } from "next/server";
+import Stripe from "stripe";
 
 /**
- * Payment verification endpoint placeholder.
- *
- * In production, verify the Stripe session ID to confirm payment
- * before revealing the negotiation pack.
+ * Payment verification endpoint.
+ * Verifies a Stripe session ID to confirm payment before revealing content.
  */
 
 export async function POST(request: Request) {
   const body = await request.json();
 
-  // --- Uncomment for production ---
-  // import Stripe from "stripe";
-  // const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
-  // const session = await stripe.checkout.sessions.retrieve(body.sessionId);
-  // const paid = session.payment_status === "paid";
-  // return NextResponse.json({ verified: paid });
-  // --- End production code ---
+  if (process.env.STRIPE_SECRET_KEY && body.sessionId) {
+    try {
+      const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+      const session = await stripe.checkout.sessions.retrieve(body.sessionId);
+      return NextResponse.json({
+        verified: session.payment_status === "paid",
+        sessionId: body.sessionId,
+      });
+    } catch (error) {
+      console.error("Stripe verify error:", error);
+      return NextResponse.json({ verified: false });
+    }
+  }
 
+  // Development fallback: always verify
   return NextResponse.json({
     verified: true,
-    sessionId: body.sessionId,
+    sessionId: body.sessionId || "dev-session",
   });
 }
