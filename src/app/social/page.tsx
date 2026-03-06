@@ -918,6 +918,25 @@ function downloadCanvas(canvas: HTMLCanvasElement, filename: string) {
   link.click();
 }
 
+/* ===== COPY BUTTON ===== */
+function CopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false);
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+  return (
+    <button
+      onClick={handleCopy}
+      className="flex items-center gap-1 text-[10px] text-accent/70 hover:text-accent transition-colors cursor-pointer"
+    >
+      {copied ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
+      {copied ? "Copied" : "Copy"}
+    </button>
+  );
+}
+
 /* ===== CAROUSEL PREVIEW ===== */
 function CarouselPreview({ post }: { post: CarouselPost }) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -1408,9 +1427,65 @@ export default function SocialPage() {
           </motion.div>
         )}
 
-        {/* Instructions */}
+        {/* Brand Kit */}
         <motion.div
           className="mt-12"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5, ease }}
+        >
+          <GlassCard>
+            <div className="flex items-center gap-2 mb-4">
+              <Sparkles className="w-3.5 h-3.5 text-accent/70" />
+              <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-muted/50">Brand Kit</span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Instagram Bio */}
+              <div className="rounded-xl bg-white/[0.02] border border-white/[0.05] p-4">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-semibold text-foreground/80">Instagram Bio</span>
+                  <CopyButton text={`UnderChozen\nKnow your worth. Prove it with data.\nFree salary analysis → 25 roles · 18 cities · 13 industries\n↓ Check yours in 30 seconds\nunderchozen.com`} />
+                </div>
+                <div className="space-y-1 text-xs text-muted/65 leading-relaxed">
+                  <p className="font-semibold text-foreground/85">UnderChozen</p>
+                  <p>Know your worth. Prove it with data.</p>
+                  <p>Free salary analysis → 25 roles · 18 cities · 13 industries</p>
+                  <p>↓ Check yours in 30 seconds</p>
+                  <p className="text-accent/70">underchozen.com</p>
+                </div>
+              </div>
+
+              {/* Logo Prompt */}
+              <div className="rounded-xl bg-white/[0.02] border border-white/[0.05] p-4">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-semibold text-foreground/80">Logo Prompt</span>
+                  <CopyButton text="Minimal, modern logomark for 'UnderChozen', a salary intelligence platform. Abstract upward-pointing arrow or rising bar chart formed from a single continuous line, suggesting growth and upward mobility. Dark background (#06060B), gradient accent from electric purple (#8B6CFF) to blue (#5B8DEF). Clean geometric shapes, no text in the icon. Glassmorphism subtle glow effect behind the mark. Suitable for app icon, favicon, and social media profile picture. Professional, premium, fintech aesthetic. Square format, centered composition, minimal negative space." />
+                </div>
+                <p className="text-xs text-muted/55 leading-relaxed">
+                  Minimal logomark — abstract upward arrow / rising bar chart from a single continuous line. Dark bg (#06060B), purple-to-blue gradient (#8B6CFF → #5B8DEF). Geometric, no text. Glassmorphism glow. App icon ready, premium fintech aesthetic.
+                </p>
+                <div className="flex items-center gap-2 mt-3">
+                  <div className="flex gap-1.5">
+                    {["#06060B", "#8B6CFF", "#5B8DEF", "#EEEEF0", "#34D399"].map((c) => (
+                      <div
+                        key={c}
+                        className="w-5 h-5 rounded-md border border-white/10"
+                        style={{ background: c }}
+                        title={c}
+                      />
+                    ))}
+                  </div>
+                  <span className="text-[9px] text-muted/40 ml-1">Brand palette</span>
+                </div>
+              </div>
+            </div>
+          </GlassCard>
+        </motion.div>
+
+        {/* Instructions */}
+        <motion.div
+          className="mt-4"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5, ease }}
