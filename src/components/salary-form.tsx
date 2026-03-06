@@ -33,6 +33,14 @@ export function SalaryForm() {
   const [industry, setIndustry] = useState("");
   const [companySize, setCompanySize] = useState("");
   const [companyName, setCompanyName] = useState("");
+  const [formStarted, setFormStarted] = useState(false);
+
+  const handleFormStart = () => {
+    if (!formStarted) {
+      setFormStarted(true);
+      trackEvent("form_start");
+    }
+  };
 
   const step1Valid = jobTitle && currentSalary;
   const step2Valid = yearsExperience && city && industry && companySize;
@@ -86,6 +94,7 @@ export function SalaryForm() {
       initial={{ opacity: 0, y: 20, scale: 0.98 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.7, delay: 0.3, ease }}
+      onFocusCapture={handleFormStart}
     >
       {/* Progress bar */}
       <motion.div

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, trackScrollDepth, trackSectionViews, trackTimeOnPage } from "@/lib/analytics";
 import { pixelPageView } from "@/lib/pixels";
 import { captureUtm } from "@/lib/utm";
 import { SalaryForm } from "@/components/salary-form";
@@ -116,7 +116,11 @@ function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
     >
       <div className="rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-white/[0.08] hover:bg-white/[0.03] transition-all duration-300">
         <button
-          onClick={() => setOpen(!open)}
+          onClick={() => {
+            const next = !open;
+            setOpen(next);
+            trackEvent("faq_toggle", { question: q, action: next ? "open" : "close" });
+          }}
           className="flex items-center justify-between w-full text-left px-5 py-4 sm:py-5 cursor-pointer"
         >
           <span className="text-sm font-medium text-foreground/90 pr-4 group-hover:text-foreground transition-colors">
@@ -151,6 +155,25 @@ export default function Home() {
     captureUtm();
     trackEvent("page_view", { page: "home" });
     pixelPageView();
+
+    const cleanupScroll = trackScrollDepth();
+    const cleanupTime = trackTimeOnPage();
+    const cleanupSections = trackSectionViews({
+      "#section-hero": "hero",
+      "#section-social-proof": "social_proof",
+      "#section-preview": "preview",
+      "#section-how-it-works": "how_it_works",
+      "#section-pricing": "pricing",
+      "#section-testimonials": "testimonials",
+      "#section-faq": "faq",
+      "#section-cta": "cta",
+    });
+
+    return () => {
+      cleanupScroll();
+      cleanupTime();
+      cleanupSections();
+    };
   }, []);
 
   return (
@@ -158,7 +181,7 @@ export default function Home() {
       {/* ========================================= */}
       {/* HERO                                      */}
       {/* ========================================= */}
-      <section className="relative w-full overflow-hidden">
+      <section id="section-hero" className="relative w-full overflow-hidden">
         {/* Background layers */}
         <div className="absolute inset-0 grid-pattern opacity-20" />
         <div className="absolute inset-0 pointer-events-none">
@@ -254,13 +277,13 @@ export default function Home() {
       {/* ========================================= */}
       {/* SOCIAL PROOF STRIP                        */}
       {/* ========================================= */}
-      <section className="relative py-10 sm:py-14 px-4 sm:px-6 overflow-hidden">
+      <section id="section-social-proof" className="relative py-10 sm:py-14 px-4 sm:px-6 overflow-hidden">
         <div className="glow-line" />
         <motion.div
           className="max-w-4xl mx-auto pt-10 sm:pt-14"
           {...reveal}
         >
-          <div className="grid grid-cols-3 gap-4 sm:gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-8">
             {[
               { value: "$142K", label: "Average lifetime loss from underpay", icon: TrendingUp },
               { value: "73%", label: "Of workers never negotiate their salary", icon: Users },
@@ -285,7 +308,7 @@ export default function Home() {
       {/* ========================================= */}
       {/* SAMPLE ANALYSIS PREVIEW                   */}
       {/* ========================================= */}
-      <section className="relative py-12 sm:py-16 px-4 sm:px-6 overflow-hidden">
+      <section id="section-preview" className="relative py-12 sm:py-16 px-4 sm:px-6 overflow-hidden">
         <div className="max-w-4xl mx-auto">
           <motion.div className="text-center mb-8 sm:mb-10" {...reveal}>
             <span className="info-label text-accent/60 mb-4 block">
@@ -367,7 +390,7 @@ export default function Home() {
       {/* ========================================= */}
       {/* HOW IT WORKS                              */}
       {/* ========================================= */}
-      <section className="relative py-16 sm:py-24 px-4 sm:px-6 overflow-hidden">
+      <section id="section-how-it-works" className="relative py-16 sm:py-24 px-4 sm:px-6 overflow-hidden">
         <div className="max-w-4xl mx-auto">
           <motion.div className="text-center mb-10 sm:mb-14" {...reveal}>
             <span className="info-label text-accent/60 mb-4 block">
@@ -433,7 +456,7 @@ export default function Home() {
       {/* ========================================= */}
       {/* WHAT YOU GET (FREE vs PAID)               */}
       {/* ========================================= */}
-      <section className="relative py-16 sm:py-24 px-4 sm:px-6 overflow-hidden">
+      <section id="section-pricing" className="relative py-16 sm:py-24 px-4 sm:px-6 overflow-hidden">
         <div className="glow-line" />
 
         <div className="max-w-4xl mx-auto relative z-10 pt-10 sm:pt-14">
@@ -588,7 +611,7 @@ export default function Home() {
       {/* ========================================= */}
       {/* TESTIMONIALS                              */}
       {/* ========================================= */}
-      <section className="relative py-16 sm:py-24 px-4 sm:px-6 overflow-hidden">
+      <section id="section-testimonials" className="relative py-16 sm:py-24 px-4 sm:px-6 overflow-hidden">
         <div className="glow-line" />
 
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -614,7 +637,7 @@ export default function Home() {
       {/* ========================================= */}
       {/* FAQ                                       */}
       {/* ========================================= */}
-      <section className="relative py-16 sm:py-24 px-4 sm:px-6 overflow-hidden">
+      <section id="section-faq" className="relative py-16 sm:py-24 px-4 sm:px-6 overflow-hidden">
         <div className="glow-line" />
 
         <div className="max-w-2xl mx-auto relative z-10 pt-10 sm:pt-14">
@@ -641,7 +664,7 @@ export default function Home() {
       {/* ========================================= */}
       {/* CTA                                       */}
       {/* ========================================= */}
-      <section className="relative py-20 sm:py-28 px-4 sm:px-6 overflow-hidden">
+      <section id="section-cta" className="relative py-20 sm:py-28 px-4 sm:px-6 overflow-hidden">
         <div className="glow-line" />
 
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -659,7 +682,10 @@ export default function Home() {
               30 seconds. No account. Find out where you stand.
             </p>
             <motion.button
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              onClick={() => {
+                trackEvent("cta_click", { cta: "bottom_analyze_salary" });
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
               className="inline-flex items-center gap-2.5 bg-gradient-to-r from-accent to-accent-blue text-white font-semibold px-7 sm:px-8 py-3 sm:py-3.5 rounded-xl shadow-lg shadow-accent/20 hover:shadow-accent/35 hover:brightness-110 transition-all duration-300 cursor-pointer text-sm"
               whileHover={{ scale: 1.02, y: -1 }}
               whileTap={{ scale: 0.97 }}

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useRef, useCallback, useEffect } from "react";
+import { useState, useRef, useCallback, useEffect, useMemo } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { motion, AnimatePresence } from "framer-motion";
 import { GlassCard } from "@/components/glass-card";
 import {
@@ -9,12 +10,16 @@ import {
   linkedinPosts,
   quoraAnswers,
   tiktokScripts,
+  tiktokSlideshows,
   type CarouselSlide,
   type CarouselPost,
   type TwitterThread,
   type LinkedInPost,
   type QuoraAnswer,
   type TikTokScript,
+  type TikTokSlideshow,
+  type TikTokSlide,
+  type TikTokAccent,
 } from "@/data/social-content";
 import {
   ChevronLeft,
@@ -36,6 +41,9 @@ import {
   Clock,
   Volume2,
   MessageSquare,
+  RefreshCw,
+  Wand2,
+  X,
 } from "lucide-react";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -98,8 +106,59 @@ const platformTabs: { id: Platform; label: string; icon: typeof Instagram; count
   { id: "twitter", label: "Twitter/X", icon: Twitter, count: twitterThreads.length },
   { id: "linkedin", label: "LinkedIn", icon: Linkedin, count: linkedinPosts.length },
   { id: "quora", label: "Quora", icon: HelpCircle, count: quoraAnswers.length },
-  { id: "tiktok", label: "TikTok", icon: Video, count: tiktokScripts.length },
+  { id: "tiktok", label: "TikTok", icon: Video, count: tiktokScripts.length + tiktokSlideshows.length },
 ];
+
+/* ===== TIKTOK NEON ACCENT MAP ===== */
+const tiktokAccentMap: Record<TikTokAccent, {
+  primary: string;
+  secondary: string;
+  glow: string;
+  bgGrad: [string, string, string];
+}> = {
+  "neon-pink": {
+    primary: "#FF2D78",
+    secondary: "#FF6B9D",
+    glow: "rgba(255,45,120,0.4)",
+    bgGrad: ["#1A0510", "#2A0A1A", "#150410"],
+  },
+  "electric-cyan": {
+    primary: "#00E5FF",
+    secondary: "#40F0FF",
+    glow: "rgba(0,229,255,0.4)",
+    bgGrad: ["#001A1F", "#002A30", "#001520"],
+  },
+  "hot-orange": {
+    primary: "#FF6B35",
+    secondary: "#FF9A5C",
+    glow: "rgba(255,107,53,0.4)",
+    bgGrad: ["#1A0E05", "#2A1508", "#150C04"],
+  },
+  "lime": {
+    primary: "#A8FF00",
+    secondary: "#C8FF50",
+    glow: "rgba(168,255,0,0.4)",
+    bgGrad: ["#0A1A00", "#122800", "#081500"],
+  },
+  "vivid-purple": {
+    primary: "#B44AFF",
+    secondary: "#D080FF",
+    glow: "rgba(180,74,255,0.4)",
+    bgGrad: ["#140A20", "#1E1030", "#100818"],
+  },
+};
+
+/* ===== SEEDED SHUFFLE ===== */
+function seededShuffle<T>(array: T[], seed: number): T[] {
+  const shuffled = [...array];
+  let s = seed;
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    s = (s * 1103515245 + 12345) & 0x7fffffff;
+    const j = s % (i + 1);
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
 
 /* ===== HELPERS ===== */
 function hexToRgb(hex: string): [number, number, number] {
@@ -1234,11 +1293,538 @@ function TikTokCard({ script }: { script: TikTokScript }) {
   );
 }
 
+/* ===== TIKTOK SLIDE PREVIEW (display) ===== */
+function TikTokSlidePreview({
+  slide,
+  slideIndex,
+  totalSlides,
+}: {
+  slide: TikTokSlide;
+  slideIndex: number;
+  totalSlides: number;
+}) {
+  const accent = tiktokAccentMap[slide.accent];
+
+  return (
+    <div
+      className="relative overflow-hidden flex-shrink-0"
+      style={{
+        width: 270,
+        height: 480,
+        background: `linear-gradient(145deg, ${accent.bgGrad[0]}, ${accent.bgGrad[1]}, ${accent.bgGrad[2]})`,
+        borderRadius: 16,
+        fontFamily: "'Inter', 'DM Sans', system-ui, sans-serif",
+      }}
+    >
+      {/* Noise texture */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E\")",
+        }}
+      />
+
+      {/* Strong neon orb */}
+      <div
+        className="absolute"
+        style={{
+          width: "140%",
+          height: "140%",
+          top: "-30%",
+          left: "-20%",
+          background: `radial-gradient(circle at 50% 40%, ${accent.glow.replace("0.4", "0.18")} 0%, transparent 55%)`,
+        }}
+      />
+
+      {/* Neon top line */}
+      <div
+        className="absolute top-0 left-[20%] right-[20%] h-[3px]"
+        style={{
+          background: `linear-gradient(90deg, transparent, ${accent.primary}, transparent)`,
+          boxShadow: `0 0 12px ${accent.primary}80`,
+        }}
+      />
+
+      {/* Content */}
+      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 text-center">
+        {slide.stat ? (
+          <>
+            <span
+              className="text-[9px] font-bold tracking-[0.2em] uppercase mb-4"
+              style={{ color: `${accent.primary}80` }}
+            >
+              {slide.headline.split("\n")[0]}
+            </span>
+            <div
+              className="relative text-[56px] leading-none font-black mb-3"
+              style={{
+                color: accent.primary,
+                textShadow: `0 0 30px ${accent.glow}`,
+              }}
+            >
+              {slide.stat}
+            </div>
+            {slide.statLabel && (
+              <p className="text-[11px] leading-relaxed" style={{ color: `${COLORS.muted}60`, maxWidth: 200 }}>
+                {slide.statLabel}
+              </p>
+            )}
+          </>
+        ) : (
+          <>
+            <h3
+              className="text-[38px] leading-[1.02] font-black mb-4"
+              style={{ letterSpacing: "-0.03em" }}
+            >
+              {slide.headline.split("\n").map((line, i, arr) => (
+                <span key={i}>
+                  {i === arr.length - 1 ? (
+                    <span style={{
+                      color: accent.primary,
+                      textShadow: `0 0 20px ${accent.glow}`,
+                    }}>
+                      {line}
+                    </span>
+                  ) : (
+                    <span style={{ color: COLORS.fg }}>{line}</span>
+                  )}
+                  {i < arr.length - 1 && <br />}
+                </span>
+              ))}
+            </h3>
+            {slide.subtext && (
+              <p className="text-[11px] leading-relaxed" style={{ color: `${COLORS.muted}65`, maxWidth: 220 }}>
+                {slide.subtext}
+              </p>
+            )}
+          </>
+        )}
+      </div>
+
+      {/* Watermark */}
+      <div className="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-1.5">
+        <span className="text-[8px] tracking-wider uppercase" style={{ color: `${COLORS.muted}25` }}>
+          @underchozen {slideIndex + 1}/{totalSlides}
+        </span>
+      </div>
+
+      {/* Bottom neon bar */}
+      <div
+        className="absolute bottom-3 left-6 right-10 h-[2px]"
+        style={{
+          background: `linear-gradient(90deg, ${accent.primary}50, ${accent.secondary}30, transparent)`,
+          boxShadow: `0 0 8px ${accent.primary}30`,
+        }}
+      />
+    </div>
+  );
+}
+
+/* ===== TIKTOK SLIDESHOW CANVAS RENDERER ===== */
+const TT_CANVAS_W = 1080;
+const TT_CANVAS_H = 1920;
+
+function renderTikTokSlideToCanvas(slide: TikTokSlide): HTMLCanvasElement {
+  const canvas = document.createElement("canvas");
+  canvas.width = TT_CANVAS_W;
+  canvas.height = TT_CANVAS_H;
+  const ctx = canvas.getContext("2d")!;
+
+  const accent = tiktokAccentMap[slide.accent];
+  const [ar, ag, ab] = hexToRgb(accent.primary);
+  const [sr, sg, sb] = hexToRgb(accent.secondary);
+
+  // Background
+  const bgGrad = ctx.createLinearGradient(0, 0, TT_CANVAS_W * 0.4, TT_CANVAS_H);
+  bgGrad.addColorStop(0, accent.bgGrad[0]);
+  bgGrad.addColorStop(0.5, accent.bgGrad[1]);
+  bgGrad.addColorStop(1, accent.bgGrad[2]);
+  ctx.fillStyle = bgGrad;
+  ctx.fillRect(0, 0, TT_CANVAS_W, TT_CANVAS_H);
+
+  // Neon orb
+  const orbGrad = ctx.createRadialGradient(
+    TT_CANVAS_W / 2, TT_CANVAS_H * 0.3, 0,
+    TT_CANVAS_W / 2, TT_CANVAS_H * 0.3, TT_CANVAS_W * 0.8
+  );
+  orbGrad.addColorStop(0, `rgba(${ar},${ag},${ab},0.18)`);
+  orbGrad.addColorStop(0.5, `rgba(${ar},${ag},${ab},0.06)`);
+  orbGrad.addColorStop(1, "transparent");
+  ctx.fillStyle = orbGrad;
+  ctx.fillRect(0, 0, TT_CANVAS_W, TT_CANVAS_H);
+
+  // Top neon line
+  const lineGrad = ctx.createLinearGradient(TT_CANVAS_W * 0.2, 0, TT_CANVAS_W * 0.8, 0);
+  lineGrad.addColorStop(0, "transparent");
+  lineGrad.addColorStop(0.5, accent.primary);
+  lineGrad.addColorStop(1, "transparent");
+  ctx.fillStyle = lineGrad;
+  ctx.fillRect(TT_CANVAS_W * 0.2, 0, TT_CANVAS_W * 0.6, 6);
+
+  const cx = TT_CANVAS_W / 2;
+  const cy = TT_CANVAS_H / 2;
+
+  function setFont(weight: string, size: number) {
+    ctx.font = `${weight} ${size}px Inter, "DM Sans", system-ui, sans-serif`;
+  }
+
+  function wrapText(text: string, maxW: number): string[] {
+    const words = text.split(" ");
+    const lines: string[] = [];
+    let current = "";
+    for (const word of words) {
+      const test = current ? `${current} ${word}` : word;
+      if (ctx.measureText(test).width > maxW && current) {
+        lines.push(current);
+        current = word;
+      } else {
+        current = test;
+      }
+    }
+    if (current) lines.push(current);
+    return lines;
+  }
+
+  if (slide.stat) {
+    // Stat slide
+    setFont("700", 36);
+    ctx.fillStyle = `rgba(${ar},${ag},${ab},0.6)`;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.letterSpacing = "8px";
+    const labelText = slide.headline.split("\n")[0].toUpperCase();
+    ctx.fillText(labelText, cx, cy - 250);
+    ctx.letterSpacing = "0px";
+
+    // Stat glow
+    const statGlow = ctx.createRadialGradient(cx, cy - 40, 0, cx, cy - 40, 350);
+    statGlow.addColorStop(0, `rgba(${ar},${ag},${ab},0.12)`);
+    statGlow.addColorStop(1, "transparent");
+    ctx.fillStyle = statGlow;
+    ctx.fillRect(0, cy - 390, TT_CANVAS_W, 700);
+
+    setFont("900", 180);
+    ctx.fillStyle = accent.primary;
+    ctx.shadowColor = accent.glow;
+    ctx.shadowBlur = 40;
+    ctx.fillText(slide.stat, cx, cy - 20);
+    ctx.shadowBlur = 0;
+
+    if (slide.statLabel) {
+      setFont("400", 40);
+      ctx.fillStyle = `rgba(142,142,147,0.55)`;
+      const slLines = wrapText(slide.statLabel, TT_CANVAS_W * 0.7);
+      slLines.forEach((line, i) => {
+        ctx.fillText(line, cx, cy + 140 + i * 55);
+      });
+    }
+  } else {
+    // Text slide
+    const headlineLines = slide.headline.split("\n");
+    setFont("900", 120);
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    const lineH = 130;
+    const totalH = headlineLines.length * lineH;
+    const startY = cy - totalH / 2;
+
+    headlineLines.forEach((line, i) => {
+      const y = startY + i * lineH + lineH / 2;
+      const isLast = i === headlineLines.length - 1;
+      if (isLast) {
+        ctx.fillStyle = accent.primary;
+        ctx.shadowColor = accent.glow;
+        ctx.shadowBlur = 30;
+      } else {
+        ctx.fillStyle = COLORS.fg;
+        ctx.shadowBlur = 0;
+      }
+      ctx.fillText(line, cx, y);
+    });
+    ctx.shadowBlur = 0;
+
+    if (slide.subtext) {
+      setFont("400", 36);
+      ctx.fillStyle = `rgba(142,142,147,0.6)`;
+      const stY = startY + totalH + 40;
+      const stLines = wrapText(slide.subtext, TT_CANVAS_W * 0.75);
+      stLines.forEach((line, i) => {
+        ctx.fillText(line, cx, stY + i * 50);
+      });
+    }
+  }
+
+  // Watermark
+  setFont("600", 24);
+  ctx.fillStyle = `rgba(142,142,147,0.2)`;
+  ctx.textAlign = "center";
+  ctx.fillText("@underchozen", cx, TT_CANVAS_H - 60);
+
+  // Bottom neon bar
+  const barGrad = ctx.createLinearGradient(120, TT_CANVAS_H - 50, TT_CANVAS_W - 200, TT_CANVAS_H - 50);
+  barGrad.addColorStop(0, `rgba(${ar},${ag},${ab},0.5)`);
+  barGrad.addColorStop(0.6, `rgba(${sr},${sg},${sb},0.3)`);
+  barGrad.addColorStop(1, "transparent");
+  ctx.fillStyle = barGrad;
+  ctx.fillRect(120, TT_CANVAS_H - 52, TT_CANVAS_W - 320, 4);
+
+  return canvas;
+}
+
+/* ===== TIKTOK SLIDESHOW PREVIEW ===== */
+function TikTokSlideshowPreview({ slideshow }: { slideshow: TikTokSlideshow }) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [captionCopied, setCaptionCopied] = useState(false);
+  const [hashtagsCopied, setHashtagsCopied] = useState(false);
+  const [downloading, setDownloading] = useState(false);
+  const [downloadingAll, setDownloadingAll] = useState(false);
+  const [downloadProgress, setDownloadProgress] = useState("");
+  const slideRef = useRef<HTMLDivElement>(null);
+  const [slideScale, setSlideScale] = useState(1);
+
+  useEffect(() => {
+    const el = slideRef.current;
+    if (!el) return;
+    const update = () => {
+      const w = el.getBoundingClientRect().width;
+      setSlideScale(Math.min(w / 270, 1));
+    };
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  const prev = () => setCurrentSlide((s) => Math.max(0, s - 1));
+  const next = () => setCurrentSlide((s) => Math.min(slideshow.slides.length - 1, s + 1));
+
+  const copyCaption = useCallback(async () => {
+    await navigator.clipboard.writeText(slideshow.caption);
+    setCaptionCopied(true);
+    setTimeout(() => setCaptionCopied(false), 2000);
+  }, [slideshow.caption]);
+
+  const copyHashtags = useCallback(async () => {
+    await navigator.clipboard.writeText(slideshow.hashtags);
+    setHashtagsCopied(true);
+    setTimeout(() => setHashtagsCopied(false), 2000);
+  }, [slideshow.hashtags]);
+
+  const downloadCurrentSlide = useCallback(async () => {
+    setDownloading(true);
+    try {
+      const canvas = renderTikTokSlideToCanvas(slideshow.slides[currentSlide]);
+      downloadCanvas(canvas, `${slideshow.id}-slide-${currentSlide + 1}.png`);
+    } finally {
+      setDownloading(false);
+    }
+  }, [slideshow, currentSlide]);
+
+  const downloadAllSlides = useCallback(async () => {
+    setDownloadingAll(true);
+    try {
+      for (let i = 0; i < slideshow.slides.length; i++) {
+        setDownloadProgress(`${i + 1} of ${slideshow.slides.length}`);
+        const canvas = renderTikTokSlideToCanvas(slideshow.slides[i]);
+        downloadCanvas(canvas, `${slideshow.id}-slide-${i + 1}.png`);
+        await new Promise((r) => setTimeout(r, 400));
+      }
+    } finally {
+      setDownloadingAll(false);
+      setDownloadProgress("");
+    }
+  }, [slideshow]);
+
+  return (
+    <div className="space-y-5">
+      {/* Slide viewer */}
+      <div className="relative w-full max-w-[270px] mx-auto">
+        <div
+          ref={slideRef}
+          className="relative w-full overflow-hidden rounded-2xl border border-white/[0.06]"
+          style={{ aspectRatio: "9/16" }}
+        >
+          <div className="absolute inset-0 origin-top-left" style={{ width: 270, height: 480, transform: `scale(${slideScale})` }}>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentSlide}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.3, ease }}
+              >
+                <TikTokSlidePreview
+                  slide={slideshow.slides[currentSlide]}
+                  slideIndex={currentSlide}
+                  totalSlides={slideshow.slides.length}
+                />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
+
+        {/* Navigation */}
+        <button
+          onClick={prev}
+          disabled={currentSlide === 0}
+          className="absolute left-2 sm:left-[-48px] top-1/2 -translate-y-1/2 w-9 h-9 rounded-xl glass flex items-center justify-center disabled:opacity-20 hover:bg-white/[0.06] transition-all cursor-pointer disabled:cursor-default z-20"
+        >
+          <ChevronLeft className="w-4 h-4 text-foreground/70" />
+        </button>
+        <button
+          onClick={next}
+          disabled={currentSlide === slideshow.slides.length - 1}
+          className="absolute right-2 sm:right-[-48px] top-1/2 -translate-y-1/2 w-9 h-9 rounded-xl glass flex items-center justify-center disabled:opacity-20 hover:bg-white/[0.06] transition-all cursor-pointer disabled:cursor-default z-20"
+        >
+          <ChevronRight className="w-4 h-4 text-foreground/70" />
+        </button>
+      </div>
+
+      {/* Download buttons */}
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3">
+        <button
+          onClick={downloadCurrentSlide}
+          disabled={downloading}
+          className="flex items-center gap-2 text-xs font-medium px-4 py-2.5 rounded-xl bg-accent/[0.08] border border-accent/15 text-accent/80 hover:bg-accent/[0.14] disabled:opacity-50 transition-all cursor-pointer disabled:cursor-default"
+        >
+          {downloading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Download className="w-3.5 h-3.5" />}
+          {downloading ? "Exporting..." : "Download Slide"}
+        </button>
+        <button
+          onClick={downloadAllSlides}
+          disabled={downloadingAll}
+          className="flex items-center gap-2 text-xs font-medium px-4 py-2.5 rounded-xl bg-gradient-to-r from-accent/[0.1] to-accent-blue/[0.1] border border-accent/15 text-foreground/75 hover:from-accent/[0.16] hover:to-accent-blue/[0.16] disabled:opacity-50 transition-all cursor-pointer disabled:cursor-default"
+        >
+          {downloadingAll ? (
+            <>
+              <Loader2 className="w-3.5 h-3.5 animate-spin" />
+              Downloading {downloadProgress}
+            </>
+          ) : (
+            <>
+              <Layers className="w-3.5 h-3.5" />
+              Download All {slideshow.slides.length} Slides
+            </>
+          )}
+        </button>
+      </div>
+
+      {/* Slide dots */}
+      <div className="flex items-center justify-center gap-1.5">
+        {slideshow.slides.map((s, i) => {
+          const dotAccent = tiktokAccentMap[s.accent];
+          return (
+            <button
+              key={i}
+              onClick={() => setCurrentSlide(i)}
+              className="cursor-pointer transition-all"
+              style={{
+                width: currentSlide === i ? 20 : 6,
+                height: 6,
+                borderRadius: 3,
+                background: currentSlide === i
+                  ? dotAccent.primary
+                  : "rgba(255,255,255,0.1)",
+                boxShadow: currentSlide === i ? `0 0 8px ${dotAccent.glow}` : "none",
+              }}
+            />
+          );
+        })}
+      </div>
+
+      {/* Caption + Hashtags */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+        <div className="rounded-xl bg-white/[0.02] border border-white/[0.05] p-4">
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-1.5">
+              <FileText className="w-3 h-3 text-muted/50" />
+              <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-muted/50">Caption</span>
+            </div>
+            <button
+              onClick={copyCaption}
+              className="flex items-center gap-1 text-[10px] text-accent/70 hover:text-accent transition-colors cursor-pointer"
+            >
+              {captionCopied ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
+              {captionCopied ? "Copied" : "Copy"}
+            </button>
+          </div>
+          <p className="text-xs text-muted/60 leading-relaxed whitespace-pre-line">{slideshow.caption}</p>
+        </div>
+        <div className="rounded-xl bg-white/[0.02] border border-white/[0.05] p-4">
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-1.5">
+              <Hash className="w-3 h-3 text-muted/50" />
+              <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-muted/50">Hashtags</span>
+            </div>
+            <button
+              onClick={copyHashtags}
+              className="flex items-center gap-1 text-[10px] text-accent/70 hover:text-accent transition-colors cursor-pointer"
+            >
+              {hashtagsCopied ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
+              {hashtagsCopied ? "Copied" : "Copy"}
+            </button>
+          </div>
+          <p className="text-xs text-accent-blue/60 leading-relaxed">{slideshow.hashtags}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ===== MAIN PAGE ===== */
 export default function SocialPage() {
   const [platform, setPlatform] = useState<Platform>("instagram");
   const [selectedPost, setSelectedPost] = useState<CarouselPost>(carouselPosts[0]);
+  const [selectedSlideshow, setSelectedSlideshow] = useState<TikTokSlideshow>(tiktokSlideshows[0]);
   const [view, setView] = useState<"gallery" | "preview">("gallery");
+  const [tiktokSubTab, setTiktokSubTab] = useState<"slideshows" | "scripts">("slideshows");
+  const [shuffleSeed, setShuffleSeed] = useState(0);
+
+  /* AI Generation state */
+  const [showAiModal, setShowAiModal] = useState(false);
+  const [aiTopic, setAiTopic] = useState("");
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiError, setAiError] = useState("");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [aiContent, setAiContent] = useState<any[]>([]);
+
+  /* Shuffled content arrays */
+  const shuffledCarousels = useMemo(() => shuffleSeed === 0 ? carouselPosts : seededShuffle(carouselPosts, shuffleSeed), [shuffleSeed]);
+  const shuffledThreads = useMemo(() => shuffleSeed === 0 ? twitterThreads : seededShuffle(twitterThreads, shuffleSeed), [shuffleSeed]);
+  const shuffledLinkedin = useMemo(() => shuffleSeed === 0 ? linkedinPosts : seededShuffle(linkedinPosts, shuffleSeed), [shuffleSeed]);
+  const shuffledQuora = useMemo(() => shuffleSeed === 0 ? quoraAnswers : seededShuffle(quoraAnswers, shuffleSeed), [shuffleSeed]);
+  const shuffledTTScripts = useMemo(() => shuffleSeed === 0 ? tiktokScripts : seededShuffle(tiktokScripts, shuffleSeed), [shuffleSeed]);
+  const shuffledTTSlideshows = useMemo(() => shuffleSeed === 0 ? tiktokSlideshows : seededShuffle(tiktokSlideshows, shuffleSeed), [shuffleSeed]);
+
+  const handleShuffle = () => setShuffleSeed((s) => s + 1);
+
+  const handleAiGenerate = async () => {
+    setAiLoading(true);
+    setAiError("");
+    try {
+      const res = await fetch("/api/generate-social", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ platform, topic: aiTopic || undefined }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setAiError(data.error || "Generation failed");
+        return;
+      }
+      setAiContent((prev) => [{ ...data.content, _aiGenerated: true }, ...prev]);
+      setShowAiModal(false);
+      setAiTopic("");
+    } catch {
+      setAiError("Network error. Please try again.");
+    } finally {
+      setAiLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    trackEvent("page_view", { page: "social" });
+  }, []);
 
   return (
     <main id="main-content" className="min-h-screen relative overflow-hidden">
@@ -1271,14 +1857,15 @@ export default function SocialPage() {
           </p>
         </motion.div>
 
-        {/* Platform tabs */}
+        {/* Platform tabs + action buttons */}
         <motion.div
           className="mb-8"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.5, ease }}
         >
-          <div className="flex gap-1.5 overflow-x-auto pb-2 scrollbar-hide">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="flex-1 flex gap-1.5 overflow-x-auto pb-2 scrollbar-hide">
             {platformTabs.map((tab) => {
               const Icon = tab.icon;
               const active = platform === tab.id;
@@ -1302,8 +1889,130 @@ export default function SocialPage() {
                 </button>
               );
             })}
+            </div>
+
+            {/* Shuffle + AI buttons */}
+            <div className="flex items-center gap-1.5 flex-shrink-0 pb-2">
+              <button
+                onClick={handleShuffle}
+                className="flex items-center gap-1.5 text-xs font-medium px-3 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] text-muted/60 hover:text-foreground/70 hover:bg-white/[0.06] transition-all cursor-pointer whitespace-nowrap"
+                title="Shuffle content order"
+              >
+                <RefreshCw className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">Shuffle</span>
+              </button>
+              <button
+                onClick={() => setShowAiModal(true)}
+                className="flex items-center gap-1.5 text-xs font-medium px-3 py-2.5 rounded-xl bg-accent/[0.08] border border-accent/15 text-accent/70 hover:text-accent hover:bg-accent/[0.14] transition-all cursor-pointer whitespace-nowrap"
+                title="AI Generate content"
+              >
+                <Wand2 className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">AI Generate</span>
+              </button>
+            </div>
           </div>
         </motion.div>
+
+        {/* AI Generation Modal */}
+        <AnimatePresence>
+          {showAiModal && (
+            <motion.div
+              className="fixed inset-0 z-50 flex items-center justify-center px-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setShowAiModal(false)} />
+              <motion.div
+                className="relative glass-elevated rounded-2xl p-6 w-full max-w-md"
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-accent/10 border border-accent/15 flex items-center justify-center">
+                      <Wand2 className="w-4 h-4 text-accent" />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-semibold text-foreground/90">AI Generate Content</h3>
+                      <p className="text-[10px] text-muted/50">Powered by Claude Haiku · ~$0.01-0.03 per generation</p>
+                    </div>
+                  </div>
+                  <button onClick={() => setShowAiModal(false)} className="text-muted/40 hover:text-foreground/70 cursor-pointer">
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+
+                <div className="space-y-3">
+                  <div>
+                    <label className="text-[10px] font-semibold tracking-[0.15em] uppercase text-muted/50 mb-1.5 block">
+                      Platform
+                    </label>
+                    <p className="text-sm text-foreground/80 capitalize">{platform}</p>
+                  </div>
+                  <div>
+                    <label className="text-[10px] font-semibold tracking-[0.15em] uppercase text-muted/50 mb-1.5 block">
+                      Topic (optional)
+                    </label>
+                    <input
+                      type="text"
+                      value={aiTopic}
+                      onChange={(e) => setAiTopic(e.target.value)}
+                      placeholder="e.g., Remote work salary trends"
+                      className="w-full px-3 py-2.5 rounded-xl text-sm text-foreground/80 border border-white/[0.08] focus:outline-none"
+                    />
+                  </div>
+                  {aiError && (
+                    <p className="text-xs text-red-400/80">{aiError}</p>
+                  )}
+                  <button
+                    onClick={handleAiGenerate}
+                    disabled={aiLoading}
+                    className="w-full flex items-center justify-center gap-2 text-sm font-medium px-4 py-3 rounded-xl bg-gradient-to-r from-accent to-accent-blue text-white hover:opacity-90 disabled:opacity-50 transition-all cursor-pointer disabled:cursor-default"
+                  >
+                    {aiLoading ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        Generating...
+                      </>
+                    ) : (
+                      <>
+                        <Sparkles className="w-4 h-4" />
+                        Generate Content
+                      </>
+                    )}
+                  </button>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* AI Generated Content Banner */}
+        {aiContent.length > 0 && (
+          <motion.div
+            className="mb-6"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <GlassCard>
+              <div className="flex items-center gap-2 mb-3">
+                <Wand2 className="w-3.5 h-3.5 text-accent" />
+                <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-accent/60">AI Generated</span>
+                <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-md bg-accent/10 text-accent/70">{aiContent.length}</span>
+              </div>
+              <div className="space-y-2">
+                {aiContent.map((item, i) => (
+                  <div key={i} className="flex items-center justify-between rounded-lg bg-white/[0.02] border border-white/[0.05] px-3 py-2">
+                    <span className="text-xs text-foreground/70">{item.title || item.question || "Generated content"}</span>
+                    <CopyBlockButton text={JSON.stringify(item, null, 2)} />
+                  </div>
+                ))}
+              </div>
+            </GlassCard>
+          </motion.div>
+        )}
 
         {/* ===== INSTAGRAM TAB ===== */}
         {platform === "instagram" && (
@@ -1311,7 +2020,7 @@ export default function SocialPage() {
             {/* View toggle */}
             <div className="flex items-center justify-between mb-6">
               <p className="text-xs text-muted/40">
-                {carouselPosts.length} carousel posts ready to download
+                {shuffledCarousels.length} carousel posts ready to download
               </p>
               <div className="flex items-center gap-1 glass rounded-lg p-1">
                 <button
@@ -1342,7 +2051,7 @@ export default function SocialPage() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.4 }}
               >
-                {carouselPosts.map((post, i) => {
+                {shuffledCarousels.map((post, i) => {
                   const postAccent = accentMap[post.slides[0].accent || "purple"];
                   return (
                     <motion.div
@@ -1446,7 +2155,7 @@ export default function SocialPage() {
               >
                 {/* Post selector tabs */}
                 <div className="flex gap-2 overflow-x-auto pb-4 mb-6 scrollbar-hide">
-                  {carouselPosts.map((post) => {
+                  {shuffledCarousels.map((post) => {
                     const tabAccent = accentMap[post.slides[0].accent || "purple"];
                     return (
                       <button
@@ -1533,15 +2242,16 @@ export default function SocialPage() {
         {/* ===== TWITTER TAB ===== */}
         {platform === "twitter" && (
           <motion.div
+            key={shuffleSeed}
             className="space-y-4"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease }}
           >
             <p className="text-xs text-muted/40 mb-4">
-              {twitterThreads.length} ready-to-post threads. Copy individual tweets or the full thread.
+              {shuffledThreads.length} ready-to-post threads. Copy individual tweets or the full thread.
             </p>
-            {twitterThreads.map((thread) => (
+            {shuffledThreads.map((thread) => (
               <ThreadCard key={thread.id} thread={thread} />
             ))}
           </motion.div>
@@ -1550,15 +2260,16 @@ export default function SocialPage() {
         {/* ===== LINKEDIN TAB ===== */}
         {platform === "linkedin" && (
           <motion.div
+            key={shuffleSeed}
             className="space-y-4"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease }}
           >
             <p className="text-xs text-muted/40 mb-4">
-              {linkedinPosts.length} thought-leadership posts. Copy and post directly to LinkedIn.
+              {shuffledLinkedin.length} thought-leadership posts. Copy and post directly to LinkedIn.
             </p>
-            {linkedinPosts.map((post) => (
+            {shuffledLinkedin.map((post) => (
               <LinkedInCard key={post.id} post={post} />
             ))}
           </motion.div>
@@ -1567,15 +2278,16 @@ export default function SocialPage() {
         {/* ===== QUORA TAB ===== */}
         {platform === "quora" && (
           <motion.div
+            key={shuffleSeed}
             className="space-y-4"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease }}
           >
             <p className="text-xs text-muted/40 mb-4">
-              {quoraAnswers.length} high-value answers to salary questions. Copy and post on Quora.
+              {shuffledQuora.length} high-value answers to salary questions. Copy and post on Quora.
             </p>
-            {quoraAnswers.map((answer) => (
+            {shuffledQuora.map((answer) => (
               <QuoraCard key={answer.id} answer={answer} />
             ))}
           </motion.div>
@@ -1584,19 +2296,235 @@ export default function SocialPage() {
         {/* ===== TIKTOK TAB ===== */}
         {platform === "tiktok" && (
           <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-4"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease }}
           >
-            <div className="lg:col-span-2">
-              <p className="text-xs text-muted/40 mb-4">
-                {tiktokScripts.length} video scripts with hooks, CTAs, and sound suggestions. Film and post.
-              </p>
+            {/* Sub-tabs */}
+            <div className="flex items-center gap-2 mb-6">
+              <button
+                onClick={() => setTiktokSubTab("slideshows")}
+                className={`flex items-center gap-1.5 text-xs font-medium px-3 py-2 rounded-lg transition-all cursor-pointer ${
+                  tiktokSubTab === "slideshows"
+                    ? "bg-pink-500/12 text-pink-400 border border-pink-500/20"
+                    : "text-muted/50 hover:text-foreground/70 border border-transparent"
+                }`}
+              >
+                <Layers className="w-3 h-3" />
+                Slideshows
+                <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded-md ${
+                  tiktokSubTab === "slideshows" ? "bg-pink-500/15 text-pink-400/80" : "bg-white/[0.04] text-muted/40"
+                }`}>
+                  {tiktokSlideshows.length}
+                </span>
+              </button>
+              <button
+                onClick={() => setTiktokSubTab("scripts")}
+                className={`flex items-center gap-1.5 text-xs font-medium px-3 py-2 rounded-lg transition-all cursor-pointer ${
+                  tiktokSubTab === "scripts"
+                    ? "bg-pink-500/12 text-pink-400 border border-pink-500/20"
+                    : "text-muted/50 hover:text-foreground/70 border border-transparent"
+                }`}
+              >
+                <FileText className="w-3 h-3" />
+                Scripts
+                <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded-md ${
+                  tiktokSubTab === "scripts" ? "bg-pink-500/15 text-pink-400/80" : "bg-white/[0.04] text-muted/40"
+                }`}>
+                  {tiktokScripts.length}
+                </span>
+              </button>
             </div>
-            {tiktokScripts.map((script) => (
-              <TikTokCard key={script.id} script={script} />
-            ))}
+
+            {/* Slideshows sub-tab */}
+            {tiktokSubTab === "slideshows" && (
+              <>
+                <div className="flex items-center justify-between mb-4">
+                  <p className="text-xs text-muted/40">
+                    {tiktokSlideshows.length} slideshow posts with downloadable 9:16 slides
+                  </p>
+                  <div className="flex items-center gap-1 glass rounded-lg p-1">
+                    <button
+                      onClick={() => setView("gallery")}
+                      className={`flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md transition-all cursor-pointer ${
+                        view === "gallery" ? "bg-accent/15 text-accent" : "text-muted/50 hover:text-foreground/70"
+                      }`}
+                    >
+                      <Layers className="w-3 h-3" />
+                      Gallery
+                    </button>
+                    <button
+                      onClick={() => setView("preview")}
+                      className={`flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md transition-all cursor-pointer ${
+                        view === "preview" ? "bg-accent/15 text-accent" : "text-muted/50 hover:text-foreground/70"
+                      }`}
+                    >
+                      <Eye className="w-3 h-3" />
+                      Preview
+                    </button>
+                  </div>
+                </div>
+                {view === "gallery" ? (
+                  <div key={shuffleSeed}>
+                    <motion.div
+                      className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.4 }}
+                    >
+                      {shuffledTTSlideshows.map((ss, i) => {
+                        const ssAccent = tiktokAccentMap[ss.slides[0].accent];
+                        return (
+                          <motion.div
+                            key={ss.id}
+                            initial={{ opacity: 0, y: 16 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: i * 0.05, duration: 0.4, ease }}
+                          >
+                            <GlassCard
+                              className="cursor-pointer glass-hover transition-all duration-300 group relative overflow-hidden"
+                              onClick={() => { setSelectedSlideshow(ss); setView("preview"); }}
+                            >
+                              <div
+                                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
+                                style={{ background: `linear-gradient(145deg, ${ssAccent.primary}08, transparent)` }}
+                              />
+                              <div className="relative z-10">
+                                <div
+                                  className="relative w-full rounded-xl overflow-hidden mb-3"
+                                  style={{
+                                    aspectRatio: "9/16",
+                                    background: `linear-gradient(145deg, ${ssAccent.bgGrad[0]}, ${ssAccent.bgGrad[1]})`,
+                                    border: `1px solid ${ssAccent.primary}15`,
+                                  }}
+                                >
+                                  <div
+                                    className="absolute"
+                                    style={{
+                                      width: "80%", height: "60%", top: "-10%", left: "10%",
+                                      background: `radial-gradient(circle, ${ssAccent.primary}18 0%, transparent 70%)`,
+                                    }}
+                                  />
+                                  <div className="absolute inset-0 flex items-center justify-center p-4 text-center">
+                                    <p
+                                      className="text-sm leading-tight font-black"
+                                      style={{ color: COLORS.fg, textShadow: `0 0 15px ${ssAccent.glow}` }}
+                                    >
+                                      {ss.slides[0].headline.split("\n").map((line, li, arr) => (
+                                        <span key={li}>
+                                          {li === arr.length - 1 ? (
+                                            <span style={{ color: ssAccent.primary }}>{line}</span>
+                                          ) : line}
+                                          {li < arr.length - 1 && <br />}
+                                        </span>
+                                      ))}
+                                    </p>
+                                  </div>
+                                  <div
+                                    className="absolute top-2 right-2 text-[8px] font-bold tracking-wider uppercase px-1.5 py-0.5 rounded-md"
+                                    style={{
+                                      background: `${ssAccent.primary}15`,
+                                      color: `${ssAccent.primary}90`,
+                                      border: `1px solid ${ssAccent.primary}20`,
+                                    }}
+                                  >
+                                    {ss.slides.length} slides
+                                  </div>
+                                </div>
+                                <p className="text-xs font-semibold text-foreground/85 mb-0.5 line-clamp-1">{ss.title}</p>
+                                <p
+                                  className="text-[9px] font-semibold tracking-[0.15em] uppercase"
+                                  style={{ color: `${ssAccent.primary}60` }}
+                                >
+                                  {ss.category}
+                                </p>
+                              </div>
+                            </GlassCard>
+                          </motion.div>
+                        );
+                      })}
+                    </motion.div>
+                  </div>
+                ) : (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    {/* Slideshow selector tabs */}
+                    <div className="flex gap-2 overflow-x-auto pb-4 mb-6 scrollbar-hide">
+                      {tiktokSlideshows.map((ss) => {
+                        const tabAccent = tiktokAccentMap[ss.slides[0].accent];
+                        return (
+                          <button
+                            key={ss.id}
+                            onClick={() => setSelectedSlideshow(ss)}
+                            className="flex-shrink-0 text-xs font-medium px-3 py-2 rounded-lg transition-all cursor-pointer whitespace-nowrap"
+                            style={{
+                              background: selectedSlideshow.id === ss.id ? `${tabAccent.primary}18` : "rgba(255,255,255,0.02)",
+                              color: selectedSlideshow.id === ss.id ? `${tabAccent.primary}dd` : `${COLORS.muted}60`,
+                              border: `1px solid ${selectedSlideshow.id === ss.id ? `${tabAccent.primary}30` : "rgba(255,255,255,0.04)"}`,
+                            }}
+                          >
+                            {ss.title}
+                          </button>
+                        );
+                      })}
+                    </div>
+
+                    {/* Selected slideshow header */}
+                    <div className="flex items-center gap-3 mb-6">
+                      <div
+                        className="w-10 h-10 rounded-xl flex items-center justify-center"
+                        style={{
+                          background: `linear-gradient(135deg, ${tiktokAccentMap[selectedSlideshow.slides[0].accent].primary}18, ${tiktokAccentMap[selectedSlideshow.slides[0].accent].secondary}10)`,
+                          border: `1px solid ${tiktokAccentMap[selectedSlideshow.slides[0].accent].primary}25`,
+                        }}
+                      >
+                        <Video className="w-4.5 h-4.5" style={{ color: tiktokAccentMap[selectedSlideshow.slides[0].accent].primary }} />
+                      </div>
+                      <div>
+                        <h2 className="text-lg font-semibold tracking-tight text-foreground/90">{selectedSlideshow.title}</h2>
+                        <p className="text-[10px] font-semibold tracking-[0.15em] uppercase" style={{ color: `${tiktokAccentMap[selectedSlideshow.slides[0].accent].primary}60` }}>
+                          {selectedSlideshow.category} · {selectedSlideshow.slides.length} slides · 9:16
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Main preview */}
+                    <div className="flex flex-col items-center">
+                      <TikTokSlideshowPreview slideshow={selectedSlideshow} />
+                    </div>
+
+                    {/* Back to gallery */}
+                    <div className="mt-8 text-center">
+                      <button
+                        onClick={() => setView("gallery")}
+                        className="text-xs text-muted/50 hover:text-foreground/70 transition-colors cursor-pointer"
+                      >
+                        ← Back to gallery
+                      </button>
+                    </div>
+                  </motion.div>
+                )}
+              </>
+            )}
+
+            {/* Scripts sub-tab */}
+            {tiktokSubTab === "scripts" && (
+              <div key={shuffleSeed}>
+                <div className="lg:col-span-2">
+                  <p className="text-xs text-muted/40 mb-4">
+                    {tiktokScripts.length} video scripts with hooks, CTAs, and sound suggestions. Film and post.
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                  {shuffledTTScripts.map((script) => (
+                    <TikTokCard key={script.id} script={script} />
+                  ))}
+                </div>
+              </div>
+            )}
           </motion.div>
         )}
 

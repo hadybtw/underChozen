@@ -9,6 +9,7 @@ import {
 import { analyzeSalary } from "@/lib/calculator";
 import { formatCurrency } from "@/lib/utils";
 import { Footer } from "@/components/footer";
+import { PageTracker } from "@/components/page-tracker";
 
 /* ===== SLUG HELPERS ===== */
 
@@ -182,6 +183,7 @@ export default async function SalaryPage({ params }: PageProps) {
 
   return (
     <main className="min-h-screen relative overflow-hidden">
+      <PageTracker properties={{ page: "seo_salary", role: roleName, city: cityName }} />
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="grid-pattern opacity-15 absolute inset-0" />

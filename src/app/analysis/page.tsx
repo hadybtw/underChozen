@@ -20,7 +20,7 @@ import { analyzeSalary, type SalaryInput } from "@/lib/calculator";
 import { generateNegotiationPack } from "@/lib/negotiation";
 import { generatePremiumPack } from "@/lib/premium";
 import { formatCurrency, ordinal } from "@/lib/utils";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, trackScrollDepth, trackTimeOnPage } from "@/lib/analytics";
 import { salaryTrends, locationTrends } from "@/data/salaries";
 import { GlassCard } from "@/components/glass-card";
 import { MetricCard } from "@/components/metric-card";
@@ -105,6 +105,17 @@ function AnalysisContent() {
     return () => clearTimeout(timer);
   }, [input, router]);
 
+  // Scroll depth + time on page tracking
+  useEffect(() => {
+    if (loading) return;
+    const cleanupScroll = trackScrollDepth();
+    const cleanupTime = trackTimeOnPage();
+    return () => {
+      cleanupScroll();
+      cleanupTime();
+    };
+  }, [loading]);
+
   const handleUnlock = useCallback(async (tier: "blueprint" | "premium" = "blueprint", discountCode?: string) => {
     if (!input) return;
 
@@ -185,7 +196,7 @@ function AnalysisContent() {
           {/* Exit intent popup */}
           <ExitIntent />
 
-          <div className="relative z-10 max-w-3xl mx-auto px-4 md:px-6 py-8 sm:py-12">
+          <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
             {/* Navigation */}
             <motion.div
               className="flex items-center justify-between mb-10 sm:mb-14"
@@ -194,14 +205,20 @@ function AnalysisContent() {
               transition={{ duration: 0.3 }}
             >
               <button
-                onClick={() => router.push("/")}
+                onClick={() => {
+                  trackEvent("cta_click", { cta: "start_over" });
+                  router.push("/");
+                }}
                 className="flex items-center gap-1.5 text-xs text-muted/60 hover:text-foreground/80 transition-colors cursor-pointer group"
               >
                 <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" />
                 Start over
               </button>
               <button
-                onClick={() => router.push("/")}
+                onClick={() => {
+                  trackEvent("cta_click", { cta: "new_analysis_top" });
+                  router.push("/");
+                }}
                 className="flex items-center gap-1.5 text-xs text-muted/60 hover:text-foreground/80 transition-colors cursor-pointer group"
               >
                 <RefreshCw className="w-3 h-3" />
@@ -557,7 +574,10 @@ function AnalysisContent() {
                 Want to check a different role or location?
               </p>
               <motion.button
-                onClick={() => router.push("/")}
+                onClick={() => {
+                  trackEvent("cta_click", { cta: "run_new_analysis_bottom" });
+                  router.push("/");
+                }}
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-accent to-accent-blue text-white font-semibold px-6 py-2.5 rounded-xl shadow-lg shadow-accent/15 hover:shadow-accent/30 hover:brightness-110 transition-all duration-300 cursor-pointer text-sm"
                 whileHover={{ scale: 1.02, y: -1 }}
                 whileTap={{ scale: 0.97 }}

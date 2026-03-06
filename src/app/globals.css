@@ -358,6 +358,23 @@ select:focus {
   }
 }
 
+/* ===== SCROLLBAR HIDE ===== */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== TIKTOK NEON STYLES ===== */
+.tiktok-neon-pink { color: #FF2D78; }
+.tiktok-electric-cyan { color: #00E5FF; }
+.tiktok-hot-orange { color: #FF6B35; }
+.tiktok-lime { color: #A8FF00; }
+.tiktok-vivid-purple { color: #B44AFF; }
+
 /* Safe area padding for mobile browsers */
 @supports (padding: max(0px)) {
   body {

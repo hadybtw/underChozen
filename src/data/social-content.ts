@@ -1,6 +1,6 @@
 /**
  * Multi-platform social content library.
- * Instagram carousels, Twitter threads, LinkedIn posts, Quora answers, TikTok scripts.
+ * Instagram carousels, Twitter threads, LinkedIn posts, Quora answers, TikTok scripts & slideshows.
  */
 
 /* ===== INSTAGRAM CAROUSELS ===== */
@@ -247,6 +247,77 @@ export const carouselPosts: CarouselPost[] = [
       { type: "cta", headline: "Check Your\nAI Premium", subtext: "See how AI skills affect your market value.", ctaText: "underchozen.com", accent: "purple" },
     ],
   },
+  {
+    id: "salary-by-company-size",
+    title: "How Company Size Affects Your Pay",
+    category: "Salary Data",
+    caption: "Startup vs enterprise — the pay gap is bigger than you think. Here's how company size impacts your salary.\n\nLink in bio for your personalized breakdown.",
+    hashtags: "#salary #startup #enterprise #compensation #career #techsalary #jobmarket #careeradvice #payscale #money",
+    slides: [
+      { type: "hook", headline: "How Company Size\nAffects Your Pay", subtext: "The difference might shock you.", accent: "purple" },
+      { type: "stat", headline: "Startup (< 50)", stat: "$95K", statLabel: "Median SWE salary · equity upside", accent: "warning" },
+      { type: "stat", headline: "Mid-Market (200-1K)", stat: "$125K", statLabel: "Median SWE salary · balanced comp", accent: "blue" },
+      { type: "stat", headline: "Enterprise (5K+)", stat: "$155K", statLabel: "Median SWE salary · top benefits", accent: "green" },
+      { type: "content", headline: "The Trade-offs", subtext: "Startups: lower base, equity lottery\nMid-market: balanced, growth path\nEnterprise: highest base, slower promos\n\nTotal comp ≠ base salary", accent: "purple" },
+      { type: "cta", headline: "See Your Market\nRate by Size", subtext: "Adjust for company size in your analysis.", ctaText: "underchozen.com", accent: "purple" },
+    ],
+  },
+  {
+    id: "gender-pay-gap-data",
+    title: "The Pay Gap Is Still Real in 2026",
+    category: "Education",
+    caption: "The data doesn't lie. Here's what the gender pay gap actually looks like across roles and levels.\n\nKnowledge is power. Check your market rate.\n\nLink in bio.",
+    hashtags: "#paygap #salarytransparency #equalpay #career #salary #diversity #inclusion #workplaceequity #careergrowth #data",
+    slides: [
+      { type: "hook", headline: "The Pay Gap\nIs Still Real\nin 2026", subtext: "Here's what the data actually shows.", accent: "red" },
+      { type: "stat", headline: "Overall Gap", stat: "16%", statLabel: "Women earn 84 cents per dollar on average", accent: "red" },
+      { type: "stat", headline: "Same Role, Same Level", stat: "6-8%", statLabel: "Controlled gap · same title, same company size", accent: "warning" },
+      { type: "content", headline: "How to Close It", subtext: "→ Know your market rate (data > feelings)\n→ Negotiate every offer (men do 4x more)\n→ Ask for the top of range, not mid\n→ Document your impact quarterly", accent: "green" },
+      { type: "cta", headline: "Know Your\nTrue Market Value", subtext: "Gender-neutral data. Pure market rates.", ctaText: "underchozen.com", accent: "purple" },
+    ],
+  },
+  {
+    id: "total-comp-breakdown",
+    title: "Your Salary Is Only 60% of Your Comp",
+    category: "Education",
+    caption: "Base salary gets all the attention, but total compensation is what actually matters. Here's the full picture.\n\nLink in bio to calculate yours.",
+    hashtags: "#totalcomp #salary #benefits #stockoptions #RSU #compensation #career #money #finance #careeradvice",
+    slides: [
+      { type: "hook", headline: "Your Salary Is\nOnly 60% of\nYour Comp", subtext: "Stop ignoring the other 40%.", accent: "green" },
+      { type: "stat", headline: "Base Salary", stat: "60%", statLabel: "Of total compensation on average", accent: "blue" },
+      { type: "content", headline: "The Other 40%", subtext: "→ Annual bonus (10-20%)\n→ Stock/RSUs (15-30% at big tech)\n→ 401K match (3-6%)\n→ Health insurance ($8-15K value)\n→ PTO days ($5-12K value)", accent: "green" },
+      { type: "stat", headline: "Hidden Value", stat: "$35K", statLabel: "Average value of benefits most ignore", accent: "purple" },
+      { type: "cta", headline: "Calculate Your\nTotal Comp", subtext: "See the full picture of your market value.", ctaText: "underchozen.com", accent: "purple" },
+    ],
+  },
+  {
+    id: "job-hopping-premium",
+    title: "Job Hoppers Earn 30% More After 5 Years",
+    category: "Tips",
+    caption: "Loyalty doesn't always pay. Here's the cold hard data on job hopping vs staying put.\n\nLink in bio to check if you're underpaid.",
+    hashtags: "#jobhopping #career #salary #careeradvice #jobtips #hiring #resignation #newjob #careergrowth #money",
+    slides: [
+      { type: "hook", headline: "Job Hoppers Earn\n30% More After\n5 Years", subtext: "Loyalty tax is real. Here's the math.", accent: "green" },
+      { type: "stat", headline: "Average Annual Raise", stat: "3.5%", statLabel: "For staying at the same company", accent: "warning" },
+      { type: "stat", headline: "Average Job-Hop Raise", stat: "15-25%", statLabel: "When switching companies every 2-3 years", accent: "green" },
+      { type: "content", headline: "The Sweet Spot", subtext: "→ Stay 2-3 years per role (minimum)\n→ Leave when growth stalls\n→ Each hop = negotiation leverage\n→ After 5 years: $30-50K more", accent: "blue" },
+      { type: "cta", headline: "Are You Being\nUnderpaid?", subtext: "Check if your salary matches the market.", ctaText: "underchozen.com", accent: "purple" },
+    ],
+  },
+  {
+    id: "recession-proof-salary",
+    title: "How to Recession-Proof Your Salary",
+    category: "Tips",
+    caption: "Economic uncertainty is rising. Here's how to protect your earning power no matter what happens.\n\nLink in bio for your market analysis.",
+    hashtags: "#recession #career #salary #jobsecurity #careeradvice #economy #skills #upskilling #careergrowth #money",
+    slides: [
+      { type: "hook", headline: "How to\nRecession-Proof\nYour Salary", subtext: "3 strategies that work in any economy.", accent: "blue" },
+      { type: "content", headline: "1. Know Your\nMarket Value", subtext: "You can't negotiate what you don't know.\nCheck market rates quarterly.\nData makes you un-lowball-able.", accent: "blue" },
+      { type: "content", headline: "2. Stack High-Demand\nSkills", subtext: "AI/ML: +40% premium\nCloud/DevOps: +25% premium\nData Engineering: +30% premium\n\nRecession-resistant = in-demand.", accent: "green" },
+      { type: "content", headline: "3. Build Your\nNegotiation Muscle", subtext: "Practice before you need it.\nDocument impact metrics now.\nHave a number ready always.", accent: "purple" },
+      { type: "cta", headline: "Check Your\nMarket Position", subtext: "Free analysis. Know where you stand.", ctaText: "underchozen.com", accent: "purple" },
+    ],
+  },
 ];
 
 /* ===== TWITTER/X THREADS ===== */
@@ -379,6 +450,66 @@ export const twitterThreads: TwitterThread[] = [
       "But most people don't negotiate because:\n\n→ They don't know their market rate\n→ They don't know what to say\n→ They're afraid of being told no\n→ They think it's \"greedy\"\n\n85% of managers expect you to negotiate.",
       "What you get for $29:\n\n→ Your exact recommended raise amount\n→ Ready-to-send email script\n→ Meeting talking points\n→ Objection handlers\n→ 3-year projection\n→ PDF report\n\nAll personalized to YOUR data.",
       "Free salary analysis + $29 negotiation blueprint: underchozen.com\n\n30-day money-back guarantee. If it doesn't work, you pay nothing.",
+    ],
+  },
+  {
+    id: "tw-total-comp",
+    title: "Your base salary is a distraction",
+    category: "Education",
+    tweets: [
+      "Your base salary is a distraction.\n\nHere's what actually determines your wealth at work: 🧵",
+      "Base salary = ~60% of total comp.\n\nThe other 40%:\n→ Annual bonus\n→ RSUs / stock options\n→ 401K match (free money)\n→ Health insurance ($8-15K)\n→ PTO value\n\nMost people only negotiate the 60%.",
+      "At FAANG:\n\nL4 SWE base: $175K\nTotal comp: $280K+\n\nThat's $105K you're leaving on the table if you only negotiate base.",
+      "How to negotiate total comp:\n\n1. Ask for the full comp breakdown\n2. Negotiate signing bonus separately\n3. Ask for accelerated vesting\n4. Push for higher RSU refreshers\n5. Don't forget relocation",
+      "Calculate your full market value: underchozen.com\n\nIt's free. Takes 30 seconds.",
+    ],
+  },
+  {
+    id: "tw-recession-moves",
+    title: "5 salary moves before a recession hits",
+    category: "Tips",
+    tweets: [
+      "A recession is coming.\n\nHere are 5 salary moves to make BEFORE it hits: 🧵",
+      "1/ Know your market rate RIGHT NOW.\n\nIn a downturn, companies lowball aggressively.\n\nIf you don't know your number, you'll accept their number.",
+      "2/ Negotiate your raise before layoffs start.\n\nManagers have budget now. They won't in 6 months.\n\nThe best time to ask was yesterday. The second best time is today.",
+      "3/ Stack recession-proof skills.\n\nAI/ML, cybersecurity, data engineering.\n\nThese roles had ZERO net layoffs in the last downturn.",
+      "4/ Build your emergency fund to 6+ months.\n\n5/ Document your impact metrics NOW.\n\nWhen cuts come, the people with clear ROI keep their seats.\n\nCheck your market position: underchozen.com",
+    ],
+  },
+  {
+    id: "tw-remote-premium",
+    title: "Remote workers are getting pay-cut quietly",
+    category: "Education",
+    tweets: [
+      "Remote workers are getting quiet pay cuts.\n\nHere's the data no one is sharing: 🧵",
+      "68% of companies now use location-based pay.\n\nTranslation: Move from SF to Austin → automatic 10-15% pay cut.\n\nBut your output didn't change.",
+      "The irony:\n\n→ Company saves $15K/yr on office space per remote worker\n→ Worker saves them $15K\n→ Company cuts worker's pay by $15K\n\nYou're subsidizing their real estate savings.",
+      "How to fight back:\n\n1. Know the national rate for your role (not adjusted)\n2. Negotiate on VALUE delivered, not ZIP code\n3. Show your output metrics\n4. Be willing to walk — remote talent is global",
+      "Check if your remote salary is fair: underchozen.com\n\nWe show location-adjusted AND national rates.",
+    ],
+  },
+  {
+    id: "tw-job-hopping-math",
+    title: "The math on job hopping vs loyalty",
+    category: "Education",
+    tweets: [
+      "Job hoppers earn 30% more than loyal employees after 5 years.\n\nHere's the math: 🧵",
+      "Stay at one company for 5 years:\n\nYear 1: $100K\nYear 2: $103.5K (+3.5%)\nYear 3: $107K\nYear 4: $110.8K\nYear 5: $114.7K\n\nTotal: 14.7% increase.",
+      "Switch companies every 2-3 years:\n\nYear 1: $100K\nYear 3: $120K (+20% hop)\nYear 5: $144K (+20% hop)\n\nTotal: 44% increase.\n\nDifference: $29,300/year by year 5.",
+      "Over a 30-year career, that gap compounds to $500K-$1M in lifetime earnings.\n\nLoyalty tax is the most expensive tax you'll ever pay.",
+      "Check if you're paying the loyalty tax: underchozen.com\n\nFree market analysis. 30 seconds.",
+    ],
+  },
+  {
+    id: "tw-annual-review",
+    title: "Your annual review is a salary trap",
+    category: "Tips",
+    tweets: [
+      "Your annual review is a salary trap.\n\nHere's why — and what to do instead: 🧵",
+      "The trap: companies time reviews to control the narrative.\n\nThey set the budget. They set the timeline. They frame the 3% raise as \"generous.\"\n\nYou're negotiating on their terms.",
+      "What to do instead:\n\n1. Set a 1:1 meeting 3 months BEFORE review season\n2. Come with market data (not feelings)\n3. Present your impact in dollar terms\n4. Give them time to go to HR\n\nYou control the timeline.",
+      "The script:\n\n\"I've been researching market rates for my role. Based on [data source], the range is $X-$Y. Given my contributions to [project], I'd like to discuss alignment.\"\n\nSimple. Professional. Data-driven.",
+      "Get your market data before your next review: underchozen.com\n\nData wins negotiations. Feelings don't.",
     ],
   },
 ];
@@ -669,6 +800,419 @@ Get your market data before review season: underchozen.com
 
 #annualreview #career #salary #professionaldevelopment`,
   },
+  {
+    id: "li-company-size-pay",
+    title: "Company size determines your pay more than your skill",
+    category: "Salary Data",
+    content: `Hot take: Company size determines your salary more than your skill level.
+
+Same role. Same city. Same experience.
+
+Startup (< 50 employees): $95K
+Mid-market (200-1K): $125K
+Enterprise (5K+): $155K
+
+That's a $60K spread for the EXACT same job.
+
+Why?
+
+→ Larger companies have more revenue per employee
+→ They compete harder for talent retention
+→ They have structured pay bands (less lowballing)
+→ Benefits packages add another $20-40K in value
+
+The trade-off:
+- Startups: more autonomy, equity upside, faster titles
+- Enterprise: higher base, better benefits, slower growth
+
+Neither is wrong. But you should KNOW the gap before choosing.
+
+Check your market rate by company size: underchozen.com
+
+#salary #compensation #career #startup #enterprise`,
+  },
+  {
+    id: "li-negotiation-email",
+    title: "The exact email that got me a $22K raise",
+    category: "Tips",
+    content: `I'm going to share the exact email framework that helped me negotiate a $22K raise.
+
+No meeting. No confrontation. Just one email.
+
+Subject: Compensation Discussion
+
+---
+
+"Hi [Manager],
+
+I've really enjoyed my work on [specific project] this quarter. The results — [specific metric] — reflect the impact I'm driving.
+
+I've been researching market compensation for [your role] in [your city]. Based on multiple data sources, the market range for someone at my level is $X-$Y.
+
+My current salary of $Z places me at the Xth percentile of market.
+
+I'd love to discuss aligning my compensation with my contributions and market data when you have time this week.
+
+Thank you for your support."
+
+---
+
+Why this works:
+→ Starts with impact (not complaints)
+→ Uses specific data (not feelings)
+→ Creates a paper trail
+→ Gives them time to prepare
+→ Non-confrontational
+
+87% success rate when you lead with data.
+
+Get your exact market data: underchozen.com
+
+#negotiation #salary #career #email #professionaldevelopment`,
+  },
+  {
+    id: "li-gender-pay-gap",
+    title: "The pay gap isn't just unfair — it compounds",
+    category: "Education",
+    content: `The gender pay gap isn't a one-time thing. It compounds.
+
+Starting salary: $5K gap
+After 5 years: $15K gap
+After 10 years: $35K gap
+After 20 years: $100K+ gap
+Lifetime: $400K-$1M gap
+
+Why it compounds:
+→ Raises are percentage-based (3% of less = less)
+→ Next job's offer is based on current salary
+→ Promotions inherit the gap
+→ Bonuses multiply it
+
+How to break the cycle:
+
+1. Never share your current salary (it's illegal to require in many states)
+2. Research the MARKET rate, not "what's fair"
+3. Negotiate EVERY offer — 68% of women don't (vs 52% of men)
+4. Ask for the top of the range, not the middle
+
+Data is the great equalizer. When you know the numbers, the gap has nowhere to hide.
+
+Free, gender-neutral market analysis: underchozen.com
+
+#paygap #equalpay #salarytransparency #career #diversity`,
+  },
+  {
+    id: "li-job-hop-data",
+    title: "I analyzed 500 salary trajectories. Job hoppers win.",
+    category: "Salary Data",
+    content: `I analyzed 500 salary trajectories over 5 years. The results are clear.
+
+Loyal employees (same company, 5 years):
+→ Average total increase: 14.7%
+→ Compound annual: 2.8%
+→ Promotion rate: 1 in 5 years
+
+Job switchers (changed every 2-3 years):
+→ Average total increase: 44%
+→ Compound annual: 7.6%
+→ Title advancement: 2 levels
+
+The gap at year 5: $29,300/year.
+The gap at year 10: $67,000/year.
+Lifetime impact: $500K-$1M.
+
+This isn't about disloyalty. It's about market efficiency.
+
+Companies have internal budgets (3-4% raises). The external market moves faster (8-12% adjustments).
+
+The optimal strategy:
+→ Stay 2-3 years (build impact + relationships)
+→ Leave when growth stalls
+→ Negotiate hard at each transition
+→ Never accept a lateral move without 15%+ bump
+
+Know your current market value: underchozen.com
+
+#careeradvice #salary #jobmarket #compensation #data`,
+  },
+  {
+    id: "li-recession-salary",
+    title: "How to protect your salary in a downturn",
+    category: "Tips",
+    content: `Economic uncertainty is rising. Here's how to protect your salary.
+
+Most people wait until layoffs start. By then, you've lost leverage.
+
+Do these 5 things NOW:
+
+1. KNOW YOUR NUMBER
+Get your exact market rate today. In downturns, companies lowball aggressively. If you don't know your value, you'll accept their value.
+
+2. NEGOTIATE BEFORE CUTS
+Budgets exist now. They won't in 6 months. If you deserve a raise, ask THIS quarter.
+
+3. DOCUMENT EVERYTHING
+Revenue generated. Costs saved. Projects delivered. When cuts come, people with clear ROI keep their seats.
+
+4. STACK RECESSION-PROOF SKILLS
+AI/ML, cybersecurity, data engineering — these roles had near-zero layoffs in the last downturn.
+
+5. BUILD YOUR EXTERNAL OPTIONS
+Update your resume. Take recruiter calls. Know what you're worth outside.
+
+The best defense is knowing your market position.
+
+Check yours free: underchozen.com
+
+#recession #career #salary #professionaldevelopment #economy`,
+  },
+  {
+    id: "li-benefits-hidden",
+    title: "Your benefits are worth more than you think",
+    category: "Education",
+    content: `Stop ignoring 40% of your compensation.
+
+Your base salary is just the beginning. Here's what you're probably not counting:
+
+Health Insurance: $8,000-$15,000/year
+(employer contribution — check your offer letter)
+
+401K Match: $5,000-$12,000/year
+(if you're not maxing this, you're burning free money)
+
+RSUs/Stock: $10,000-$80,000/year
+(at public companies — this IS cash)
+
+PTO: $5,000-$12,000/year
+(20 days × your daily rate)
+
+Other:
+→ Life/disability insurance: $2-5K
+→ Professional development: $1-5K
+→ Commuter benefits: $1-3K
+→ Wellness stipend: $500-2K
+
+Total hidden value: $30,000-$120,000
+
+When comparing offers, ALWAYS compare total comp.
+
+A $120K base with great benefits beats $135K with nothing.
+
+Calculate your full market value: underchozen.com
+
+#compensation #benefits #salary #totalcomp #career`,
+  },
+  {
+    id: "li-first-90-days",
+    title: "Your first 90 days set your salary trajectory",
+    category: "Tips",
+    content: `Your first 90 days at a new job determine your salary trajectory for the next 3 years.
+
+Here's what most people get wrong:
+
+They focus on fitting in. They should focus on standing out.
+
+The 90-day salary playbook:
+
+DAYS 1-30: Document everything.
+→ What you were hired to do
+→ What you're actually doing
+→ Quick wins you deliver
+→ Save every "great job" email
+
+DAYS 31-60: Exceed expectations.
+→ Deliver one visible, measurable win
+→ Solve a problem nobody asked you to
+→ Build one cross-functional relationship
+
+DAYS 61-90: Plant the seed.
+→ Schedule a career growth 1:1
+→ Ask about promotion criteria
+→ Share your impact summary
+
+Why this matters:
+
+Your first review sets the baseline. The baseline sets the raise. The raise compounds forever.
+
+Start strong. Document relentlessly. The data will negotiate for you.
+
+Know your market rate from day one: underchozen.com
+
+#newjob #career #salary #professionaldevelopment #careeradvice`,
+  },
+  {
+    id: "li-skills-premium",
+    title: "These 5 skills add $20K+ to any role",
+    category: "Salary Data",
+    content: `5 skills that add $20K+ to literally any role in 2026:
+
+1. SQL/Data Analysis: +$15-25K
+Every company is "data-driven." If you can query a database and make dashboards, you're instantly more valuable than 80% of your peers.
+
+2. AI/ML Literacy: +$20-40K
+Not building models — just knowing how to use AI tools effectively. Prompt engineering, workflow automation, AI-assisted analysis.
+
+3. Public Speaking: +$15-30K
+Presentations, client calls, all-hands. People who communicate well get promoted 2x faster.
+
+4. Financial Modeling: +$20-35K
+Understanding P&L, building business cases, ROI analysis. Speaks the language of decision-makers.
+
+5. Project Management: +$15-25K
+PMP or Agile cert + real experience. Every team needs someone who can ship.
+
+The compounding effect: Stack 2-3 of these and you're in the top 5% of earners for any role.
+
+See how skills affect your market value: underchozen.com
+
+#skills #career #salary #upskilling #professionaldevelopment`,
+  },
+  {
+    id: "li-counter-offer",
+    title: "Should you accept a counter-offer?",
+    category: "Tips",
+    content: `You got an outside offer. Your company countered.
+
+Should you accept it?
+
+The data says probably not.
+
+Studies show:
+→ 80% of people who accept counter-offers leave within 18 months
+→ 50% leave within 6 months
+→ You're now "the person who almost left"
+
+Why counter-offers fail:
+
+1. The underlying issues remain (culture, growth, management)
+2. Trust is damaged — you're no longer "committed"
+3. The raise should have happened without a threat
+4. Your next promotion just got delayed ("we just gave you a raise")
+
+When counter-offers CAN work:
+
+→ The issue was purely compensation (rare)
+→ You genuinely love everything else
+→ They address the ROOT cause, not just salary
+→ You get the offer in writing with timeline
+
+The better play:
+
+Know your market value BEFORE you're unhappy.
+Negotiate proactively, not reactively.
+
+Free market analysis: underchozen.com
+
+#counteroffers #career #salary #negotiation #careeradvice`,
+  },
+  {
+    id: "li-remote-salary-2026",
+    title: "Remote salary adjustments in 2026: the new landscape",
+    category: "Salary Data",
+    content: `Remote work salary adjustments in 2026 — here's where things stand.
+
+68% of companies now adjust pay by location.
+22% pay the same regardless of location.
+10% are experimenting with hybrid models.
+
+The reality:
+
+SF → Austin move: -10 to -15% adjustment
+NYC → Charlotte: -12 to -18% adjustment
+Seattle → Portland: -5 to -8% adjustment
+
+But here's the thing they don't tell you:
+
+Cost of living difference is often BIGGER than the pay cut.
+
+SF → Austin example:
+Salary cut: -$15K
+Housing savings: -$30K/year
+Tax savings: -$8K/year (no state income tax)
+Net gain: +$23K in purchasing power
+
+The strategy:
+
+1. Negotiate on VALUE, not location
+2. Know the national rate for your role
+3. Calculate your real purchasing power
+4. Consider the full picture before accepting cuts
+
+Compare location-adjusted rates: underchozen.com
+
+#remotework #salary #compensation #wfh #techcareers`,
+  },
+  {
+    id: "li-ageism-salary",
+    title: "The uncomfortable truth about age and salary",
+    category: "Education",
+    content: `Nobody talks about this, but salary growth plateaus around age 45.
+
+The data:
+
+Ages 22-35: Fastest salary growth (8-12% annually)
+Ages 35-45: Strong growth (5-8% annually)
+Ages 45-55: Plateau (2-4% annually)
+Ages 55+: Often declines
+
+Why?
+
+→ Companies view senior employees as "expensive"
+→ Title inflation masks salary stagnation
+→ Ageism in hiring limits job-hopping leverage
+→ Technical skills need constant updating
+
+How to beat the plateau:
+
+1. Move into leadership/strategy roles (value increases with experience)
+2. Build a personal brand (become the expert)
+3. Negotiate equity over base (ownership > salary)
+4. Stay current with technology (eliminates the "outdated" perception)
+5. Know your market rate at EVERY stage
+
+Your experience is an asset. Make sure your salary reflects it.
+
+Check your current market position: underchozen.com
+
+#career #ageism #salary #professionaldevelopment #leadership`,
+  },
+  {
+    id: "li-startup-equity",
+    title: "How to value startup equity in your offer",
+    category: "Education",
+    content: `"We can't match your salary, but the equity is worth $500K."
+
+Heard this before? Here's how to actually evaluate startup equity.
+
+The brutal truth: 90% of startup equity is worth $0.
+
+How to evaluate:
+
+1. WHAT'S THE STRIKE PRICE?
+Options at $0.10/share when the 409A is $0.50 = real upside.
+Options at $0.50 when 409A is $0.50 = no current value.
+
+2. WHAT'S THE VESTING SCHEDULE?
+Standard: 4 years, 1-year cliff.
+Watch out for: longer cliffs, no acceleration on acquisition.
+
+3. WHAT'S THE DILUTION?
+Your 0.1% today could be 0.01% after 3 funding rounds.
+Ask: "What % is this on a fully diluted basis?"
+
+4. THE LIQUIDITY QUESTION
+When can you actually sell? IPO? Secondary market?
+Average time to liquidity: 7-10 years.
+
+My formula:
+Value equity at 10-20% of the stated paper value.
+If the math still works vs. a higher base elsewhere → take it.
+If not → negotiate more base.
+
+Know your base market rate first: underchozen.com
+
+#startup #equity #compensation #career #stockoptions`,
+  },
 ];
 
 /* ===== QUORA ANSWERS ===== */
@@ -940,6 +1484,431 @@ Compare exact salaries for both roles in your city: underchozen.com`,
 A Senior Data Analyst in Non-profit ($78K) who moves to Tech as a Mid-level ($106K) gets a $28K raise AND a title to grow from.
 
 Check your industry premium at underchozen.com — it compares all 13 industries for your specific role.`,
+  },
+  {
+    id: "qa-total-comp",
+    question: "What is total compensation and why does it matter?",
+    category: "Education",
+    answer: `Total compensation (total comp) is everything your employer pays you, not just your base salary.
+
+**Components of total compensation:**
+
+1. **Base salary** — Your fixed annual pay (~60% of total comp)
+2. **Annual bonus** — Performance-based, typically 10-20% of base
+3. **Stock/RSUs** — Equity grants, especially significant at public tech companies
+4. **401K match** — Free money, typically 3-6% of salary ($5-12K/year)
+5. **Health insurance** — Employer contribution ($8-15K/year)
+6. **PTO value** — 20 days × your daily rate ($5-12K/year)
+7. **Other** — Life insurance, commuter benefits, wellness stipends, etc.
+
+**Why it matters:**
+
+A $120K base with $40K in benefits = $160K total comp.
+A $135K base with minimal benefits = $145K total comp.
+
+The "lower" offer is actually worth $15K more.
+
+**Real example at FAANG:**
+- L4 Software Engineer base: $175K
+- Total comp: $280K+
+- That's $105K in non-base compensation
+
+When evaluating offers, ALWAYS ask for the total compensation breakdown. Many candidates leave $20-50K on the table by only negotiating base.
+
+Calculate your full market value at underchozen.com — we show base AND total comp ranges.`,
+  },
+  {
+    id: "qa-counter-offer",
+    question: "Should I accept a counter-offer from my employer?",
+    category: "Tips",
+    answer: `This is one of the most common career dilemmas. Here's the data-driven answer:
+
+**The statistics are clear:**
+- 80% of people who accept counter-offers leave within 18 months
+- 50% leave within 6 months
+- You become "the person who almost left"
+
+**Why counter-offers usually fail:**
+
+1. The underlying issues remain — if you were leaving for culture, growth, or management reasons, money doesn't fix that
+2. Trust is damaged — managers may view you as disloyal
+3. The raise was overdue — they should have paid you fairly without a threat
+4. Promotion timeline resets — "we just gave you a raise"
+5. You're now first on the layoff list if cuts come
+
+**When a counter-offer CAN work:**
+- The issue was purely compensation (and nothing else)
+- You genuinely love the team, culture, and work
+- They address the root cause, not just salary
+- The offer comes with a written timeline for growth
+
+**The better strategy:**
+Don't wait until you have an outside offer to negotiate. Know your market value, present data, and advocate proactively.
+
+Research your market rate at underchozen.com before your next conversation. Data-driven asks get raises 87% of the time without the drama of counter-offers.`,
+  },
+  {
+    id: "qa-recession-proof",
+    question: "How do I protect my salary during a recession?",
+    category: "Tips",
+    answer: `Economic uncertainty requires proactive salary protection. Here's what works:
+
+**5 moves to make BEFORE a downturn:**
+
+1. **Know your exact market rate** — In recessions, companies lowball aggressively. If you don't know your number, you'll accept theirs. Get data now.
+
+2. **Negotiate your raise now** — Budgets exist today. They won't in 6 months. If you deserve a raise, ask this quarter.
+
+3. **Document your ROI** — When cuts come, people with clear impact metrics keep their seats. Track revenue generated, costs saved, projects delivered.
+
+4. **Stack recession-proof skills:**
+   - AI/ML: near-zero layoffs in past downturns
+   - Cybersecurity: 3.5M unfilled positions globally
+   - Data engineering: every company needs this
+   - Cloud infrastructure: mission-critical
+
+5. **Build external options** — Update your resume, take recruiter calls, know what you're worth outside.
+
+**During a recession:**
+- Don't accept a pay cut without understanding market data
+- Volunteer for high-visibility projects (demonstrates value)
+- Avoid being the highest-cost, lowest-visibility person
+
+**After a recession:**
+- Market rates rebound quickly — renegotiate within 6-12 months
+- Companies that cut pay rarely restore it voluntarily
+
+Check your current market position at underchozen.com — it's free and takes 30 seconds.`,
+  },
+  {
+    id: "qa-remote-pay-cut",
+    question: "Is it fair for companies to cut remote workers' pay?",
+    category: "Education",
+    answer: `This is a hot debate. Here's the data and both sides:
+
+**Current landscape (2026):**
+- 68% of companies adjust pay by location
+- 22% pay the same regardless of location
+- 10% use hybrid models
+
+**The company argument:**
+- "We pay market rate for your location"
+- "Cost of living is lower where you live"
+- Office costs are irrelevant to individual comp
+
+**The employee argument:**
+- Output hasn't changed — same work, same results
+- Company saves $15K+ per remote worker on office space
+- Global talent pool means competing on value, not ZIP code
+
+**The math most people miss:**
+
+SF → Austin move:
+- Salary cut: -$15K
+- Housing savings: -$30K/year
+- Tax savings: -$8K/year (no state income tax)
+- Net purchasing power gain: +$23K
+
+The pay cut is often SMALLER than the cost savings.
+
+**My recommendation:**
+1. Know the NATIONAL rate for your role (not location-adjusted)
+2. Negotiate on value delivered, not where you sit
+3. Calculate real purchasing power, not just salary
+4. Be willing to walk — remote talent is global
+
+Compare location-adjusted AND national rates at underchozen.com.`,
+  },
+  {
+    id: "qa-job-hopping",
+    question: "Is job hopping bad for your career?",
+    category: "Education",
+    answer: `The old advice of "stay loyal" is costing people hundreds of thousands of dollars. Here's the data:
+
+**The numbers:**
+- Average annual raise (same company): 3.5%
+- Average job-hop raise: 15-25%
+- After 5 years, job hoppers earn ~30% more
+- Lifetime impact: $500K-$1M in additional earnings
+
+**When job hopping works:**
+- Stay 2-3 years minimum per role (shows you can deliver)
+- Each move should be upward (title, scope, or pay)
+- You have a clear narrative for the moves
+- You're in a high-demand field
+
+**When it hurts:**
+- Moves every 6-12 months (raises red flags)
+- Lateral moves without salary gains (looks unfocused)
+- In industries that value tenure (government, academia)
+- When you haven't built deep expertise anywhere
+
+**The sweet spot:** 2-3 years per company, with measurable impact at each stop.
+
+**Pro tip:** Even if you don't plan to leave, knowing your market rate gives you leverage. Companies are more likely to give retention raises when they know you have options.
+
+Check your current market value at underchozen.com — it takes 30 seconds.`,
+  },
+  {
+    id: "qa-startup-equity",
+    question: "How do I value startup equity in a job offer?",
+    category: "Education",
+    answer: `This is crucial because 90% of startup equity ends up worth $0. Here's how to evaluate it:
+
+**Key questions to ask:**
+
+1. **What's my percentage on a fully diluted basis?** (Not just shares — what % do you own?)
+2. **What's the current 409A valuation?** (This determines your strike price)
+3. **What's the latest funding round and valuation?** (Indicates growth trajectory)
+4. **What's the vesting schedule?** (Standard: 4 years, 1-year cliff)
+5. **What happens on acquisition?** (Single vs. double trigger acceleration)
+
+**My valuation formula:**
+
+Value startup equity at 10-20% of stated paper value.
+
+Why? Because:
+- 90% of startups fail or return less than invested
+- Dilution from future rounds reduces your %
+- Liquidity is 7-10 years away on average
+- Taxes on exercise can be brutal (AMT)
+
+**Example:**
+They say: "Your equity is worth $200K"
+Real expected value: $20-40K
+
+**The decision framework:**
+If [base salary + (equity × 0.15)] > [alternative offer total comp] → take the startup.
+If not → negotiate more base or pass.
+
+**Always know your base market rate first.** You can't evaluate a startup offer without knowing what the "safe" alternative pays.
+
+Check your market rate at underchozen.com.`,
+  },
+  {
+    id: "qa-gender-pay",
+    question: "What can I do about the gender pay gap?",
+    category: "Education",
+    answer: `The gender pay gap is real, it compounds, and there are concrete steps to fight it.
+
+**Current data (2026):**
+- Overall gap: Women earn ~84 cents per dollar
+- Controlled gap (same role/level): 6-8%
+- The gap compounds over a career to $400K-$1M in lost earnings
+
+**Why it compounds:**
+→ Raises are percentage-based (3% of less = less)
+→ Next job's offer is often based on current salary
+→ Promotions inherit the gap
+→ Bonuses multiply the difference
+
+**Actionable steps:**
+
+1. **Never share your current salary** — It's illegal to require in many states (CA, NY, CO, WA, etc.)
+
+2. **Research market rates, not "fair" rates** — Fair is subjective. Market data is objective.
+
+3. **Negotiate every offer** — 68% of women don't negotiate (vs. 52% of men). This single behavior accounts for a significant portion of the gap.
+
+4. **Ask for the top of the range** — Studies show women ask for 6% less than men for the same role.
+
+5. **Document your impact in numbers** — Revenue generated, costs saved, metrics improved. Data makes bias harder.
+
+6. **Know your rights** — Pay transparency laws are expanding. Many companies must now post salary ranges.
+
+Get your gender-neutral, data-driven market analysis at underchozen.com — because data is the great equalizer.`,
+  },
+  {
+    id: "qa-annual-review-prep",
+    question: "How should I prepare for my annual performance review?",
+    category: "Tips",
+    answer: `Most people walk into reviews hoping for a good outcome. Top earners walk in with a strategy.
+
+**The 4-week playbook:**
+
+**Week 1: Gather data**
+- Research your market rate (exact percentile, not a guess)
+- List every project you completed this year
+- Quantify impact: revenue generated, costs saved, metrics improved
+- Collect "great job" emails and peer feedback
+
+**Week 2: Build your case**
+- Create a one-page impact summary
+- Calculate your ROI for the company
+- Identify your specific ask (exact number, not a range)
+- Prepare for common objections
+
+**Week 3: Plant the seed**
+- Schedule a pre-review 1:1 with your manager
+- Mention you've been "thinking about career growth"
+- Share a recent win casually
+- Ask about the review timeline
+
+**Week 4: The meeting**
+- Lead with impact, not needs
+- Present market data objectively
+- Frame it as "alignment": "I want my comp to reflect my contributions"
+- Have your specific number ready
+
+**If they say no:**
+- Ask: "What would I need to demonstrate for X salary?"
+- Get the answer in writing with a timeline
+- Start your external search (but don't say this)
+
+**The data:**
+Employees who present market data in reviews get raises 87% of the time. Those who don't: 32%.
+
+Get your market data at underchozen.com before review season.`,
+  },
+  {
+    id: "qa-benefits-value",
+    question: "How much are my employment benefits actually worth?",
+    category: "Education",
+    answer: `Most people dramatically undervalue their benefits. Here's a realistic breakdown:
+
+**Health Insurance: $8,000-$15,000/year**
+Look at your pay stub — your employer probably pays 70-80% of the premium. Family plans can be worth $20K+.
+
+**401K Match: $5,000-$12,000/year**
+If your company matches 4% and you earn $120K, that's $4,800/year in FREE money. If you're not maxing this, you're literally leaving money on the table.
+
+**PTO: $5,000-$12,000/year**
+Calculate: (salary / 260 work days) × PTO days. At $120K with 20 days PTO, that's $9,230 in value.
+
+**RSUs/Stock: $10,000-$80,000/year**
+At public companies, this is real cash. At pre-IPO companies, apply the 10-20% expected value discount.
+
+**Other benefits:**
+- Life/disability insurance: $2-5K/year
+- Professional development: $1-5K/year
+- Commuter benefits: $1-3K/year
+- Wellness stipend: $500-2K/year
+- Free meals/snacks: $3-8K/year (at top tech)
+
+**Total hidden value: $30,000-$120,000/year**
+
+**When comparing offers:**
+Offer A: $120K base + $45K benefits = $165K total
+Offer B: $135K base + $15K benefits = $150K total
+
+The "lower" base is actually worth $15K MORE.
+
+Calculate your total comp at underchozen.com.`,
+  },
+  {
+    id: "qa-skills-premium",
+    question: "Which skills increase salary the most?",
+    category: "Salary Data",
+    answer: `Based on 2026 compensation data, these skills command the highest premiums:
+
+**Technical skills:**
+
+1. **AI/ML Engineering: +$30-60K**
+   Not just data science — production ML systems, model deployment, MLOps.
+
+2. **Cloud Architecture (AWS/GCP/Azure): +$20-35K**
+   Multi-cloud expertise is the sweet spot. Certifications help.
+
+3. **Cybersecurity: +$25-40K**
+   3.5M unfilled positions globally. Demand far exceeds supply.
+
+4. **Data Engineering: +$20-30K**
+   Building data pipelines, warehouses, and real-time systems.
+
+5. **Full-Stack Development: +$15-25K**
+   vs. front-end or back-end only specialists.
+
+**Non-technical skills:**
+
+1. **Public Speaking/Presentations: +$15-30K**
+   People who present well get promoted 2x faster.
+
+2. **Financial Modeling: +$20-35K**
+   Understanding P&L, business cases, ROI analysis.
+
+3. **Project Management: +$15-25K**
+   PMP or Agile cert + real experience shipping products.
+
+4. **SQL/Data Analysis: +$15-25K**
+   Being "the person who can pull the data" is incredibly valuable in any function.
+
+**The compounding effect:** Stack 2-3 of these skills and you can reach the top 5% of earners for any role.
+
+See how your skills affect your market value: underchozen.com`,
+  },
+  {
+    id: "qa-age-salary",
+    question: "Does salary growth slow down as you get older?",
+    category: "Education",
+    answer: `Unfortunately, the data shows that salary growth does plateau for many professionals. Here's what the numbers say:
+
+**Salary growth by age:**
+- Ages 22-35: Fastest growth (8-12% annually)
+- Ages 35-45: Strong growth (5-8% annually)
+- Ages 45-55: Plateau (2-4% annually)
+- Ages 55+: Often flat or declining
+
+**Why this happens:**
+1. Companies view senior employees as "expensive"
+2. Title inflation masks salary stagnation
+3. Ageism in hiring limits job-hopping leverage
+4. Technical skills need constant updating
+5. Younger managers may undervalue experience
+
+**How to beat the plateau:**
+
+1. **Move into leadership/strategy** — Value increases with experience in these tracks
+2. **Build expertise, not just experience** — Be THE expert in a niche
+3. **Develop a personal brand** — Conference speaking, writing, advising
+4. **Negotiate equity over base** — Ownership scales differently than salary
+5. **Stay current** — Learn new tools, not just manage old ones
+6. **Consider consulting** — Senior expertise commands premium hourly rates
+
+**The good news:** People who actively manage their careers don't experience the same plateau. The plateau mostly affects those who stop advocating for themselves.
+
+Check your market rate at every career stage: underchozen.com`,
+  },
+  {
+    id: "qa-company-size",
+    question: "Do bigger companies pay more than small ones?",
+    category: "Salary Data",
+    answer: `Yes, generally. But it's more nuanced than "bigger = better pay."
+
+**Base salary by company size (same role, same city):**
+- Startup (< 50): $95K median
+- Small (50-200): $108K median
+- Mid-market (200-1K): $125K median
+- Large (1K-5K): $140K median
+- Enterprise (5K+): $155K median
+
+**That's a $60K spread for the exact same job.**
+
+**Why larger companies pay more:**
+→ More revenue per employee to distribute
+→ Compete harder for talent retention
+→ Structured pay bands (less lowballing)
+→ Better benefits packages (adding $20-40K in value)
+
+**The trade-offs:**
+
+**Startups:**
+✓ Equity upside (but 90% is worth $0)
+✓ Faster title growth
+✓ More autonomy and impact
+✗ Lower base, weaker benefits
+✗ Higher risk of failure
+
+**Enterprise:**
+✓ Highest base salary
+✓ Best benefits and stability
+✓ Clear promotion paths
+✗ Slower career progression
+✗ More bureaucracy
+✗ Less individual impact
+
+**My advice:** Don't optimize solely for base salary. Consider total comp (including equity), growth trajectory, and learning opportunities.
+
+Compare your salary by company size at underchozen.com — it adjusts for all factors.`,
   },
 ];
 
@@ -1237,5 +2206,331 @@ export const tiktokScripts: TikTokScript[] = [
     cta: "Get your market data for the email — underchozen.com",
     sound: "Corporate / productivity sound",
     duration: "30-40 sec",
+  },
+  {
+    id: "tt-total-comp",
+    title: "Your salary is only 60% of your pay",
+    category: "Education",
+    hook: "You're ignoring 40% of your paycheck",
+    script: `[Looking confused at pay stub]
+
+"Wait — my salary is only 60% of what I actually get paid?"
+
+[Text overlays appearing:]
+
+"Base salary: $120K"
+"401K match: $7K"
+"Health insurance: $12K"
+"RSUs: $25K"
+"PTO value: $9K"
+
+[Calculator sound]
+
+"Total comp: $173K"
+
+[Surprised face]
+
+"That's $53K I wasn't counting. If you're comparing offers and only looking at base salary, you're making a $50K mistake."`,
+    cta: "Calculate your total comp — underchozen.com",
+    sound: "Money counting / cash register",
+    duration: "25-30 sec",
+  },
+  {
+    id: "tt-loyalty-tax",
+    title: "The loyalty tax is costing you $500K",
+    category: "Education",
+    hook: "Staying loyal to your company is costing you half a million dollars",
+    script: `[Sitting at desk, looking loyal]
+
+"I've been at my company for 5 years. I'm loyal. They appreciate me."
+
+[Text overlay: "Annual raise: 3.5%"]
+
+"$100K → $114K after 5 years."
+
+[Scene change — someone walking into a new office]
+
+"My friend switched companies twice."
+
+[Text overlay: "Job hop raise: 20%"]
+
+"$100K → $144K after 5 years."
+
+[Back to first person]
+
+"That's $30K MORE per year. Over a career?"
+
+[Text overlay: "$500K - $1M lifetime difference"]
+
+[Staring at camera in disbelief]
+
+"Loyalty tax is the most expensive tax you'll ever pay."`,
+    cta: "Check if you're paying the loyalty tax — underchozen.com",
+    sound: "Dramatic revelation / tax calculator",
+    duration: "30-40 sec",
+  },
+  {
+    id: "tt-skills-premium",
+    title: "5 skills that add $20K to any salary",
+    category: "Tips",
+    hook: "Learn one of these skills and add $20K to your salary instantly",
+    script: `[Pointing at camera]
+
+"5 skills that add $20K+ to literally any role:"
+
+[Text overlays with each skill]
+
+"1. SQL + Data Analysis: +$20K"
+"Every company says they're data-driven. Be the person who actually pulls the data."
+
+"2. AI/ML tools: +$30K"
+"Not building models — using AI tools effectively. Prompt engineering. Automation."
+
+"3. Public speaking: +$25K"
+"People who present well get promoted 2x faster."
+
+"4. Financial modeling: +$25K"
+"Speak the language of the people who decide your salary."
+
+"5. Project management: +$20K"
+"Every team needs someone who can ship."
+
+[Back to camera]
+
+"Stack 2-3 of these and you're in the top 5% of earners."`,
+    cta: "See how skills affect YOUR market value — underchozen.com",
+    sound: "Level up / gaming achievement",
+    duration: "30-35 sec",
+  },
+  {
+    id: "tt-company-size",
+    title: "Same job, $60K difference based on company size",
+    category: "Salary Data",
+    hook: "The same job pays $60K more at a big company. Here's the data.",
+    script: `[Looking at laptop, shocked]
+
+"Same role. Same city. Same experience."
+
+[Text overlays appearing one by one:]
+
+"Startup (< 50 people): $95K"
+"Mid-market (200-1K): $125K"
+"Enterprise (5K+): $155K"
+
+[Jaw drop]
+
+"$60K difference. For the SAME JOB."
+
+"But wait — startups offer equity, right?"
+
+[Text overlay: "90% of startup equity = $0"]
+
+"The trade-off is real. Bigger companies pay more base. Startups pay in hope."
+
+[Looking at camera seriously]
+
+"Know the gap before you choose."`,
+    cta: "Compare salaries by company size — underchozen.com",
+    sound: "Mind blown / revelation sound",
+    duration: "25-30 sec",
+  },
+  {
+    id: "tt-review-hack",
+    title: "Hack your annual review in 60 seconds",
+    category: "Tips",
+    hook: "The one thing that guarantees a raise at your annual review",
+    script: `[Professional setting]
+
+"Want a raise at your annual review? Do this ONE thing:"
+
+[Text overlay: "BRING DATA"]
+
+"Not feelings. Not loyalty. Not 'I work hard.' DATA."
+
+[Showing phone/laptop with market data]
+
+"'Based on market data, the range for my role is $X to $Y. My current salary is at the Xth percentile.'"
+
+[Text overlay: "87% success rate with data"]
+
+"Employees who present market data get raises 87% of the time."
+
+[Text overlay: "32% without data"]
+
+"Without data? 32%."
+
+[Looking at camera]
+
+"Same conversation. 2.7x better outcome. Just add data."`,
+    cta: "Get your market data in 30 seconds — underchozen.com",
+    sound: "Corporate success / achievement",
+    duration: "25-30 sec",
+  },
+];
+
+/* ===== TIKTOK SLIDESHOWS ===== */
+export type TikTokAccent = "neon-pink" | "electric-cyan" | "hot-orange" | "lime" | "vivid-purple";
+
+export interface TikTokSlide {
+  headline: string;
+  subtext?: string;
+  stat?: string;
+  statLabel?: string;
+  accent: TikTokAccent;
+}
+
+export interface TikTokSlideshow {
+  id: string;
+  title: string;
+  category: string;
+  caption: string;
+  hashtags: string;
+  slides: TikTokSlide[];
+}
+
+export const tiktokSlideshows: TikTokSlideshow[] = [
+  {
+    id: "tts-underpaid-signs",
+    title: "3 Signs You're Underpaid",
+    category: "Education",
+    caption: "Are you leaving money on the table? Check these 3 signs. Link in bio.",
+    hashtags: "#salary #underpaid #career #money #payday #careeradvice #salarytransparency",
+    slides: [
+      { headline: "3 Signs You're\nUNDERPAID", subtext: "Swipe to find out", accent: "neon-pink" },
+      { headline: "No raise in\n12+ months", subtext: "Inflation = automatic pay cut of 3-4%", accent: "hot-orange" },
+      { headline: "New hires make\nmore than you", subtext: "Companies pay market to attract, not retain", accent: "electric-cyan" },
+      { headline: "You've never\nnegotiated", subtext: "73% never do. Those who do earn $18K more.", accent: "vivid-purple" },
+      { headline: "Check yours\nFREE", stat: "30sec", statLabel: "underchozen.com", accent: "lime" },
+    ],
+  },
+  {
+    id: "tts-salary-by-city",
+    title: "Same Job, Different City, Wild Pay Gap",
+    category: "Salary Data",
+    caption: "Location matters more than you think. Same role, massive pay differences.",
+    hashtags: "#salary #techsalary #swe #developer #paygap #city #relocation #remotework",
+    slides: [
+      { headline: "Same Job\nDifferent City", subtext: "Software Engineer salaries by city", accent: "electric-cyan" },
+      { headline: "San Francisco", stat: "$165K", statLabel: "Median SWE salary", accent: "vivid-purple" },
+      { headline: "New York", stat: "$155K", statLabel: "Median SWE salary", accent: "neon-pink" },
+      { headline: "Austin", stat: "$130K", statLabel: "Median SWE salary", accent: "hot-orange" },
+      { headline: "That's a\n$35K gap", subtext: "Same skills. Same output. Different ZIP code.", accent: "lime" },
+      { headline: "Check YOUR\ncity rate", stat: "FREE", statLabel: "underchozen.com", accent: "electric-cyan" },
+    ],
+  },
+  {
+    id: "tts-negotiation-email",
+    title: "The Email That Gets You a Raise",
+    category: "Tips",
+    caption: "No meeting needed. Just send this email. 87% success rate with data.",
+    hashtags: "#negotiation #salary #raise #careertips #email #money #careeradvice",
+    slides: [
+      { headline: "The Email That\nGets You a Raise", subtext: "No meeting needed. Just send this.", accent: "lime" },
+      { headline: "Subject:\nCompensation\nDiscussion", subtext: "Professional. Non-threatening.", accent: "electric-cyan" },
+      { headline: "Lead with\nIMPACT", subtext: "\"My work on [project] delivered [metric]\"", accent: "vivid-purple" },
+      { headline: "Drop the\nDATA", subtext: "\"Market range for my role: $X-$Y\"", accent: "neon-pink" },
+      { headline: "Make the ASK", subtext: "\"I'd love to discuss alignment\"", accent: "hot-orange" },
+      { headline: "87% success\nrate", stat: "87%", statLabel: "When you lead with data", accent: "lime" },
+    ],
+  },
+  {
+    id: "tts-job-hop-math",
+    title: "Job Hopping Math: $500K Difference",
+    category: "Education",
+    caption: "Loyalty is costing you half a million dollars. Here's the actual math.",
+    hashtags: "#jobhopping #salary #career #money #loyalty #quitmyjob #careeradvice",
+    slides: [
+      { headline: "Loyalty Tax\nIs REAL", subtext: "Here's the math", accent: "hot-orange" },
+      { headline: "Stay 5 Years", stat: "$114K", statLabel: "Started at $100K · 3.5% annual raises", accent: "neon-pink" },
+      { headline: "Hop Every\n2-3 Years", stat: "$144K", statLabel: "Started at $100K · 20% hop raises", accent: "lime" },
+      { headline: "Year 5 Gap", stat: "$30K/yr", statLabel: "That's $2,500/month you're missing", accent: "electric-cyan" },
+      { headline: "Lifetime\nDifference", stat: "$500K+", statLabel: "Over a 30-year career", accent: "vivid-purple" },
+    ],
+  },
+  {
+    id: "tts-total-comp",
+    title: "Your Salary Is Only 60% of Your Pay",
+    category: "Education",
+    caption: "Stop ignoring 40% of your compensation. Here's the full picture.",
+    hashtags: "#totalcomp #salary #benefits #money #career #401k #stocks #compensation",
+    slides: [
+      { headline: "Your Salary\nIs Only 60%", subtext: "Of what you actually earn", accent: "vivid-purple" },
+      { headline: "Base Salary", stat: "$120K", statLabel: "The part everyone talks about", accent: "electric-cyan" },
+      { headline: "The Other 40%", subtext: "401K: $7K\nHealth: $12K\nRSUs: $25K\nPTO: $9K", accent: "lime" },
+      { headline: "REAL Total", stat: "$173K", statLabel: "That's $53K you're ignoring", accent: "neon-pink" },
+      { headline: "Compare\nTOTAL comp", stat: "FREE", statLabel: "underchozen.com", accent: "hot-orange" },
+    ],
+  },
+  {
+    id: "tts-ai-premium",
+    title: "AI Skills = Instant 40% Raise",
+    category: "Salary Data",
+    caption: "The AI premium is real. Here's what AI skills add to your salary.",
+    hashtags: "#AI #artificialintelligence #techsalary #career #machinelearning #money #skills",
+    slides: [
+      { headline: "AI Skills =\nInstant Raise", subtext: "The premium is real", accent: "electric-cyan" },
+      { headline: "General SWE", stat: "$125K", statLabel: "Median mid-level salary", accent: "vivid-purple" },
+      { headline: "ML Engineer", stat: "$175K", statLabel: "Same level, AI specialization", accent: "lime" },
+      { headline: "The Premium", stat: "+40%", statLabel: "Just for knowing AI/ML", accent: "neon-pink" },
+      { headline: "At Senior Level", stat: "+55%", statLabel: "The gap gets BIGGER with experience", accent: "hot-orange" },
+      { headline: "Check your\nAI premium", stat: "FREE", statLabel: "underchozen.com", accent: "electric-cyan" },
+    ],
+  },
+  {
+    id: "tts-recession-proof",
+    title: "5 Recession-Proof Salary Moves",
+    category: "Tips",
+    caption: "Economic uncertainty rising. Make these moves BEFORE it's too late.",
+    hashtags: "#recession #salary #career #money #economy #jobsecurity #careeradvice",
+    slides: [
+      { headline: "Recession\nIs Coming", subtext: "5 moves to protect your salary", accent: "hot-orange" },
+      { headline: "1. Know Your\nMarket Rate", subtext: "Companies lowball in downturns. Know your number.", accent: "electric-cyan" },
+      { headline: "2. Negotiate\nNOW", subtext: "Budgets exist today. They won't in 6 months.", accent: "lime" },
+      { headline: "3. Document\nYour ROI", subtext: "Clear impact = safe seat when cuts come", accent: "vivid-purple" },
+      { headline: "4. Stack\nSafe Skills", subtext: "AI/ML, cybersecurity, data — zero layoffs", accent: "neon-pink" },
+      { headline: "5. Check Your\nPosition", stat: "FREE", statLabel: "underchozen.com", accent: "lime" },
+    ],
+  },
+  {
+    id: "tts-gender-gap",
+    title: "The Pay Gap Compounds to $1M",
+    category: "Education",
+    caption: "The gender pay gap isn't just unfair — it compounds over your entire career.",
+    hashtags: "#paygap #equalpay #salary #career #women #diversity #salarytransparency",
+    slides: [
+      { headline: "The Pay Gap\nCOMPOUNDS", subtext: "It's worse than you think", accent: "neon-pink" },
+      { headline: "Year 1 Gap", stat: "$5K", statLabel: "Seems small, right?", accent: "hot-orange" },
+      { headline: "Year 10 Gap", stat: "$35K", statLabel: "Raises compound the difference", accent: "vivid-purple" },
+      { headline: "Lifetime Gap", stat: "$1M", statLabel: "Over a full career", accent: "electric-cyan" },
+      { headline: "Fight It\nWith DATA", subtext: "Gender-neutral market rates. Pure data.", accent: "lime" },
+    ],
+  },
+  {
+    id: "tts-review-cheat",
+    title: "Annual Review Cheat Code",
+    category: "Tips",
+    caption: "87% success rate with this one simple change to your annual review strategy.",
+    hashtags: "#annualreview #salary #raise #career #negotiation #work #careeradvice",
+    slides: [
+      { headline: "Annual Review\nCHEAT CODE", subtext: "87% get a raise doing this", accent: "lime" },
+      { headline: "Without Data", stat: "32%", statLabel: "Chance of getting a raise", accent: "neon-pink" },
+      { headline: "With Market\nData", stat: "87%", statLabel: "Chance of getting a raise", accent: "electric-cyan" },
+      { headline: "That's 2.7x\nBetter Odds", subtext: "Same conversation. Just add data.", accent: "vivid-purple" },
+      { headline: "Get Your Data\nin 30 Seconds", stat: "FREE", statLabel: "underchozen.com", accent: "lime" },
+    ],
+  },
+  {
+    id: "tts-company-size",
+    title: "Same Job, $60K Gap by Company Size",
+    category: "Salary Data",
+    caption: "Company size determines your pay more than your skill. Here's the data.",
+    hashtags: "#salary #startup #enterprise #career #money #compensation #techsalary",
+    slides: [
+      { headline: "Same Job\n$60K Gap", subtext: "Based on company size alone", accent: "vivid-purple" },
+      { headline: "Startup", stat: "$95K", statLabel: "< 50 employees", accent: "hot-orange" },
+      { headline: "Mid-Market", stat: "$125K", statLabel: "200-1K employees", accent: "electric-cyan" },
+      { headline: "Enterprise", stat: "$155K", statLabel: "5K+ employees", accent: "lime" },
+      { headline: "Know the gap\nbefore choosing", stat: "FREE", statLabel: "underchozen.com", accent: "neon-pink" },
+    ],
   },
 ];

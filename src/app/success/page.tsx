@@ -212,14 +212,14 @@ function SuccessContent() {
 
             {/* Actions */}
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link href={analysisUrl} className="flex-1">
+              <Link href={analysisUrl} className="flex-1" onClick={() => trackEvent("cta_click", { cta: "view_results_success" })}>
                 <Button size="lg" className="w-full flex items-center justify-center gap-2">
                   View Your Results
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
               {tier === "blueprint" && (
-                <Link href={analysisUrl} className="flex-1">
+                <Link href={analysisUrl} className="flex-1" onClick={() => trackEvent("cta_click", { cta: "download_pdf_success" })}>
                   <Button variant="secondary" size="lg" className="w-full flex items-center justify-center gap-2">
                     <Download className="w-4 h-4" />
                     Download PDF

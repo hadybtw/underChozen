@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Download, Mail, ArrowRight } from "lucide-react";
 import { Button } from "./button";
+import { trackEvent } from "@/lib/analytics";
 
 interface ExitIntentProps {
   onEmailSubmit?: (email: string) => void;
@@ -19,6 +20,7 @@ export function ExitIntent({ onEmailSubmit }: ExitIntentProps) {
     if (e.clientY <= 5 && !sessionStorage.getItem("uc_exit_shown")) {
       setShow(true);
       sessionStorage.setItem("uc_exit_shown", "1");
+      trackEvent("exit_intent_shown");
     }
   }, []);
 
@@ -43,6 +45,7 @@ export function ExitIntent({ onEmailSubmit }: ExitIntentProps) {
     setError("");
     setSubmitted(true);
     onEmailSubmit?.(email);
+    trackEvent("email_capture", { source: "exit_intent" });
 
     // Send to email capture API
     fetch("/api/email", {

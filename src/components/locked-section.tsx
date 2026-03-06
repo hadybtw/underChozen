@@ -20,6 +20,7 @@ import { Button } from "./button";
 import { CountdownTimer } from "./countdown-timer";
 import { formatCurrency } from "@/lib/utils";
 import { validateDiscount, applyDiscount, type DiscountCode } from "@/lib/discounts";
+import { trackEvent } from "@/lib/analytics";
 
 interface LockedSectionProps {
   onUnlock: (discountCode?: string) => void;
@@ -75,8 +76,10 @@ export function LockedSection({ onUnlock, onUnlockPremium, lifetimeImpact, gap }
     const result = validateDiscount(promoInput);
     if (result) {
       setAppliedDiscount(result);
+      trackEvent("promo_apply", { code: promoInput, valid: true, percent: result.percent });
     } else {
       setPromoError("Invalid or expired code");
+      trackEvent("promo_apply", { code: promoInput, valid: false });
     }
   };
 
