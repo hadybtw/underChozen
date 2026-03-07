@@ -524,694 +524,813 @@ export interface LinkedInPost {
 
 export const linkedinPosts: LinkedInPost[] = [
   {
-    id: "li-underpaid-data",
-    title: "I analyzed 10,000+ salary data points",
-    category: "Data",
-    content: `I analyzed salary data across 25 roles, 18 cities, and 13 industries.
-
-Here's what I found:
-
-→ 73% of professionals have never negotiated their salary
-→ Those who negotiate earn $18K more on average
-→ The lifetime cost of being $5K underpaid: $162K
-→ Location affects salary by up to 35% for the same role
-→ Industry matters more than people think — same role, 25% pay gap
-
-The biggest insight?
-
-Most people don't know their market rate.
-
-Not vaguely. Not "I think I'm around $X."
-
-Their EXACT percentile. Their EXACT market range. Their EXACT gap.
-
-Without that data, you're negotiating blind.
-
-We built a free tool that tells you in 30 seconds: underchozen.com
-
-No signup. No account. Just data.
-
-Have you checked your market rate recently?
-
-#salary #career #negotiation #data`,
-  },
-  {
-    id: "li-negotiation-mistake",
-    title: "The biggest salary negotiation mistake",
-    category: "Tips",
-    content: `The biggest mistake in salary negotiation isn't asking for too much.
-
-It's not asking at all.
-
-73% of workers never negotiate. Here's what happens to the 27% who do:
-
-→ 87% get a raise
-→ Average increase: $18K
-→ Most say the conversation took under 15 minutes
-
-What holds people back:
-
-"I don't want to seem greedy"
-→ 85% of managers EXPECT you to negotiate
-
-"They might rescind the offer"
-→ This almost never happens (<1% of cases)
-
-"I don't know what to ask for"
-→ This is the real problem. And it's solvable.
-
-The fix: show up with data.
-
-Not "I feel like I deserve more."
-But "Market data shows I'm at the 34th percentile. Here's my evidence."
-
-One conversation. Fifteen minutes. $18K/year.
-
-Free market analysis: underchozen.com
-
-What's your negotiation story?
-
-#salarynegotiation #career #leadership #professionaldevelopment`,
-  },
-  {
-    id: "li-manager-perspective",
-    title: "As a hiring manager, I'll tell you a secret",
+    id: "li-silent-paycut",
+    title: "Your employer gave you a pay cut this year. You just didn't notice.",
     category: "Education",
-    content: `As a hiring manager, here's what I wish every candidate knew:
+    content: `Your employer gave you a pay cut this year. You just didn't notice.
 
-The first salary offer is NEVER the best we can do.
+Inflation ran at 3.2% in 2025.
 
-Every role has a budget range. The first offer is usually the bottom 25% of that range.
+Your raise? If you got one at all, it was probably 3%.
 
-Why? Because most people accept it.
+That's not a raise. That's a 0.2% pay cut disguised as a reward.
 
-Here's how to get to the top of the range:
+Here's the part nobody tells you:
 
-1. Ask: "Is there flexibility in the compensation?"
-   (This signals you're professional, not aggressive)
+While you stayed loyal, your company hired someone new in your EXACT role — at market rate. Which is 12-18% higher than your current salary.
 
-2. Share data: "Market rate for this role in [city] is $X-Y"
-   (This makes it about data, not feelings)
+They're paying a stranger more than you because you never asked.
 
-3. Be specific: "Based on my experience and the market, I'd like to discuss $[number]"
-   (Ranges give them permission to lowball)
+The math over 5 years of "loyalty":
+→ Year 1: $100K (feels fine)
+→ Year 3: $109K (inflation-adjusted: $97K)
+→ Year 5: $119K (market rate: $148K)
+→ Lifetime gap: $423,000
 
-4. Pause after asking.
-   (Silence is powerful. Let them respond.)
+You're not being rewarded for staying. You're being penalized for not leaving.
 
-The managers who pushed back the hardest on "no budget" at my company? They ALL had budget. They were just testing your resolve.
+Two things you can do TODAY:
 
-Know your market rate before your next conversation: underchozen.com
+1. Find out your actual market rate (not what you think it is — what the DATA says)
+2. Have a compensation conversation before Q3 budgets are locked
 
-#hiring #management #career #salary`,
+The data will either confirm you're fine or reveal a gap you can't afford to ignore.
+
+Check yours in 30 seconds: underchozen.com
+
+#salary #career #compensation #negotiation #inflation`,
   },
   {
-    id: "li-remote-pay",
-    title: "Remote workers are getting shortchanged",
-    category: "Data",
-    content: `Remote workers are being systematically underpaid.
-
-Here's the data:
-
-→ Remote workers earn 18% less on average than in-office peers
-→ Same company. Same role. Same output.
-→ The justification? "Cost of living adjustment."
-
-But think about this:
-
-If you work remotely for a company HQ'd in San Francisco, you're:
-→ Serving SF-level clients
-→ Meeting SF-level standards
-→ Generating SF-level revenue
-
-Your zip code doesn't change the value of your work.
-
-What to do:
-
-1. Benchmark your salary against your company's HQ location
-2. Never volunteer your location in salary conversations
-3. If asked, redirect: "I'm focused on the value I bring to the role"
-4. Know the exact pay gap between your location and HQ
-
-The average remote worker in a low-cost city who benchmarks against HQ earns $42K more than those who accept "adjusted" rates.
-
-Free tool to compare salaries by city: underchozen.com
-
-Are you being location-adjusted? Or location-discounted?
-
-#remotework #salary #workfromhome #fairpay`,
-  },
-  {
-    id: "li-first-salary",
-    title: "Your first salary follows you forever",
-    category: "Education",
-    content: `Your first salary isn't just your first paycheck.
-
-It's the foundation for every raise, bonus, and equity grant for the rest of your career.
-
-The math:
-
-Starting $5K below market → -$162K over 20 years.
-
-That's not a typo. Every 3% raise compounds on that lower base. Your 401K match is calculated from it. Your bonus percentage. Even your next job's offer — they'll ask for your current salary.
-
-To new graduates and early-career professionals:
-
-Please negotiate your first offer.
-
-"But I have no leverage!"
-
-You do:
-→ 70% of companies improve the offer when asked
-→ Only 1% rescind (red flag company anyway)
-→ The worst outcome is they say no (you've lost nothing)
-
-The script is simple:
-
-"I'm excited about this opportunity. Based on my research, the market range for this role is $X-Y. Could we discuss moving the offer to $[top of range]?"
-
-Know the market range for your first role: underchozen.com
-
-It takes 30 seconds. It could be worth $162K.
-
-#newgrad #firstjob #salary #career`,
-  },
-  {
-    id: "li-ai-careers",
-    title: "AI skills = 40% salary premium",
-    category: "Data",
-    content: `AI/ML specialization commands a 40% salary premium in 2026.
-
-The numbers:
-
-Mid-level Software Engineer: $125K
-Mid-level ML Engineer: $175K
-
-Senior SWE: $178K
-Senior AI/ML: $245K+
-
-The gap is widening.
-
-Why?
-
-There are 3.2x more open AI/ML positions than qualified candidates. Every company wants AI. Most can't hire fast enough.
-
-The fastest path to the AI premium:
-
-1. Learn fundamentals (fast.ai is free)
-2. Build 2-3 projects with real datasets
-3. Apply to AI-adjacent roles (not pure research)
-4. Negotiate with market data (the premium is real)
-
-You don't need a PhD. You need demonstrable skills.
-
-Check what AI skills add to your market rate: underchozen.com
-
-#AI #machinelearning #career #techsalary`,
-  },
-  {
-    id: "li-quiet-quit",
-    title: "Quiet quitting is a salary problem",
-    category: "Education",
-    content: `Hot take: "quiet quitting" is a compensation problem, not an engagement problem.
-
-When someone is paid fairly:
-→ They feel valued
-→ They're motivated to grow
-→ They advocate for their company
-
-When someone is underpaid:
-→ They disengage
-→ They do the minimum
-→ They eventually leave
-
-The data supports this:
-
-→ 65% of "quiet quitters" report feeling underpaid
-→ Companies that maintain pay equity have 30% lower attrition
-→ A $5K raise costs less than a $50K replacement hire
-
-To managers: before blaming engagement, check compensation.
-To employees: before disengaging, check your market rate.
-
-Both conversations start with data.
-
-Free market rate check: underchozen.com
-
-#leadership #management #retention #compensation`,
-  },
-  {
-    id: "li-annual-review",
-    title: "How to prepare for your annual review",
+    id: "li-email-script",
+    title: "I sent one email. My salary went up $22K. Here's the exact script.",
     category: "Tips",
-    content: `Annual review season is coming.
+    content: `I sent one email. My salary went up $22K.
 
-Most people walk in hoping for a good outcome.
+No meeting. No confrontation. No ultimatum.
 
-Top performers walk in with a strategy.
-
-Here's the playbook:
-
-BEFORE the meeting:
-→ Know your market rate (exact percentile, not a guess)
-→ List 5 specific contributions with measurable impact
-→ Calculate the revenue/savings your work generated
-→ Prepare your ask: specific number, not a range
-
-DURING the meeting:
-→ Lead with your impact, not your needs
-→ Present market data objectively
-→ Frame it as alignment: "I want my comp to reflect my contributions"
-→ Have a specific number ready
-
-IF THEY SAY NO:
-→ Ask for a timeline: "When can we revisit?"
-→ Ask for alternatives: equity, bonus, title, PTO
-→ Get it in writing
-→ Start your external search (but don't say this)
-
-The data advantage:
-
-Employees who present market data in reviews get raises 87% of the time.
-
-Those who don't: 32%.
-
-Get your market data before review season: underchozen.com
-
-#annualreview #career #salary #professionaldevelopment`,
-  },
-  {
-    id: "li-company-size-pay",
-    title: "Company size determines your pay more than your skill",
-    category: "Salary Data",
-    content: `Hot take: Company size determines your salary more than your skill level.
-
-Same role. Same city. Same experience.
-
-Startup (< 50 employees): $95K
-Mid-market (200-1K): $125K
-Enterprise (5K+): $155K
-
-That's a $60K spread for the EXACT same job.
-
-Why?
-
-→ Larger companies have more revenue per employee
-→ They compete harder for talent retention
-→ They have structured pay bands (less lowballing)
-→ Benefits packages add another $20-40K in value
-
-The trade-off:
-- Startups: more autonomy, equity upside, faster titles
-- Enterprise: higher base, better benefits, slower growth
-
-Neither is wrong. But you should KNOW the gap before choosing.
-
-Check your market rate by company size: underchozen.com
-
-#salary #compensation #career #startup #enterprise`,
-  },
-  {
-    id: "li-negotiation-email",
-    title: "The exact email that got me a $22K raise",
-    category: "Tips",
-    content: `I'm going to share the exact email framework that helped me negotiate a $22K raise.
-
-No meeting. No confrontation. Just one email.
-
-Subject: Compensation Discussion
+Here's the exact framework:
 
 ---
 
-"Hi [Manager],
+Subject: Quick question about compensation alignment
 
-I've really enjoyed my work on [specific project] this quarter. The results — [specific metric] — reflect the impact I'm driving.
+Hi [Manager],
 
-I've been researching market compensation for [your role] in [your city]. Based on multiple data sources, the market range for someone at my level is $X-$Y.
+I wanted to flag something I've been thinking about.
 
-My current salary of $Z places me at the Xth percentile of market.
+Over the past [X months], I've contributed to [specific achievement with a number attached — revenue, users, cost savings]. I'm proud of the work and energized by what's ahead.
 
-I'd love to discuss aligning my compensation with my contributions and market data when you have time this week.
+I've also been doing some market research. Based on several data sources, the median compensation for [your role] in [your city] at [your experience level] is [specific number].
 
-Thank you for your support."
+My current salary puts me at the [X]th percentile of market — which is below the range my contributions would suggest.
+
+I'd love to find 15 minutes to discuss alignment when you have a moment this week.
 
 ---
 
 Why this works:
-→ Starts with impact (not complaints)
-→ Uses specific data (not feelings)
-→ Creates a paper trail
-→ Gives them time to prepare
-→ Non-confrontational
+→ Opens with impact, not complaints
+→ Uses a specific percentile (not "I feel underpaid")
+→ Creates a paper trail HR can reference
+→ Gives them time to go to bat for you internally
+→ Non-confrontational. Zero drama.
 
-87% success rate when you lead with data.
+87% of employees who present market data get a raise.
+32% of those who go in with feelings alone do.
 
-Get your exact market data: underchozen.com
+Same conversation. 2.7x better outcome. The only variable is data.
 
-#negotiation #salary #career #email #professionaldevelopment`,
+Get your market data: underchozen.com
+
+#negotiation #salary #career #leadership #management`,
   },
   {
-    id: "li-gender-pay-gap",
-    title: "The pay gap isn't just unfair — it compounds",
-    category: "Education",
-    content: `The gender pay gap isn't a one-time thing. It compounds.
-
-Starting salary: $5K gap
-After 5 years: $15K gap
-After 10 years: $35K gap
-After 20 years: $100K+ gap
-Lifetime: $400K-$1M gap
-
-Why it compounds:
-→ Raises are percentage-based (3% of less = less)
-→ Next job's offer is based on current salary
-→ Promotions inherit the gap
-→ Bonuses multiply it
-
-How to break the cycle:
-
-1. Never share your current salary (it's illegal to require in many states)
-2. Research the MARKET rate, not "what's fair"
-3. Negotiate EVERY offer — 68% of women don't (vs 52% of men)
-4. Ask for the top of the range, not the middle
-
-Data is the great equalizer. When you know the numbers, the gap has nowhere to hide.
-
-Free, gender-neutral market analysis: underchozen.com
-
-#paygap #equalpay #salarytransparency #career #diversity`,
-  },
-  {
-    id: "li-job-hop-data",
-    title: "I analyzed 500 salary trajectories. Job hoppers win.",
-    category: "Salary Data",
-    content: `I analyzed 500 salary trajectories over 5 years. The results are clear.
-
-Loyal employees (same company, 5 years):
-→ Average total increase: 14.7%
-→ Compound annual: 2.8%
-→ Promotion rate: 1 in 5 years
-
-Job switchers (changed every 2-3 years):
-→ Average total increase: 44%
-→ Compound annual: 7.6%
-→ Title advancement: 2 levels
-
-The gap at year 5: $29,300/year.
-The gap at year 10: $67,000/year.
-Lifetime impact: $500K-$1M.
-
-This isn't about disloyalty. It's about market efficiency.
-
-Companies have internal budgets (3-4% raises). The external market moves faster (8-12% adjustments).
-
-The optimal strategy:
-→ Stay 2-3 years (build impact + relationships)
-→ Leave when growth stalls
-→ Negotiate hard at each transition
-→ Never accept a lateral move without 15%+ bump
-
-Know your current market value: underchozen.com
-
-#careeradvice #salary #jobmarket #compensation #data`,
-  },
-  {
-    id: "li-recession-salary",
-    title: "How to protect your salary in a downturn",
+    id: "li-hiring-manager-secret",
+    title: "I'm a hiring manager. Here's what I wish candidates knew about salary.",
     category: "Tips",
-    content: `Economic uncertainty is rising. Here's how to protect your salary.
+    content: `I'm a hiring manager. I've extended 200+ offers.
 
-Most people wait until layoffs start. By then, you've lost leverage.
+Here's what I wish every candidate knew:
 
-Do these 5 things NOW:
+1. I WANT you to negotiate. If you don't, I assume you'll accept anything — and my budget goes elsewhere.
 
-1. KNOW YOUR NUMBER
-Get your exact market rate today. In downturns, companies lowball aggressively. If you don't know your value, you'll accept their value.
+2. The first number I give you is never my best number. I have a range. The offer is always at the bottom of it.
 
-2. NEGOTIATE BEFORE CUTS
-Budgets exist now. They won't in 6 months. If you deserve a raise, ask THIS quarter.
+3. "I need to think about it" is the most powerful phrase in salary negotiation. I've watched candidates get $15K more just by pausing for 48 hours.
 
-3. DOCUMENT EVERYTHING
-Revenue generated. Costs saved. Projects delivered. When cuts come, people with clear ROI keep their seats.
+4. I cannot fight for you without ammunition. When you say "I want more," I have nothing to take to HR. When you say "Market data shows $X, and here's my impact," I become your advocate.
 
-4. STACK RECESSION-PROOF SKILLS
-AI/ML, cybersecurity, data engineering — these roles had near-zero layoffs in the last downturn.
+5. I judge candidates who negotiate MORE favorably. It shows you understand your value, do research, and advocate for yourself — skills I need on my team.
 
-5. BUILD YOUR EXTERNAL OPTIONS
-Update your resume. Take recruiter calls. Know what you're worth outside.
+6. The budget is almost never as fixed as we claim. "We can't go higher" usually means "I'd need VP approval" — which I'll get if you're worth it.
 
-The best defense is knowing your market position.
+7. Your current salary is irrelevant to me. I'm buying future output, not matching your past employer's mistake.
 
-Check yours free: underchozen.com
+Stop being afraid of the conversation. We're expecting it.
 
-#recession #career #salary #professionaldevelopment #economy`,
+Know your market rate before your next interview: underchozen.com
+
+#hiring #negotiation #salary #recruiting #management`,
   },
   {
-    id: "li-benefits-hidden",
-    title: "Your benefits are worth more than you think",
+    id: "li-three-year-trap",
+    title: "The 3-year trap: why your biggest raise is always at a new company",
+    category: "Data",
+    content: `I tracked my own compensation for 12 years. Here's the pattern:
+
+Year 1 at a company: Big jump (negotiated a 20%+ raise to join)
+Year 2: Strong performance. 4% raise.
+Year 3: Another great year. 3.5% raise.
+Year 4: "Budget was tight." 2% raise.
+
+Then I'd leave. And get another 20% jump.
+
+Repeat x4 companies.
+
+My total compensation growth over 12 years: 187%.
+If I'd stayed at company #1 the whole time? ~38%.
+
+That's a $340,000 difference. Same skills. Same work ethic. Just different negotiation leverage.
+
+Here's why the 3-year trap exists:
+
+→ Internal raise budgets: 3-4% (company-wide pool)
+→ External offers: 15-25% (market-rate matching)
+→ Companies invest in acquiring talent, not retaining it
+→ Your "loyalty" subsidizes new-hire signing bonuses
+
+The companies that break this pattern exist — but they're rare. And they STILL require you to advocate with data.
+
+The play:
+1. Check your market rate annually
+2. If you're below the 50th percentile after year 2, negotiate or leave
+3. Never accept a lateral move without a 15%+ bump
+4. Document your impact BEFORE review season, not during
+
+Your loyalty is admirable. But it shouldn't cost you six figures.
+
+Check your percentile: underchozen.com
+
+#careeradvice #salary #jobmarket #compensation #leadership`,
+  },
+  {
+    id: "li-unpopular-opinion",
+    title: "Unpopular opinion: you don't deserve a raise. You deserve market rate.",
     category: "Education",
-    content: `Stop ignoring 40% of your compensation.
+    content: `Unpopular opinion: You don't deserve a raise.
 
-Your base salary is just the beginning. Here's what you're probably not counting:
+You deserve market rate.
 
-Health Insurance: $8,000-$15,000/year
-(employer contribution — check your offer letter)
+There's a difference.
 
-401K Match: $5,000-$12,000/year
-(if you're not maxing this, you're burning free money)
+A "raise" implies you're asking for a favor.
+"Market rate" implies the market has already decided your value — and your employer hasn't kept up.
 
-RSUs/Stock: $10,000-$80,000/year
-(at public companies — this IS cash)
+Framing matters more than most people realize:
 
-PTO: $5,000-$12,000/year
-(20 days × your daily rate)
+❌ "I've been here 3 years and I think I deserve more"
+✅ "Market data shows my role at this level pays $X. I'd like to discuss alignment."
 
-Other:
-→ Life/disability insurance: $2-5K
-→ Professional development: $1-5K
-→ Commuter benefits: $1-3K
-→ Wellness stipend: $500-2K
+❌ "My rent went up and I'm struggling"
+✅ "My contributions generated $Y in revenue this quarter. The market values that at $X."
 
-Total hidden value: $30,000-$120,000
+❌ "My coworker told me she makes more"
+✅ "Aggregated market data places my percentile at Z. I want to close the gap."
 
-When comparing offers, ALWAYS compare total comp.
+The first version of each makes it about you.
+The second makes it about the data.
 
-A $120K base with great benefits beats $135K with nothing.
+Managers can argue with your feelings. They can't argue with the market.
 
-Calculate your full market value: underchozen.com
+This isn't about being combative. It's about being precise.
 
-#compensation #benefits #salary #totalcomp #career`,
+Every negotiation you have should start with one question: "What does the market say?"
+
+Answer that question: underchozen.com
+
+#salary #negotiation #career #leadership #communication`,
   },
   {
-    id: "li-first-90-days",
-    title: "Your first 90 days set your salary trajectory",
+    id: "li-45-minute-mistake",
+    title: "The 45-minute mistake that costs professionals $500K",
+    category: "Education",
+    content: `It takes 45 minutes to prepare for a salary negotiation.
+
+The average return on those 45 minutes? $18,000/year.
+
+Over a 30-year career, that compounds to $500,000+.
+
+And yet 73% of professionals never do it. Not once.
+
+Here's what those 45 minutes look like:
+
+MINUTE 0-15: Research
+→ Look up your market rate for your exact role + city + level
+→ Find the 25th, 50th, and 75th percentile numbers
+→ Note where your current salary falls
+
+MINUTE 15-30: Build your case
+→ List your 3 biggest measurable impacts this year
+→ Translate each into dollars (revenue generated, costs saved, efficiency gained)
+→ Calculate your ROI for the company
+
+MINUTE 30-45: Write the script
+→ Open with impact (not tenure or feelings)
+→ Present the market data (specific percentile, not a range)
+→ Make a specific ask (exact number, not "something in the range of")
+→ Prepare for one objection: "We don't have the budget"
+
+That's it. 45 minutes. $500K.
+
+The most expensive thing you'll ever do is nothing.
+
+Start your 15-minute research: underchozen.com
+
+#negotiation #career #salary #productivity #professionaldevelopment`,
+  },
+  {
+    id: "li-reverse-interview",
+    title: "I ask one question in every interview that reveals the real salary range",
     category: "Tips",
-    content: `Your first 90 days at a new job determine your salary trajectory for the next 3 years.
+    content: `In every interview, I ask one question that reveals the real salary range.
 
-Here's what most people get wrong:
+It's not "What's the budget?"
+It's not "What are you offering?"
 
-They focus on fitting in. They should focus on standing out.
+It's this:
 
-The 90-day salary playbook:
+"What does the compensation trajectory look like for someone who excels in this role over the first 2-3 years?"
 
-DAYS 1-30: Document everything.
-→ What you were hired to do
-→ What you're actually doing
-→ Quick wins you deliver
-→ Save every "great job" email
+Why this works:
 
-DAYS 31-60: Exceed expectations.
-→ Deliver one visible, measurable win
-→ Solve a problem nobody asked you to
-→ Build one cross-functional relationship
+1. It signals you're thinking long-term (managers love this)
+2. It forces them to reveal the salary band without asking directly
+3. It exposes whether there's real growth or a dead-end ceiling
+4. It gives you the RANGE — which is what you actually negotiate against
 
-DAYS 61-90: Plant the seed.
-→ Schedule a career growth 1:1
-→ Ask about promotion criteria
-→ Share your impact summary
+If they say: "You'd start at $X and could be at $Y in 2 years"
+You now know the ceiling. Negotiate to start closer to it.
 
-Why this matters:
+If they say: "We do annual reviews and typical raises are 3-4%"
+Red flag. That's below inflation. You'll be underpaid by year 2.
 
-Your first review sets the baseline. The baseline sets the raise. The raise compounds forever.
+If they dodge: "It depends on a lot of factors..."
+The band is either narrow or they don't have a growth plan.
 
-Start strong. Document relentlessly. The data will negotiate for you.
+The answer to this ONE question tells you more about comp than 3 rounds of negotiations.
 
-Know your market rate from day one: underchozen.com
+But you still need to know YOUR market rate before you walk in.
 
-#newjob #career #salary #professionaldevelopment #careeradvice`,
+Get it here: underchozen.com
+
+#interviewing #salary #career #hiring #negotiation`,
   },
   {
-    id: "li-skills-premium",
-    title: "These 5 skills add $20K+ to any role",
-    category: "Salary Data",
-    content: `5 skills that add $20K+ to literally any role in 2026:
-
-1. SQL/Data Analysis: +$15-25K
-Every company is "data-driven." If you can query a database and make dashboards, you're instantly more valuable than 80% of your peers.
-
-2. AI/ML Literacy: +$20-40K
-Not building models — just knowing how to use AI tools effectively. Prompt engineering, workflow automation, AI-assisted analysis.
-
-3. Public Speaking: +$15-30K
-Presentations, client calls, all-hands. People who communicate well get promoted 2x faster.
-
-4. Financial Modeling: +$20-35K
-Understanding P&L, building business cases, ROI analysis. Speaks the language of decision-makers.
-
-5. Project Management: +$15-25K
-PMP or Agile cert + real experience. Every team needs someone who can ship.
-
-The compounding effect: Stack 2-3 of these and you're in the top 5% of earners for any role.
-
-See how skills affect your market value: underchozen.com
-
-#skills #career #salary #upskilling #professionaldevelopment`,
-  },
-  {
-    id: "li-counter-offer",
-    title: "Should you accept a counter-offer?",
+    id: "li-data-wins",
+    title: "I gave my manager a spreadsheet instead of a speech. I got promoted.",
     category: "Tips",
-    content: `You got an outside offer. Your company countered.
+    content: `I got promoted last quarter.
 
-Should you accept it?
+Not because I gave a speech. Not because I "leaned in."
 
-The data says probably not.
+Because I gave my manager a spreadsheet.
 
-Studies show:
-→ 80% of people who accept counter-offers leave within 18 months
-→ 50% leave within 6 months
-→ You're now "the person who almost left"
+Here's what was on it:
 
-Why counter-offers fail:
+ROW 1: My market rate ($X — from 3 independent sources)
+ROW 2: My current salary ($Y — 18th percentile)
+ROW 3: Revenue I influenced this year ($Z)
+ROW 4: My ROI for the company (salary cost vs. revenue impact = 8.4x)
+ROW 5: Comparable salaries at 3 competitor companies
 
-1. The underlying issues remain (culture, growth, management)
-2. Trust is damaged — you're no longer "committed"
-3. The raise should have happened without a threat
-4. Your next promotion just got delayed ("we just gave you a raise")
+That's it. Five rows. No emotion. No "I feel."
 
-When counter-offers CAN work:
+My manager took it to her VP. The VP took it to HR. HR approved a promotion + 24% raise within 3 weeks.
 
-→ The issue was purely compensation (rare)
-→ You genuinely love everything else
-→ They address the ROOT cause, not just salary
-→ You get the offer in writing with timeline
+Why this works:
 
-The better play:
+Managers WANT to pay you more. They just need tools to justify it internally. Your job isn't to convince your manager — it's to arm them with data so they can convince THEIR manager.
 
-Know your market value BEFORE you're unhappy.
-Negotiate proactively, not reactively.
+When you walk in with feelings, you create a difficult conversation.
+When you walk in with a spreadsheet, you create a business case.
 
-Free market analysis: underchozen.com
+Be the easiest promotion decision your manager ever makes.
 
-#counteroffers #career #salary #negotiation #careeradvice`,
+Build your spreadsheet in 30 seconds: underchozen.com
+
+#promotion #salary #career #leadership #data`,
   },
   {
-    id: "li-remote-salary-2026",
-    title: "Remote salary adjustments in 2026: the new landscape",
-    category: "Salary Data",
-    content: `Remote work salary adjustments in 2026 — here's where things stand.
-
-68% of companies now adjust pay by location.
-22% pay the same regardless of location.
-10% are experimenting with hybrid models.
-
-The reality:
-
-SF → Austin move: -10 to -15% adjustment
-NYC → Charlotte: -12 to -18% adjustment
-Seattle → Portland: -5 to -8% adjustment
-
-But here's the thing they don't tell you:
-
-Cost of living difference is often BIGGER than the pay cut.
-
-SF → Austin example:
-Salary cut: -$15K
-Housing savings: -$30K/year
-Tax savings: -$8K/year (no state income tax)
-Net gain: +$23K in purchasing power
-
-The strategy:
-
-1. Negotiate on VALUE, not location
-2. Know the national rate for your role
-3. Calculate your real purchasing power
-4. Consider the full picture before accepting cuts
-
-Compare location-adjusted rates: underchozen.com
-
-#remotework #salary #compensation #wfh #techcareers`,
-  },
-  {
-    id: "li-ageism-salary",
-    title: "The uncomfortable truth about age and salary",
+    id: "li-comparison-trap",
+    title: "Stop comparing your salary to your friends. Compare it to the market.",
     category: "Education",
-    content: `Nobody talks about this, but salary growth plateaus around age 45.
+    content: `"My friend makes $160K and we have the same title."
 
-The data:
+I hear this every week. And every week, I say the same thing:
 
-Ages 22-35: Fastest salary growth (8-12% annually)
-Ages 35-45: Strong growth (5-8% annually)
-Ages 45-55: Plateau (2-4% annually)
-Ages 55+: Often declines
+Your friend's salary is irrelevant.
 
-Why?
+Here's why:
 
-→ Companies view senior employees as "expensive"
-→ Title inflation masks salary stagnation
-→ Ageism in hiring limits job-hopping leverage
-→ Technical skills need constant updating
+→ Different company size = different pay bands
+→ Different city = different cost-of-living adjustment
+→ Different industry = 15-40% premium variation
+→ Different negotiation = completely different starting point
+→ Different tenure = different internal raise history
 
-How to beat the plateau:
+Two people with identical titles can have a $60K gap and BOTH be paid fairly for their specific situation.
 
-1. Move into leadership/strategy roles (value increases with experience)
-2. Build a personal brand (become the expert)
-3. Negotiate equity over base (ownership > salary)
-4. Stay current with technology (eliminates the "outdated" perception)
-5. Know your market rate at EVERY stage
+The question isn't "Am I paid less than my friend?"
 
-Your experience is an asset. Make sure your salary reflects it.
+The question is: "Am I paid fairly for MY role, in MY city, at MY experience level, in MY industry, at MY company size?"
 
-Check your current market position: underchozen.com
+That requires data. Not anecdotes.
 
-#career #ageism #salary #professionaldevelopment #leadership`,
+I've watched people rage-quit over a perceived gap that didn't exist — and I've watched people feel fine while sitting $40K below market because nobody told them.
+
+Your salary should be benchmarked against the market, not against your group chat.
+
+Get your personalized benchmark: underchozen.com
+
+#salary #career #compensation #data #careeradvice`,
   },
   {
-    id: "li-startup-equity",
-    title: "How to value startup equity in your offer",
+    id: "li-quiet-leverage",
+    title: "The most powerful negotiation tactic is one you never use out loud",
+    category: "Tips",
+    content: `The most powerful negotiation tactic is one you never use out loud.
+
+It's not a threat. It's not an ultimatum. It's not "I have another offer."
+
+It's THIS: knowing your exact market value and being genuinely willing to walk away.
+
+That's it. That's the tactic.
+
+When you KNOW you're worth $160K and you're making $128K, something shifts. Your posture changes. Your patience changes. You stop negotiating from anxiety and start negotiating from clarity.
+
+Your manager senses it. They don't know why, but you seem... different.
+
+Here's what quiet leverage looks like in practice:
+
+Without leverage: "I really hope you can find something in the budget..."
+With leverage: "The market range is $155-175K. I'd like to close the gap by Q2."
+
+Without leverage: "Whatever you think is fair..."
+With leverage: "Based on my impact and the data, $162K reflects fair market alignment."
+
+Without leverage: "Maybe we can revisit next year?"
+With leverage: "I appreciate the conversation. I'll need to evaluate my options and follow up."
+
+You never mention another offer.
+You never threaten to leave.
+You just carry yourself like someone who knows their number.
+
+And that number? You can find it in 30 seconds.
+
+underchozen.com
+
+#negotiation #salary #leadership #career #communication`,
+  },
+  {
+    id: "li-hr-budget-lie",
+    title: "HR told me 'the budget is set.' I got a 28% raise anyway. Here's how.",
+    category: "Tips",
+    content: `"The budget is already set for this cycle."
+
+I've heard this exact line 4 times in my career. And 3 of those times, I got a raise anyway.
+
+Here's what "the budget is set" actually means:
+
+→ The STANDARD raise pool is allocated (3-4% spread across the team)
+→ There is ALWAYS a discretionary budget for retention
+→ There is ALWAYS an emergency budget for flight-risk employees
+→ There is ALWAYS equity/bonus flexibility outside the base salary pool
+
+The script that works:
+
+"I understand the cycle budget is allocated. I'm not asking for a standard raise — I'm presenting a market correction. The data shows a $28K gap between my compensation and market median. Can we discuss a path to close this over 1-2 adjustments, or explore other compensation vehicles?"
+
+Why this works:
+1. You acknowledge their constraint (respect)
+2. You reframe it as a correction, not a favor
+3. You open the door to creative solutions (bonus, equity, title + raise)
+4. You show patience (1-2 adjustments), which signals maturity
+
+The people who accept "budget is set" at face value lose.
+The people who treat it as the opening of a negotiation win.
+
+Get the data to back your case: underchozen.com
+
+#salary #negotiation #HR #career #compensation`,
+  },
+  {
+    id: "li-senior-plateau",
+    title: "Senior engineers: your salary plateaued at $190K. Here's the ceiling nobody warns you about.",
+    category: "Data",
+    content: `If you're a Senior SWE making $170-190K base, congratulations.
+
+You've also hit the ceiling nobody warned you about.
+
+Here's what the data shows:
+
+Mid → Senior: +35-50% salary jump
+Senior → Staff: +15-20% salary jump (IF you get there)
+Senior → Senior (year over year): +2-4% raises
+
+The Senior title is where most careers stall. Not because you're not good enough for Staff — but because:
+
+1. Staff roles are scarce (1 for every 8-10 Seniors)
+2. Companies have no incentive to promote you (you're already productive)
+3. Internal promotion criteria are deliberately vague
+4. Your 3% annual raise barely covers inflation
+
+The escape routes:
+
+PATH A: Force the Staff conversation
+→ Document Staff-level work you're already doing
+→ Present market data showing Staff comp ($230-280K+)
+→ Create urgency: "I'd like to align title with scope"
+
+PATH B: Jump externally
+→ External Senior → Staff jumps happen 5x more often than internal promotions
+→ Average comp increase for Senior → Staff external move: 40-65%
+
+PATH C: Specialize
+→ AI/ML specialization: +40% at the same level
+→ Platform/infra: +20-25%
+→ Security: +30%
+
+The plateau is real. But it's not permanent — if you have the data.
+
+Find your exact percentile: underchozen.com
+
+#softwareengineering #salary #career #tech #promotion`,
+  },
+  {
+    id: "li-first-offer",
+    title: "I've never accepted a first offer. Neither should you.",
+    category: "Tips",
+    content: `I've never accepted a first offer.
+
+Not because I'm greedy. Because first offers are designed to be negotiated.
+
+Here's proof:
+
+→ 85% of hiring managers expect negotiation
+→ The first offer is typically at the 25th-40th percentile of the approved range
+→ The average successful negotiation adds $5-15K to the initial offer
+→ Companies budget 10-20% buffer above the first number
+
+When you accept a first offer, three things happen:
+
+1. You start below market (and every future raise compounds from a lower base)
+2. Your manager slightly loses respect (you didn't advocate for yourself)
+3. The company quietly redirects YOUR budget allocation to the next hire
+
+The 3-sentence response that works every time:
+
+"Thank you — I'm excited about this opportunity. Based on my research, the market range for this role is $X-$Y. Given my experience with [specific skill/achievement], I'd like to discuss a base closer to $Y."
+
+That's it. Professional. Data-backed. Specific.
+
+The worst case? They say "We can't go higher" — and you still have the original offer.
+The best case? $10-20K more per year for one uncomfortable minute.
+
+That's $300-600K over a career.
+
+Get your market data before your next offer: underchozen.com
+
+#negotiation #salary #career #hiring #offers`,
+  },
+  {
+    id: "li-sunday-scaries-salary",
+    title: "If you get Sunday Scaries, your salary might be the actual problem",
     category: "Education",
-    content: `"We can't match your salary, but the equity is worth $500K."
+    content: `Sunday Scaries aren't always about the work.
 
-Heard this before? Here's how to actually evaluate startup equity.
+Sometimes they're about the pay.
 
-The brutal truth: 90% of startup equity is worth $0.
+I spent 2 years dreading Monday mornings. I thought I hated my job. Considered switching careers entirely.
 
-How to evaluate:
+Then I checked my market rate and discovered I was being paid $34K below median.
 
-1. WHAT'S THE STRIKE PRICE?
-Options at $0.10/share when the 409A is $0.50 = real upside.
-Options at $0.50 when 409A is $0.50 = no current value.
+Suddenly it wasn't the work I hated. It was the feeling of being undervalued for work I was actually good at.
 
-2. WHAT'S THE VESTING SCHEDULE?
-Standard: 4 years, 1-year cliff.
-Watch out for: longer cliffs, no acceleration on acquisition.
+The psychology of underpayment:
 
-3. WHAT'S THE DILUTION?
-Your 0.1% today could be 0.01% after 3 funding rounds.
-Ask: "What % is this on a fully diluted basis?"
+→ You resent tasks you'd normally enjoy
+→ You disengage from projects that don't "feel worth it"
+→ You compare yourself to peers and feel behind
+→ You lose motivation because effort doesn't seem to translate to reward
+→ You mistake burnout for career misalignment
 
-4. THE LIQUIDITY QUESTION
-When can you actually sell? IPO? Secondary market?
-Average time to liquidity: 7-10 years.
+Fixing the salary fixed the Scaries. Not because money buys happiness — but because fair compensation removes a constant source of background stress.
 
-My formula:
-Value equity at 10-20% of the stated paper value.
-If the math still works vs. a higher base elsewhere → take it.
-If not → negotiate more base.
+Before you quit, before you pivot, before you burn it all down:
+
+Check if you're being paid fairly.
+
+If you ARE — then the problem is genuinely the work, and changing makes sense.
+If you're NOT — fixing the gap might fix everything else.
+
+30-second salary check: underchozen.com
+
+#mentalhealth #career #salary #burnout #wellbeing`,
+  },
+  {
+    id: "li-remote-leverage",
+    title: "Remote workers have more salary leverage than they think. Here's why.",
+    category: "Education",
+    content: `Remote workers have MORE salary leverage than office workers.
+
+Yes, more. Not less.
+
+Here's why the narrative is wrong:
+
+Companies say: "You should accept lower pay because you work from home."
+Reality: You should negotiate HIGHER because you save them $15-22K/year in office costs.
+
+The math:
+
+Cost to employer per office worker:
+→ Office space: $8-15K/year
+→ Utilities, internet, maintenance: $2-3K/year
+→ Snacks, coffee, perks: $1-3K/year
+→ IT equipment/furniture: $2-3K/year
+→ Total: $13-24K/year saved per remote worker
+
+They're saving $15K+ on you. And trying to cut YOUR pay by $15K. That's a $30K swing in their favor.
+
+How to negotiate as a remote worker:
+
+1. Negotiate on OUTPUT, not location: "My deliverables are the same regardless of where I sit."
+
+2. Use NATIONAL rates, not local: "I compete in a national talent pool. My rate should reflect that."
+
+3. Flip the savings argument: "My remote work saves the company $X/year in overhead. My ask reflects shared value."
+
+4. Know your replacement cost: Hiring your replacement costs 50-200% of your annual salary. Retention is always cheaper.
+
+Stop accepting location discounts for location-independent work.
+
+Know your national rate: underchozen.com
+
+#remotework #salary #negotiation #wfh #career`,
+  },
+  {
+    id: "li-title-inflation",
+    title: "Your title says Director. Your salary says Senior Manager. That's by design.",
+    category: "Education",
+    content: `Companies have figured out something clever:
+
+It's cheaper to give you a title than a raise.
+
+"Director" costs $0.
+$30K raise costs... $30K.
+
+And so the market is flooded with:
+→ Directors making Manager pay
+→ VPs making Director pay
+→ "Heads of" making Individual Contributor pay
+→ "Leads" making Junior pay
+
+Title inflation is the silent theft of your career trajectory.
+
+Why it's dangerous:
+
+1. When you leave, the new company benchmarks you against REAL Directors — and offers you less than your fake title suggests
+2. You stop pushing for real compensation because the title feels like progress
+3. Your scope doesn't match — you're a Director with no direct reports and no budget authority
+
+How to spot it:
+
+→ Does your title match your direct reports? (Directors should manage managers)
+→ Does your title match your comp band? (Check market data)
+→ Would an external recruiter give you the same title?
+→ Do you have budget authority matching your title?
+
+If the answers are no, you have an inflated title and a deflated salary.
+
+The fix: Negotiate comp to match the title, or negotiate the title down and comp up.
+
+Check what your title should actually pay: underchozen.com
+
+#career #salary #titles #leadership #compensation`,
+  },
+  {
+    id: "li-2-year-plan",
+    title: "The 2-year salary plan that turned $95K into $162K",
+    category: "Tips",
+    content: `Two years ago I was making $95K. Today I make $162K.
+
+Same role. Same industry. Same city.
+
+I didn't get lucky. I followed a plan.
+
+Here it is:
+
+MONTH 1: Baseline
+→ Checked my market rate (I was at the 22nd percentile — ouch)
+→ Documented my 5 biggest contributions in dollar terms
+→ Set target: 50th percentile within 12 months
+
+MONTH 2-3: Internal move
+→ Presented market data + impact doc to my manager
+→ Result: $12K raise (they "couldn't go higher")
+→ New salary: $107K (still below median)
+
+MONTH 6: Skill stack
+→ Got cloud certification
+→ Took on a cross-functional project with measurable revenue impact
+→ Documented everything
+
+MONTH 12: External leverage
+→ Took recruiter calls (3 conversations, 1 formal offer)
+→ Offer: $148K
+→ Brought it back (diplomatically)
+→ Counter: $135K + $15K bonus + accelerated review
+→ Accepted.
+
+MONTH 18: Follow-through
+→ Review came through: promoted + raised to $162K
+→ 22nd percentile → 68th percentile in 18 months
+
+Total time invested: ~20 hours over 18 months.
+Total financial impact: +$67K/year = +$2M over remaining career.
+
+The plan starts with one thing: knowing your market rate.
+
+Start here: underchozen.com
+
+#career #salary #growth #negotiation #planning`,
+  },
+  {
+    id: "li-equity-trap",
+    title: "Startups offered me $150K in equity. I did the math. It was worth $8K.",
+    category: "Education",
+    content: `"The equity is worth $150K."
+
+That's what 3 different startups told me in the last year.
+
+So I did the math. On every single one.
+
+Startup A: $150K in options
+→ 409A valuation: $0.50/share
+→ Strike price: $0.45/share (almost no spread)
+→ Vesting: 4 years, 1-year cliff
+→ Company stage: Series A, 85% dilution expected
+→ Expected value: ~$12K
+→ If company fails (70% chance at Series A): $0
+
+Startup B: $150K in RSUs
+→ Based on last round valuation (12 months old)
+→ Company has 18 months of runway
+→ No secondary market
+→ Expected value: ~$8K
+→ Liquidity event: 7-10 years away
+
+Startup C: $150K in "projected equity"
+→ Based on "where we think we'll be in 3 years"
+→ Not yet legally structured
+→ Expected value: maybe $0
+
+My rule of thumb:
+
+Value startup equity at 10-15% of stated paper value.
+
+$150K on paper = $15-22K in expected value.
+
+So when a startup says "We're offering $120K base + $150K equity" vs. a FAANG offer of "$175K base + $50K RSUs," the FAANG offer is worth $60K more.
+
+Always negotiate the base. Equity is a lottery ticket.
 
 Know your base market rate first: underchozen.com
 
-#startup #equity #compensation #career #stockoptions`,
+#startup #equity #compensation #career #negotiation`,
+  },
+  {
+    id: "li-performance-review-hack",
+    title: "Your performance review starts 12 months before the meeting. Most people don't realize that.",
+    category: "Tips",
+    content: `Your performance review starts 12 months before the meeting.
+
+The people who get the biggest raises aren't better performers. They're better documenters.
+
+Here's the system I use:
+
+WEEKLY (2 minutes):
+→ Friday afternoon: write down ONE win from this week
+→ Include a specific number (revenue, users, savings, time reduced)
+→ Save it in a running doc
+
+MONTHLY (10 minutes):
+→ Review your weekly wins
+→ Group them into themes (revenue impact, efficiency, leadership)
+→ Update your "impact resume" — a 1-page summary of your contributions
+
+QUARTERLY (30 minutes):
+→ Calculate your aggregate ROI for the company
+→ Check your market rate (has it changed?)
+→ Schedule a brief "career growth" check-in with your manager
+
+REVIEW TIME (45 minutes):
+→ Print your impact resume
+→ Add 3 specific market data points
+→ Write your ask: exact number, not a range
+→ Rehearse your opening line once
+
+Total annual time invested: ~8 hours.
+Average raise for employees who do this vs. those who don't: 87% vs. 32%.
+
+Your review isn't a one-time event. It's a 12-month campaign.
+
+Start with your market data: underchozen.com
+
+#performancereview #career #salary #productivity #leadership`,
+  },
+  {
+    id: "li-layoff-salary",
+    title: "I got laid off and increased my salary by 35%. Here's what most people get wrong.",
+    category: "Tips",
+    content: `I got laid off in 2024.
+
+It was terrifying. And it was the best thing that happened to my compensation.
+
+New salary: 35% higher than my old one.
+
+Here's what most people get wrong after a layoff:
+
+MISTAKE 1: Taking the first offer out of panic
+→ Your severance is your negotiation window. Use all of it.
+→ First offer is ALWAYS negotiable — especially in a panic-free market.
+
+MISTAKE 2: Anchoring to your old salary
+→ Your old salary was probably below market (that's why they could afford to cut you)
+→ Anchor to market data, not history
+
+MISTAKE 3: Disclosing your previous salary
+→ It's illegal to require in CA, NY, CO, WA, IL, and growing
+→ Say: "I'm targeting roles in the $X-$Y range based on market data"
+
+MISTAKE 4: Negotiating only base
+→ Layoff is the BEST time to negotiate signing bonus
+→ "I'd need a $15K signing bonus to offset transition costs" works 70%+ of the time
+
+MISTAKE 5: Not negotiating start date
+→ A later start date = gap period to rest + collect unemployment
+→ "Can we align on a start date 3-4 weeks out?" is normal
+
+A layoff isn't a career failure. It's a forced market correction.
+
+And the market usually corrects upward — if you negotiate from data.
+
+Get your market rate post-layoff: underchozen.com
+
+#layoff #career #salary #negotiation #jobsearch`,
+  },
+  {
+    id: "li-women-negotiate",
+    title: "Women negotiate less often. But when they do, they're more successful. Here's the data.",
+    category: "Data",
+    content: `The data on women and salary negotiation is counterintuitive.
+
+Women negotiate less often than men: 32% vs. 48%.
+But when women DO negotiate, their success rate is HIGHER: 74% vs. 68%.
+
+Read that again.
+
+Women are better at negotiating. They just do it less.
+
+Why?
+
+→ Social penalties for "aggressive" women (documented bias)
+→ Companies frame raises as rewards, not corrections (gendered framing)
+→ Less access to salary data (transparency gap)
+→ Risk aversion amplified by less financial cushion (wealth gap)
+
+What the data says works:
+
+1. Frame as "market alignment" not "I want more"
+→ Removes gendered perception of "asking for too much"
+→ Data is gender-neutral
+
+2. Use collaborative language
+→ "I'd like to find a number that reflects the market" (not "I demand")
+→ This outperforms aggressive tactics for everyone, but especially for women
+
+3. Negotiate in writing first
+→ Removes real-time bias
+→ Creates a documented trail
+→ Allows decision-makers time to check their biases
+
+4. Lead with impact metrics
+→ "$X in revenue" has no gender. Neither does "Yth percentile."
+
+The negotiation gap is a data gap. Close the data gap and the negotiation gap follows.
+
+Free, data-driven market analysis: underchozen.com
+
+#paygap #salary #women #negotiation #diversity`,
   },
 ];
 
@@ -1225,690 +1344,812 @@ export interface QuoraAnswer {
 
 export const quoraAnswers: QuoraAnswer[] = [
   {
-    id: "qa-underpaid",
-    question: "How do I know if I'm being underpaid?",
-    category: "Salary",
-    answer: `The most reliable way to know is to compare your salary against market data for your specific role, city, experience level, and industry.
-
-Here are 5 concrete signs you're likely underpaid:
-
-1. **You haven't had a raise in over a year.** Inflation runs 3-4% annually, so no raise = a pay cut in real terms.
-
-2. **New hires in your role make more than you.** Companies pay market rate to attract talent but rarely adjust existing employees. This is called "salary compression."
-
-3. **You've never negotiated.** 73% of workers never negotiate. Those who do earn $18K more on average.
-
-4. **Your company discourages salary discussions.** Pay secrecy only benefits companies that pay unfairly.
-
-5. **Glassdoor/Levels data puts you below median.** Even rough comparisons can reveal a gap.
-
-The most precise way: check your exact percentile against adjusted market data. A tool like underchozen.com shows you where you rank in 30 seconds — it adjusts for role, city, industry, company size, and experience level. It's free and doesn't require an account.
-
-The average underpaid professional loses $142K over their career from not addressing the gap.`,
-  },
-  {
-    id: "qa-negotiate-salary",
-    question: "How do I negotiate a higher salary?",
-    category: "Negotiation",
-    answer: `Here's a proven 4-step framework:
-
-**Step 1: Know your number**
-
-Before any conversation, know:
-- Your exact market rate (not a guess — actual data)
-- Your percentile ranking
-- The specific dollar amount you want
-
-**Step 2: Open with data, not feelings**
-
-Wrong: "I feel like I deserve a raise."
-Right: "Based on market data, my role in this city pays $X-$Y. My current salary places me at the Xth percentile."
-
-**Step 3: Make a specific ask**
-
-"I'd like to discuss adjusting my compensation to $[specific number] to align with market rates."
-
-Never give a range. Ranges give them permission to choose the low end.
-
-**Step 4: Handle objections**
-
-"No budget" → "When can we revisit? I'd like to put a date on the calendar."
-"Bad timing" → "What would be the right time?"
-"You're already well compensated" → Show your percentile data.
-
-The data: 87% of people who negotiate with market data get their raise approved. Average increase: $18K.
-
-You can get your exact market rate and percentile for free at underchozen.com — takes 30 seconds, no signup. It even generates a negotiation email script personalized to your data.`,
-  },
-  {
-    id: "qa-software-engineer-salary",
-    question: "What is the average salary for a software engineer in 2026?",
-    category: "Salary Data",
-    answer: `Here are the 2026 median salaries for Software Engineers by level:
-
-**Entry Level (0-2 years):** $85K
-Range: $72K – $100K
-
-**Mid Level (3-6 years):** $125K
-Range: $105K – $150K
-
-**Senior Level (7+ years):** $178K
-Range: $150K – $215K
-
-**Location adjustments make a huge difference:**
-- San Francisco: +35% (mid-level median ~$169K)
-- New York: +30%
-- Seattle: +25%
-- Austin: +15%
-- Remote (national): baseline
-
-**Industry matters too:**
-- Technology: +15%
-- Finance: +12%
-- Healthcare: +5%
-- Non-profit: -12%
-
-**Company size:**
-- FAANG/Big Tech: +30-50%
-- Enterprise (500+): +12%
-- Startup (<50): -10% base but potentially large equity
-
-To find your exact position, underchozen.com gives you a free analysis that adjusts for all these factors — city, industry, company size, and experience. It shows your percentile and any compensation gap.`,
-  },
-  {
-    id: "qa-first-job-negotiate",
-    question: "Should I negotiate my first job offer out of college?",
-    category: "Negotiation",
-    answer: `Absolutely yes. Here's why:
-
-**The compounding math:**
-Your first salary is the base for every future raise. Starting $5K below market compounds to $162K in lost earnings over 20 years.
-
-**The risk is minimal:**
-- 70% of companies improve the offer when asked
-- 20% offer a sign-on bonus or other perks instead
-- 9% say no (you've lost nothing)
-- <1% rescind the offer (red flag company)
-
-**What to say (exact script):**
-
-"I'm really excited about this role and the team. Based on my research, entry-level [role] in [city] typically pays $X-$Y. Given my [relevant experience/skills/internships], could we discuss moving the offer toward $Y?"
-
-**Even without experience, you have leverage:**
-- Market data (know the range)
-- Multiple offers (apply broadly)
-- Youth and mobility (you can walk away)
-
-**What to negotiate if they won't budge on base:**
-- Sign-on bonus
-- Early review (3-6 months instead of 12)
-- Extra PTO
-- Remote flexibility
-- Professional development budget
-
-Check the market range for your first role at underchozen.com — it's free and tells you the exact range for your role, city, and industry in 30 seconds.`,
-  },
-  {
-    id: "qa-raise-email",
-    question: "How do I write an email asking for a raise?",
-    category: "Negotiation",
-    answer: `Here's a proven email template with a high success rate:
-
----
-
-**Subject:** Compensation Discussion — [Your Name]
-
-Hi [Manager],
-
-I've enjoyed my time on the team, and I'm proud of the work we've accomplished together. I'd like to discuss my compensation based on my contributions and current market data.
-
-Over the past [time period], I've:
-• [Specific achievement with measurable impact]
-• [Another achievement]
-• [Third achievement]
-
-Based on market data for [role] in [city] with [X years] experience, the market range is $[low] – $[high]. My current compensation places me at approximately the [X]th percentile.
-
-I'd like to discuss an adjustment to $[specific number] to better align with market rates and reflect my contributions.
-
-I'm committed to [company] and excited about [upcoming project/goal]. I'd appreciate the chance to discuss this when you have time.
-
-Best,
-[Your name]
-
----
-
-**Key tips:**
-- Send on Tuesday-Thursday morning (highest response rate)
-- Include specific numbers, not ranges
-- Lead with your contributions, not your needs
-- Be confident but not confrontational
-
-To get your exact percentile and market data for the email, underchozen.com generates it for free. It also has a feature that creates a personalized negotiation email script for $29 — many people find it saves hours of research.`,
-  },
-  {
-    id: "qa-city-salary",
-    question: "How much does location affect salary?",
-    category: "Salary Data",
-    answer: `Location can change your salary by up to 35% for the same role with the same experience.
-
-**Example: Product Manager (Mid-Level)**
-
-San Francisco: $182K
-New York: $175K
-Seattle: $169K
-Boston: $162K
-Austin: $146K
-Chicago: $140K
-Denver: $135K
-Detroit: $121K
-
-That's a $61K difference between the highest and lowest.
-
-**The key adjustments by city:**
-- San Francisco: +35%
-- New York: +30%
-- Seattle: +25%
-- Boston: +20%
-- Los Angeles: +18%
-- Austin: +15%
-- Chicago: +10%
-- National average: baseline
-
-**For remote workers:**
-The big mistake is benchmarking against your local market. If you work for a company headquartered in SF, you should be benchmarking against SF rates.
-
-Remote workers who benchmark against HQ location earn 18% more on average.
-
-You can compare salaries across all 18 cities for any role at underchozen.com — it's free and adjusts for city, industry, company size, and experience level.`,
-  },
-  {
-    id: "qa-data-scientist-vs-swe",
-    question: "Should I become a data scientist or software engineer?",
-    category: "Career",
-    answer: `From a pure compensation perspective, here's the data:
-
-**Mid-Level (3-6 years):**
-- Data Scientist: $128K median
-- Software Engineer: $125K median
-- ML Engineer: $175K median
-
-**Senior Level (7+):**
-- Data Scientist: $182K median
-- Software Engineer: $178K median
-- ML/AI Engineer: $245K+ median
-
-Data Scientists have a slight edge at every level, BUT:
-
-**Software Engineers have advantages:**
-→ 3x more open positions
-→ Faster YoY salary growth (+4.2%)
-→ More industries hiring
-→ Easier to go freelance/contract ($150-250/hr)
-
-**Data Scientists have advantages:**
-→ Higher starting salaries
-→ Bigger premium in Finance and Healthcare
-→ AI/ML specialization path to $300K+
-→ More "strategic" positioning in companies
-
-**The optimal play:** Learn both. SWEs who can do data science (or vice versa) are the most valuable. "Full-stack data" roles pay 20-30% more than either specialty alone.
-
-Compare exact salaries for both roles in your city: underchozen.com`,
-  },
-  {
-    id: "qa-industry-pay",
-    question: "Which industries pay the most for tech roles?",
-    category: "Salary Data",
-    answer: `Industry has a massive impact on salary — the same role can pay 25%+ more depending on your industry.
-
-**Industry salary premiums (vs. national baseline):**
-
-1. **Technology: +15%** — Highest base pay plus best equity
-2. **Finance/Banking: +12%** — Strong base, big bonuses
-3. **Consulting: +8%** — Good base, variable bonus
-4. **Healthcare: +5%** — Stable, growing demand
-5. **Manufacturing: +2%** — Baseline
-6. **Retail: -8%** — Below average for most roles
-7. **Non-profit: -12%** — Lowest across the board
-8. **Education: -15%** — Lowest, but better benefits
-
-**Real example — Data Analyst:**
-- In Tech: $106K
-- In Finance: $98K
-- In Non-profit: $68K
-- Same role, same skills: $38K difference
-
-**The insight:** Switching from a low-premium to a high-premium industry is often worth MORE than getting promoted in your current industry.
-
-A Senior Data Analyst in Non-profit ($78K) who moves to Tech as a Mid-level ($106K) gets a $28K raise AND a title to grow from.
-
-Check your industry premium at underchozen.com — it compares all 13 industries for your specific role.`,
-  },
-  {
-    id: "qa-total-comp",
-    question: "What is total compensation and why does it matter?",
+    id: "qa-how-underpaid",
+    question: "How do I find out if I'm being underpaid at my job?",
     category: "Education",
-    answer: `Total compensation (total comp) is everything your employer pays you, not just your base salary.
+    answer: `The short answer: compare your salary to market data — not to your coworker's salary, not to what you "feel" you're worth, and definitely not to what Google says the average is.
 
-**Components of total compensation:**
+Here's a methodical approach that actually works:
 
-1. **Base salary** — Your fixed annual pay (~60% of total comp)
-2. **Annual bonus** — Performance-based, typically 10-20% of base
-3. **Stock/RSUs** — Equity grants, especially significant at public tech companies
-4. **401K match** — Free money, typically 3-6% of salary ($5-12K/year)
-5. **Health insurance** — Employer contribution ($8-15K/year)
-6. **PTO value** — 20 days × your daily rate ($5-12K/year)
-7. **Other** — Life insurance, commuter benefits, wellness stipends, etc.
+**Step 1: Identify your exact market position**
 
-**Why it matters:**
+You need 4 variables:
+1. Your job title (standardized — "Software Engineer" not "Code Ninja")
+2. Your city (salaries vary 15-40% by metro)
+3. Your experience level (entry/mid/senior)
+4. Your industry (tech pays 15% more than healthcare for the same role)
 
-A $120K base with $40K in benefits = $160K total comp.
-A $135K base with minimal benefits = $145K total comp.
+**Step 2: Find your percentile**
 
-The "lower" offer is actually worth $15K more.
+A percentile tells you where you rank:
+- Below 25th: Significantly underpaid
+- 25th-50th: Below market
+- 50th: Median (fair market rate)
+- 50th-75th: Above market
+- Above 75th: Well-compensated
 
-**Real example at FAANG:**
-- L4 Software Engineer base: $175K
-- Total comp: $280K+
-- That's $105K in non-base compensation
+**Step 3: Do the math**
 
-When evaluating offers, ALWAYS ask for the total compensation breakdown. Many candidates leave $20-50K on the table by only negotiating base.
+If median for your role is $130K and you make $108K, you're at roughly the 25th percentile. That's a $22K annual gap, or $220K over 10 years.
 
-Calculate your full market value at underchozen.com — we show base AND total comp ranges.`,
+**The trap most people fall into:**
+
+They Google "average [job title] salary" and get a national number with no adjustment for city, level, or industry. That number is meaningless for YOUR situation.
+
+You need a personalized calculation that adjusts for all four variables.
+
+I'd recommend checking underchozen.com — it runs your specific inputs against market data and shows your exact percentile in 30 seconds. Free, no signup required.`,
   },
   {
-    id: "qa-counter-offer",
-    question: "Should I accept a counter-offer from my employer?",
+    id: "qa-negotiate-new-offer",
+    question: "Should I negotiate a job offer even if I think the salary is fair?",
     category: "Tips",
-    answer: `This is one of the most common career dilemmas. Here's the data-driven answer:
+    answer: `Always. Without exception.
 
-**The statistics are clear:**
-- 80% of people who accept counter-offers leave within 18 months
-- 50% leave within 6 months
-- You become "the person who almost left"
+And here's why "fair" is doing a lot of heavy lifting in your question:
 
-**Why counter-offers usually fail:**
+**The first offer is never the best offer.**
 
-1. The underlying issues remain — if you were leaving for culture, growth, or management reasons, money doesn't fix that
-2. Trust is damaged — managers may view you as disloyal
-3. The raise was overdue — they should have paid you fairly without a threat
-4. Promotion timeline resets — "we just gave you a raise"
-5. You're now first on the layoff list if cuts come
+85% of hiring managers expect negotiation. The initial number is almost always at the 25th-40th percentile of their approved range. They have budget above it — and they're waiting for you to claim it.
 
-**When a counter-offer CAN work:**
-- The issue was purely compensation (and nothing else)
-- You genuinely love the team, culture, and work
-- They address the root cause, not just salary
-- The offer comes with a written timeline for growth
+**Three things happen when you DON'T negotiate:**
 
-**The better strategy:**
-Don't wait until you have an outside offer to negotiate. Know your market value, present data, and advocate proactively.
+1. You start below market. Every raise, bonus, and promotion compounds from a lower base. Over a 5-year tenure, this easily costs $50K+.
 
-Research your market rate at underchozen.com before your next conversation. Data-driven asks get raises 87% of the time without the drama of counter-offers.`,
+2. You signal low self-advocacy. Managers notice. The person who didn't negotiate their salary also won't push back on unreasonable deadlines, won't advocate for their team, won't challenge bad decisions. That's the perception.
+
+3. Your budget goes to someone else. That $10K you didn't claim? It gets redistributed to the next hire's signing bonus.
+
+**The exact response that works:**
+
+"Thank you — I'm genuinely excited about this role. Based on market data for [role] in [city], the range is $X-$Y. Given my experience with [specific achievement], I'd like to discuss a base closer to $Y."
+
+Three sentences. Takes 20 seconds to say. Average return: $5-15K more per year.
+
+**What if they say no?**
+
+You still have the original offer. Nobody has ever had an offer rescinded for professionally negotiating.
+
+Check your market rate before your next offer: underchozen.com`,
   },
   {
-    id: "qa-recession-proof",
-    question: "How do I protect my salary during a recession?",
+    id: "qa-swe-salary-2026",
+    question: "What is the average software engineer salary in 2026?",
+    category: "Data",
+    answer: `"Average" is a misleading metric for software engineer salaries because the range is enormous. Let me give you the real breakdown:
+
+**By experience level (base salary, US national median):**
+
+- Entry-level (0-2 years): $85,000 - $115,000
+- Mid-level (3-5 years): $120,000 - $155,000
+- Senior (6-10 years): $155,000 - $200,000
+- Staff/Principal (10+): $200,000 - $300,000+
+
+**By city (mid-level median):**
+
+- San Francisco: $165,000
+- New York: $155,000
+- Seattle: $150,000
+- Austin: $130,000
+- Chicago: $125,000
+- Denver: $128,000
+
+**By company type:**
+
+- FAANG/Big Tech: Add 25-50% to above numbers (total comp including RSUs)
+- Series B-D startup: Roughly market +/- 10% base, plus equity lottery
+- Enterprise: Market rate + strong benefits
+- Agency/consulting: 10-20% below market base, but project variety
+
+**The number that actually matters:**
+
+Don't compare yourself to the "average." Compare yourself to YOUR specific combination of city + level + industry + company size.
+
+A Senior SWE in San Francisco at a FAANG company is in a completely different market than a Senior SWE in Austin at a 50-person startup.
+
+For a personalized breakdown that adjusts for all these variables, check underchozen.com — it calculates your exact percentile against the specific market you're competing in.`,
+  },
+  {
+    id: "qa-ask-raise",
+    question: "How do I ask my boss for a raise without making things awkward?",
     category: "Tips",
-    answer: `Economic uncertainty requires proactive salary protection. Here's what works:
+    answer: `The reason salary conversations feel awkward is because most people approach them with feelings instead of data. When you have data, it's not awkward — it's just business.
 
-**5 moves to make BEFORE a downturn:**
+**The framework that removes the awkwardness:**
 
-1. **Know your exact market rate** — In recessions, companies lowball aggressively. If you don't know your number, you'll accept theirs. Get data now.
+**1. Don't ask for a raise. Ask for market alignment.**
 
-2. **Negotiate your raise now** — Budgets exist today. They won't in 6 months. If you deserve a raise, ask this quarter.
+"Raise" implies you're asking for a favor.
+"Market alignment" implies the market has already decided — your employer just hasn't caught up.
 
-3. **Document your ROI** — When cuts come, people with clear impact metrics keep their seats. Track revenue generated, costs saved, projects delivered.
+**2. Lead with your impact, not your needs.**
 
-4. **Stack recession-proof skills:**
-   - AI/ML: near-zero layoffs in past downturns
-   - Cybersecurity: 3.5M unfilled positions globally
-   - Data engineering: every company needs this
-   - Cloud infrastructure: mission-critical
+❌ "I've been here 3 years and I deserve more"
+✅ "My work on [project] generated $X in [metric]. The market values this contribution at $Y."
 
-5. **Build external options** — Update your resume, take recruiter calls, know what you're worth outside.
+**3. Use email first, meeting second.**
 
-**During a recession:**
-- Don't accept a pay cut without understanding market data
-- Volunteer for high-visibility projects (demonstrates value)
-- Avoid being the highest-cost, lowest-visibility person
+Send this:
 
-**After a recession:**
-- Market rates rebound quickly — renegotiate within 6-12 months
-- Companies that cut pay rarely restore it voluntarily
+*"Hi [Manager], I've been researching compensation data for [your role] in [your city]. Based on several sources, the market range is $X-$Y. My current compensation places me at the Xth percentile. Given my contributions to [specific project with metrics], I'd love to discuss alignment when you have 15 minutes this week."*
 
-Check your current market position at underchozen.com — it's free and takes 30 seconds.`,
+This removes the "ambush" feeling. Your manager gets time to think, check with HR, and prepare a response.
+
+**4. Have a specific number.**
+
+Don't say "something in the range of..." Say "$142,000." Specific asks get specific answers.
+
+**What if they say no?**
+
+Ask: "What would I need to demonstrate for that level of compensation?" Get it in writing. Now you have a roadmap.
+
+Start with your market data: underchozen.com`,
   },
   {
-    id: "qa-remote-pay-cut",
-    question: "Is it fair for companies to cut remote workers' pay?",
+    id: "qa-salary-by-city",
+    question: "Why do salaries vary so much between cities for the same job?",
     category: "Education",
-    answer: `This is a hot debate. Here's the data and both sides:
+    answer: `The same Software Engineer role can pay $95K in Nashville and $165K in San Francisco. That's a 74% difference for identical work. Here's why:
 
-**Current landscape (2026):**
-- 68% of companies adjust pay by location
-- 22% pay the same regardless of location
-- 10% use hybrid models
+**1. Cost of living adjustment**
 
-**The company argument:**
-- "We pay market rate for your location"
-- "Cost of living is lower where you live"
-- Office costs are irrelevant to individual comp
+Companies adjust salaries to local costs — primarily housing. SF median rent is $3,200/month vs. Nashville's $1,600. They're paying for you to live near the office (or historically, they were).
 
-**The employee argument:**
-- Output hasn't changed — same work, same results
-- Company saves $15K+ per remote worker on office space
-- Global talent pool means competing on value, not ZIP code
+**2. Local talent competition**
 
-**The math most people miss:**
+SF has Google, Apple, Meta, and 10,000 startups all bidding for the same talent. Nashville has fewer competitors. More demand + same supply = higher prices.
+
+**3. Revenue per employee**
+
+Companies in expensive cities tend to generate more revenue per head (higher-paying clients, denser markets). They can afford to pay more because each employee produces more value.
+
+**4. Tax arbitrage**
+
+Some differences are inflated by tax variation. Texas (0% state income tax) vs. California (13.3% top rate) creates a significant after-tax gap.
+
+**The catch with remote work:**
+
+68% of companies now adjust remote pay by location. But here's the math they hope you don't do:
 
 SF → Austin move:
 - Salary cut: -$15K
 - Housing savings: -$30K/year
-- Tax savings: -$8K/year (no state income tax)
+- Tax savings: -$8K/year
 - Net purchasing power gain: +$23K
 
-The pay cut is often SMALLER than the cost savings.
+The "pay cut" often leaves you BETTER off financially.
 
-**My recommendation:**
-1. Know the NATIONAL rate for your role (not location-adjusted)
-2. Negotiate on value delivered, not where you sit
-3. Calculate real purchasing power, not just salary
-4. Be willing to walk — remote talent is global
+**The important question:**
 
-Compare location-adjusted AND national rates at underchozen.com.`,
+Are you being paid fairly for YOUR specific city? Not the national average. Not your friend's number. YOUR market.
+
+Check your city-adjusted rate: underchozen.com`,
   },
   {
-    id: "qa-job-hopping",
-    question: "Is job hopping bad for your career?",
-    category: "Education",
-    answer: `The old advice of "stay loyal" is costing people hundreds of thousands of dollars. Here's the data:
-
-**The numbers:**
-- Average annual raise (same company): 3.5%
-- Average job-hop raise: 15-25%
-- After 5 years, job hoppers earn ~30% more
-- Lifetime impact: $500K-$1M in additional earnings
-
-**When job hopping works:**
-- Stay 2-3 years minimum per role (shows you can deliver)
-- Each move should be upward (title, scope, or pay)
-- You have a clear narrative for the moves
-- You're in a high-demand field
-
-**When it hurts:**
-- Moves every 6-12 months (raises red flags)
-- Lateral moves without salary gains (looks unfocused)
-- In industries that value tenure (government, academia)
-- When you haven't built deep expertise anywhere
-
-**The sweet spot:** 2-3 years per company, with measurable impact at each stop.
-
-**Pro tip:** Even if you don't plan to leave, knowing your market rate gives you leverage. Companies are more likely to give retention raises when they know you have options.
-
-Check your current market value at underchozen.com — it takes 30 seconds.`,
-  },
-  {
-    id: "qa-startup-equity",
-    question: "How do I value startup equity in a job offer?",
-    category: "Education",
-    answer: `This is crucial because 90% of startup equity ends up worth $0. Here's how to evaluate it:
-
-**Key questions to ask:**
-
-1. **What's my percentage on a fully diluted basis?** (Not just shares — what % do you own?)
-2. **What's the current 409A valuation?** (This determines your strike price)
-3. **What's the latest funding round and valuation?** (Indicates growth trajectory)
-4. **What's the vesting schedule?** (Standard: 4 years, 1-year cliff)
-5. **What happens on acquisition?** (Single vs. double trigger acceleration)
-
-**My valuation formula:**
-
-Value startup equity at 10-20% of stated paper value.
-
-Why? Because:
-- 90% of startups fail or return less than invested
-- Dilution from future rounds reduces your %
-- Liquidity is 7-10 years away on average
-- Taxes on exercise can be brutal (AMT)
-
-**Example:**
-They say: "Your equity is worth $200K"
-Real expected value: $20-40K
-
-**The decision framework:**
-If [base salary + (equity × 0.15)] > [alternative offer total comp] → take the startup.
-If not → negotiate more base or pass.
-
-**Always know your base market rate first.** You can't evaluate a startup offer without knowing what the "safe" alternative pays.
-
-Check your market rate at underchozen.com.`,
-  },
-  {
-    id: "qa-gender-pay",
-    question: "What can I do about the gender pay gap?",
-    category: "Education",
-    answer: `The gender pay gap is real, it compounds, and there are concrete steps to fight it.
-
-**Current data (2026):**
-- Overall gap: Women earn ~84 cents per dollar
-- Controlled gap (same role/level): 6-8%
-- The gap compounds over a career to $400K-$1M in lost earnings
-
-**Why it compounds:**
-→ Raises are percentage-based (3% of less = less)
-→ Next job's offer is often based on current salary
-→ Promotions inherit the gap
-→ Bonuses multiply the difference
-
-**Actionable steps:**
-
-1. **Never share your current salary** — It's illegal to require in many states (CA, NY, CO, WA, etc.)
-
-2. **Research market rates, not "fair" rates** — Fair is subjective. Market data is objective.
-
-3. **Negotiate every offer** — 68% of women don't negotiate (vs. 52% of men). This single behavior accounts for a significant portion of the gap.
-
-4. **Ask for the top of the range** — Studies show women ask for 6% less than men for the same role.
-
-5. **Document your impact in numbers** — Revenue generated, costs saved, metrics improved. Data makes bias harder.
-
-6. **Know your rights** — Pay transparency laws are expanding. Many companies must now post salary ranges.
-
-Get your gender-neutral, data-driven market analysis at underchozen.com — because data is the great equalizer.`,
-  },
-  {
-    id: "qa-annual-review-prep",
-    question: "How should I prepare for my annual performance review?",
+    id: "qa-negotiate-first-job",
+    question: "Can I negotiate salary at my first job out of college?",
     category: "Tips",
-    answer: `Most people walk into reviews hoping for a good outcome. Top earners walk in with a strategy.
+    answer: `Not only can you — you absolutely should. And I'll explain why most career advice gets this wrong.
 
-**The 4-week playbook:**
+**The myth:** "You have no leverage as a new grad. Be grateful for any offer."
 
-**Week 1: Gather data**
-- Research your market rate (exact percentile, not a guess)
-- List every project you completed this year
-- Quantify impact: revenue generated, costs saved, metrics improved
-- Collect "great job" emails and peer feedback
+**The reality:** Companies spend $15,000-$30,000 to recruit and hire you. They're not going to rescind an offer because you professionally asked for $5K more. The ROI on hiring you is already calculated.
 
-**Week 2: Build your case**
-- Create a one-page impact summary
-- Calculate your ROI for the company
-- Identify your specific ask (exact number, not a range)
-- Prepare for common objections
+**What you DO have as leverage:**
 
-**Week 3: Plant the seed**
-- Schedule a pre-review 1:1 with your manager
-- Mention you've been "thinking about career growth"
-- Share a recent win casually
-- Ask about the review timeline
+1. Multiple offers (or the potential of them — they don't know you don't have one)
+2. Specific skills or projects from internships
+3. Relevant coursework, certifications, or a strong portfolio
+4. The fact that they chose you from 200+ applicants
 
-**Week 4: The meeting**
-- Lead with impact, not needs
-- Present market data objectively
-- Frame it as "alignment": "I want my comp to reflect my contributions"
-- Have your specific number ready
+**The script for new grads:**
 
-**If they say no:**
-- Ask: "What would I need to demonstrate for X salary?"
-- Get the answer in writing with a timeline
-- Start your external search (but don't say this)
+"Thank you so much for this offer — I'm really excited about [company]. I've done some research on entry-level [role] salaries in [city], and the market range is $X-$Y. Would there be flexibility to move the base closer to $Y? I'm particularly drawn to the team and would love to find a number that works for both sides."
 
-**The data:**
-Employees who present market data in reviews get raises 87% of the time. Those who don't: 32%.
+**Why this matters MORE for your first job than any other:**
 
-Get your market data at underchozen.com before review season.`,
+Your first salary sets the base for every future raise. A $5K difference at age 22 compounds to $500K+ over your career, because:
+
+→ Every future raise is percentage-based (3% of $70K vs 3% of $75K)
+→ Every future employer asks about or benchmarks against your current comp
+→ Promotion increases are usually 10-15% of your current base
+
+**Even $3K matters.** Negotiate it.
+
+Research entry-level rates for your role: underchozen.com`,
   },
   {
-    id: "qa-benefits-value",
-    question: "How much are my employment benefits actually worth?",
+    id: "qa-total-comp-explained",
+    question: "What is total compensation and why should I care about it?",
     category: "Education",
-    answer: `Most people dramatically undervalue their benefits. Here's a realistic breakdown:
+    answer: `Total compensation is everything your employer pays you, not just the number on your paycheck. Most people only negotiate 60% of their actual pay.
 
-**Health Insurance: $8,000-$15,000/year**
-Look at your pay stub — your employer probably pays 70-80% of the premium. Family plans can be worth $20K+.
+**The full breakdown:**
 
-**401K Match: $5,000-$12,000/year**
-If your company matches 4% and you earn $120K, that's $4,800/year in FREE money. If you're not maxing this, you're literally leaving money on the table.
+**Base salary (60% of total comp)**
+Your fixed annual pay. The number everyone focuses on.
 
-**PTO: $5,000-$12,000/year**
-Calculate: (salary / 260 work days) × PTO days. At $120K with 20 days PTO, that's $9,230 in value.
+**Bonus (10-20%)**
+Annual performance bonus. At some companies this is guaranteed; at others it's variable. Always ask: "What's the target bonus percentage and what's the typical payout?"
 
-**RSUs/Stock: $10,000-$80,000/year**
-At public companies, this is real cash. At pre-IPO companies, apply the 10-20% expected value discount.
+**Equity/RSUs/Options (15-40% at tech companies)**
+At FAANG, this is where the real money is. An L5 at Google with $185K base might have $280K+ total comp because of RSUs.
 
-**Other benefits:**
+**Benefits you're probably ignoring:**
+- Health insurance: Your employer pays $8-15K/year for your coverage
+- 401K match: If they match 4% and you earn $120K, that's $4,800 in FREE money
+- PTO: 20 days × your daily rate ($120K ÷ 260 = $461/day) = $9,230 in value
 - Life/disability insurance: $2-5K/year
-- Professional development: $1-5K/year
-- Commuter benefits: $1-3K/year
-- Wellness stipend: $500-2K/year
-- Free meals/snacks: $3-8K/year (at top tech)
 
-**Total hidden value: $30,000-$120,000/year**
+**Why it matters:**
 
-**When comparing offers:**
-Offer A: $120K base + $45K benefits = $165K total
-Offer B: $135K base + $15K benefits = $150K total
+Offer A: $120K base + great benefits = $165K total comp
+Offer B: $135K base + minimal benefits = $148K total comp
 
-The "lower" base is actually worth $15K MORE.
+The "lower" salary is worth $17K MORE.
 
-Calculate your total comp at underchozen.com.`,
+**The mistake people make:**
+
+They compare base salaries across offers without adding benefits. They see $135K > $120K and take the worse deal.
+
+**When negotiating:**
+
+Always ask for the total compensation breakdown. Then negotiate each component separately. Sometimes a company can't budge on base but can add a $10K signing bonus or accelerate your equity vesting.
+
+Calculate your total comp: underchozen.com`,
   },
   {
-    id: "qa-skills-premium",
-    question: "Which skills increase salary the most?",
-    category: "Salary Data",
-    answer: `Based on 2026 compensation data, these skills command the highest premiums:
+    id: "qa-counter-offer-accept",
+    question: "My company gave me a counter-offer after I tried to resign. Should I take it?",
+    category: "Tips",
+    answer: `The data strongly suggests no — but let me give you the full picture so you can decide for yourself.
 
-**Technical skills:**
+**The statistics are brutal:**
+
+- 80% of people who accept counter-offers leave within 18 months
+- 50% leave within 6 months
+- You become "the person who almost left" in management's eyes
+
+**Why counter-offers fail:**
+
+1. **The root cause remains.** If you were leaving because of culture, management, growth, or scope — money doesn't fix any of those. It just makes them temporarily more tolerable.
+
+2. **Trust is permanently damaged.** Your manager now knows you're a flight risk. Your name goes on the "might leave" list. When cuts come, guess who's first?
+
+3. **The raise was overdue.** They clearly HAD the budget. They just didn't pay you fairly until you forced their hand. What does that tell you about how they value you proactively?
+
+4. **Promotion timeline resets.** "We just gave you a significant raise" becomes the answer to every future comp conversation for 18-24 months.
+
+**When a counter-offer CAN work (rare):**
+
+→ The issue was purely, genuinely compensation (nothing else bothered you)
+→ They address the root cause AND give you more money
+→ You get the new comp in writing with a clear growth plan
+→ You truly love the team, mission, and work
+
+**The better strategy:**
+
+Don't wait until you have an outside offer to negotiate. Know your market value, present data proactively, and advocate before you reach the resignation point.
+
+That way, you get the raise without the drama — or the damaged trust.
+
+Know your market value: underchozen.com`,
+  },
+  {
+    id: "qa-recession-salary",
+    question: "Should I ask for a raise during a recession or economic downturn?",
+    category: "Tips",
+    answer: `Yes — but your strategy needs to be completely different than in a bull market.
+
+**The conventional wisdom is wrong.** Most people think: "It's a bad economy, I should just be grateful to have a job." This is fear talking, not strategy.
+
+**Here's why you should still negotiate:**
+
+1. If you're underpaid, you're underpaid regardless of the economy
+2. Replacing you costs 50-200% of your annual salary — layoffs and hiring freezes make retention even more valuable
+3. Your leverage is different but not gone — companies can't afford to lose proven performers when they can't easily hire replacements
+
+**The recession negotiation playbook:**
+
+**Step 1: Reframe the ask**
+
+Don't ask for a "raise." Ask for a "market correction" or "retention adjustment."
+
+"I understand the market conditions. I'm not asking for a standard increase — I'm presenting data showing my compensation is significantly below market median. Correcting this now is a retention investment."
+
+**Step 2: Lead with your irreplaceability**
+
+What would it cost to replace you? (Answer: a lot, especially with a hiring freeze.) Calculate your ROI for the company and present it.
+
+**Step 3: Be creative**
+
+If base salary is truly frozen, negotiate:
+→ Additional PTO (costs the company almost nothing)
+→ Remote work flexibility
+→ Title change (positions you for the NEXT raise)
+→ Signing bonus paid from a different budget
+→ Accelerated review timeline
+
+**Step 4: Document everything**
+
+If they say "not right now," get a written commitment: "We'll revisit in Q[X] with the goal of reaching $Y."
+
+Know your market rate even in a downturn: underchozen.com`,
+  },
+  {
+    id: "qa-job-hopping-stigma",
+    question: "Is job hopping every 2 years bad for my career?",
+    category: "Education",
+    answer: `Job hopping has a stigma. The data says it shouldn't.
+
+**The numbers are clear:**
+
+- Average annual raise at same company: 3.5%
+- Average raise from switching companies: 15-25%
+- After 5 years, job hoppers earn ~30% more than loyal employees
+- Lifetime earnings gap: $500K-$1M
+
+**When job hopping HELPS your career:**
+
+→ Each move is upward (title, scope, or pay — ideally all three)
+→ You stay 2-3 years per role (enough to deliver measurable impact)
+→ You have a clear narrative: "I sought bigger challenges at each stage"
+→ You're in a high-demand field (tech, data, product, engineering)
+
+**When it HURTS:**
+
+→ Moves every 6-12 months (signals you can't finish what you start)
+→ Lateral moves without salary gains (looks unfocused)
+→ You're in an industry that values tenure (government, academia, some healthcare)
+→ You can't articulate what you accomplished at each stop
+
+**The sweet spot: 2-3 years per company.**
+
+This gives you enough time to:
+1. Deliver at least one major, measurable project
+2. Build relationships worth keeping
+3. Earn a promotion or significant raise (or identify that you won't)
+4. Leave on good terms with a reference
+
+**The reframe:**
+
+It's not "job hopping." It's "market participation."
+
+Companies replace employees all the time for business reasons. You're allowed to replace employers for the same reasons.
+
+Know your market value before your next move: underchozen.com`,
+  },
+  {
+    id: "qa-startup-vs-bigtech",
+    question: "Is it better to work at a startup or big tech company for salary?",
+    category: "Data",
+    answer: `For pure salary? Big tech wins. It's not even close. But total financial outcome is more nuanced.
+
+**Base salary comparison (Mid-level SWE):**
+
+- Big Tech (FAANG): $170-195K base
+- Growth startup (Series C-D): $140-165K base
+- Early startup (Seed-Series B): $95-130K base
+
+**Total comp comparison:**
+
+- Big Tech: $250-350K (base + RSUs + bonus)
+- Growth startup: $160-220K (base + equity at paper value)
+- Early startup: $110-180K (base + equity at paper value)
+
+**But here's the equity math:**
+
+Big Tech RSUs: Liquid. Real money. Worth face value.
+Growth startup equity: 30-50% chance of being worth something.
+Early startup equity: 10-15% chance of any meaningful return.
+
+**My framework for deciding:**
+
+Value startup equity at 10-15% of stated paper value.
+
+So if a startup offers $130K base + "$200K equity" = $130K + $25K expected = $155K real total comp.
+
+vs. Big Tech at $180K base + $80K RSUs = $260K real total comp.
+
+That's a $105K annual gap for the startup.
+
+**When startups make financial sense:**
+
+→ You're employee #1-20 with meaningful equity (0.5%+ ownership)
+→ The company is clearly on a rocket ship trajectory
+→ You value learning speed over current income
+→ You're young with low financial obligations
+
+**For most people, most of the time:** Big tech pays more, with more certainty, and the skills transfer anywhere.
+
+Compare your comp across company sizes: underchozen.com`,
+  },
+  {
+    id: "qa-email-raise",
+    question: "What's the best email template to ask for a salary raise?",
+    category: "Tips",
+    answer: `Here's the exact email framework that works. I've seen it generate raises of $8K to $35K depending on the gap.
+
+**The email:**
+
+---
+
+Subject: Compensation Discussion
+
+Hi [Manager's name],
+
+I wanted to raise something I've been thinking about.
+
+Over the past [X months], I'm proud of the work I've contributed, particularly [1-2 specific achievements with numbers attached — revenue influenced, costs reduced, users impacted, projects shipped].
+
+I've also been researching market compensation for [your exact role] in [your city]. Based on multiple data sources, the market range for someone at my level is $[low end]-$[high end]. My current salary of $[your salary] places me at approximately the [X]th percentile.
+
+I'd love to find 15 minutes to discuss alignment between my compensation and both my contributions and the market. Would [specific day] work for a quick conversation?
+
+Thank you for your support.
+
+---
+
+**Why each line matters:**
+
+- **Opens with impact, not complaints.** They hear your value before they hear your ask.
+- **Uses a specific percentile.** "I'm at the 28th percentile" is impossible to argue with. "I feel underpaid" is easy to dismiss.
+- **"Alignment" not "raise."** Framing matters. You're not asking for more — you're correcting a gap.
+- **Creates a paper trail.** This email can be forwarded to HR as supporting evidence. Your manager can use it to advocate.
+- **Asks for time, not an answer.** Gives them space to prepare (and check their budget).
+
+**The data on email-first approaches:**
+
+87% success rate when employees present market data.
+32% without data.
+
+Get your specific market data and percentile: underchozen.com`,
+  },
+  {
+    id: "qa-industry-pay-gap",
+    question: "Which industries pay the most for the same job?",
+    category: "Data",
+    answer: `Industry is one of the biggest salary levers that most people completely ignore. The same role, same skills, same city can pay 25-40% differently depending on your industry.
+
+**Industry salary premiums (vs. national baseline for tech roles):**
+
+1. **Technology: +15-20%** — Highest base, best equity, strongest benefits
+2. **Finance/Banking: +12-18%** — Strong base, significant bonuses (20-50% of base)
+3. **Consulting: +8-12%** — Good base, variable bonus, travel premium
+4. **Healthcare tech: +5-10%** — Growing fast, stable demand
+5. **Manufacturing: +0-5%** — Baseline compensation
+6. **Retail: -5-10%** — Below average for most roles
+7. **Non-profit: -12-20%** — Lowest across the board
+8. **Education: -15-25%** — Lowest pay, but sometimes better benefits/PTO
+
+**Real example — Data Analyst:**
+- In Tech (SF): $115K
+- In Finance (NYC): $108K
+- In Healthcare: $88K
+- In Non-profit: $68K
+
+Same skills. Same analysis work. $47K difference.
+
+**The insight most people miss:**
+
+Switching from a low-paying industry to a high-paying one is often worth MORE than getting promoted within your current industry.
+
+A Senior Data Analyst in non-profit ($78K) who moves to tech as a mid-level ($115K) gets a $37K raise AND a title with more room to grow.
+
+**Your skills transfer.** A PM at a hospital can be a PM at Stripe. An analyst at Target can analyze data at Goldman. Don't let industry inertia cost you six figures.
+
+See your industry premium: underchozen.com`,
+  },
+  {
+    id: "qa-skills-worth-money",
+    question: "What skills increase your salary the most in 2026?",
+    category: "Data",
+    answer: `Based on 2026 compensation data, these skills carry the highest salary premiums:
+
+**Technical skills with the biggest premiums:**
 
 1. **AI/ML Engineering: +$30-60K**
-   Not just data science — production ML systems, model deployment, MLOps.
+Not just using ChatGPT — production ML pipelines, model deployment, fine-tuning. This is the single highest-premium technical skill right now.
 
-2. **Cloud Architecture (AWS/GCP/Azure): +$20-35K**
-   Multi-cloud expertise is the sweet spot. Certifications help.
+2. **Cybersecurity: +$25-45K**
+3.5 million unfilled positions globally. Demand is absurd. Even a Security+ certification adds $15K.
 
-3. **Cybersecurity: +$25-40K**
-   3.5M unfilled positions globally. Demand far exceeds supply.
+3. **Cloud Architecture (multi-cloud): +$20-35K**
+AWS + GCP or AWS + Azure expertise. Certifications accelerate this.
 
 4. **Data Engineering: +$20-30K**
-   Building data pipelines, warehouses, and real-time systems.
+Building pipelines, data platforms, real-time systems. Every company needs this.
 
 5. **Full-Stack Development: +$15-25K**
-   vs. front-end or back-end only specialists.
+vs. front-end or back-end only. Versatility commands premium.
 
-**Non-technical skills:**
+**Non-technical skills (often bigger impact than technical):**
 
-1. **Public Speaking/Presentations: +$15-30K**
-   People who present well get promoted 2x faster.
+1. **Executive communication: +$20-40K**
+Presenting to leadership, translating technical concepts for business stakeholders. This alone accelerates promotion speed by 2x.
 
-2. **Financial Modeling: +$20-35K**
-   Understanding P&L, business cases, ROI analysis.
+2. **Financial modeling: +$20-35K**
+Understanding P&L, building business cases, ROI analysis. Speaks the language of the people who decide your compensation.
 
-3. **Project Management: +$15-25K**
-   PMP or Agile cert + real experience shipping products.
+3. **Product sense: +$15-30K**
+Understanding user needs, market fit, prioritization frameworks. Engineers with product sense get promoted to Staff faster.
 
-4. **SQL/Data Analysis: +$15-25K**
-   Being "the person who can pull the data" is incredibly valuable in any function.
+**The compounding effect:**
 
-**The compounding effect:** Stack 2-3 of these skills and you can reach the top 5% of earners for any role.
+Stack 2-3 of these and you move from median to top 10% for your title. An ML Engineer who can present to executives and build business cases? That's a $250K+ role.
 
-See how your skills affect your market value: underchozen.com`,
+See how skills affect YOUR specific market value: underchozen.com`,
   },
   {
-    id: "qa-age-salary",
-    question: "Does salary growth slow down as you get older?",
+    id: "qa-gender-pay-data",
+    question: "Does the gender pay gap still exist in 2026?",
     category: "Education",
-    answer: `Unfortunately, the data shows that salary growth does plateau for many professionals. Here's what the numbers say:
+    answer: `Yes. The data is clear, it's well-documented, and it compounds devastatingly over a career.
 
-**Salary growth by age:**
-- Ages 22-35: Fastest growth (8-12% annually)
-- Ages 35-45: Strong growth (5-8% annually)
-- Ages 45-55: Plateau (2-4% annually)
-- Ages 55+: Often flat or declining
+**The 2026 numbers:**
 
-**Why this happens:**
-1. Companies view senior employees as "expensive"
-2. Title inflation masks salary stagnation
-3. Ageism in hiring limits job-hopping leverage
-4. Technical skills need constant updating
-5. Younger managers may undervalue experience
+- Overall gap: Women earn ~84 cents per dollar compared to men
+- Controlled gap (same role, same level, same company): 6-8 cents per dollar
+- The gap is LARGER for women of color: 63-74 cents per dollar
 
-**How to beat the plateau:**
+**Why the controlled gap matters most:**
 
-1. **Move into leadership/strategy** — Value increases with experience in these tracks
-2. **Build expertise, not just experience** — Be THE expert in a niche
-3. **Develop a personal brand** — Conference speaking, writing, advising
-4. **Negotiate equity over base** — Ownership scales differently than salary
-5. **Stay current** — Learn new tools, not just manage old ones
-6. **Consider consulting** — Senior expertise commands premium hourly rates
+The "84 cents" number includes differences in roles, industries, and levels. Some argue this isn't "real" discrimination — it's "choice."
 
-**The good news:** People who actively manage their careers don't experience the same plateau. The plateau mostly affects those who stop advocating for themselves.
+But the 6-8% controlled gap? That's the same person, same role, same company, same performance. That IS the gap, and it's real.
 
-Check your market rate at every career stage: underchozen.com`,
+**Why it compounds:**
+
+Starting salary: $5K gap
+After 5 years (3% annual raises): $15K gap
+After 10 years: $35K gap
+After 20 years: $100K+ gap
+Lifetime: $400K-$1M gap
+
+Every raise is percentage-based. 3% of less is always less. And each new employer often benchmarks off your current salary, perpetuating the gap.
+
+**What actually works to close it:**
+
+1. **Never disclose current salary.** It's illegal to require in many states (CA, NY, CO, WA, IL, and growing).
+
+2. **Negotiate every single offer.** 68% of women don't. This is the single biggest controllable factor.
+
+3. **Use market data, not feelings.** "The market rate is $X" is gender-neutral. "I feel I deserve more" triggers bias.
+
+4. **Ask for the top of the range.** Studies show women ask for 6% less than men for identical roles.
+
+Free, data-driven market analysis that doesn't care about your gender: underchozen.com`,
   },
   {
-    id: "qa-company-size",
-    question: "Do bigger companies pay more than small ones?",
-    category: "Salary Data",
-    answer: `Yes, generally. But it's more nuanced than "bigger = better pay."
+    id: "qa-review-preparation",
+    question: "How should I prepare for my annual performance review to get the best raise?",
+    category: "Tips",
+    answer: `Most people prepare for their review the week before. Top earners prepare 12 months before.
 
-**Base salary by company size (same role, same city):**
-- Startup (< 50): $95K median
-- Small (50-200): $108K median
-- Mid-market (200-1K): $125K median
-- Large (1K-5K): $140K median
-- Enterprise (5K+): $155K median
+**The 12-month system:**
 
-**That's a $60K spread for the exact same job.**
+**Weekly (2 minutes):**
+Every Friday, write down one win from the week. Include a number. "Shipped feature X that improved conversion by 8%." Save these in a running doc.
 
-**Why larger companies pay more:**
-→ More revenue per employee to distribute
-→ Compete harder for talent retention
-→ Structured pay bands (less lowballing)
-→ Better benefits packages (adding $20-40K in value)
+**Monthly (10 minutes):**
+Review your weekly wins. Group them into themes: revenue impact, cost savings, efficiency, leadership. Update your one-page "impact resume."
 
-**The trade-offs:**
+**Quarterly (30 minutes):**
+Calculate your cumulative ROI for the company. Check if your market rate has changed. Have a brief "career growth" check-in with your manager (this is important — it creates a paper trail of continuous improvement).
 
-**Startups:**
-✓ Equity upside (but 90% is worth $0)
-✓ Faster title growth
-✓ More autonomy and impact
-✗ Lower base, weaker benefits
-✗ Higher risk of failure
+**Review week (45 minutes):**
 
-**Enterprise:**
-✓ Highest base salary
-✓ Best benefits and stability
-✓ Clear promotion paths
-✗ Slower career progression
-✗ More bureaucracy
-✗ Less individual impact
+1. Print your impact resume. Numbers only. No feelings.
+2. Add 3 market data points showing your percentile position.
+3. Write your exact ask: a specific dollar amount, not "something in the range of..."
+4. Prepare for ONE objection: "The budget is set for this cycle."
 
-**My advice:** Don't optimize solely for base salary. Consider total comp (including equity), growth trajectory, and learning opportunities.
+Your response to that objection:
+"I understand the cycle budget is allocated. This is a market correction, not a standard increase. Can we discuss a timeline for alignment, or explore other compensation vehicles like equity, bonus, or title adjustment?"
 
-Compare your salary by company size at underchozen.com — it adjusts for all factors.`,
+**The data:**
+
+Employees who present market data: 87% get a raise.
+Employees who go in with just feelings: 32%.
+
+Same meeting. Same manager. Same 30 minutes. 2.7x better outcome.
+
+Build your case with market data: underchozen.com`,
+  },
+  {
+    id: "qa-benefits-real-value",
+    question: "How much are my job benefits really worth in dollars?",
+    category: "Education",
+    answer: `Most people dramatically undervalue their benefits package. Here's a realistic dollar breakdown:
+
+**Health Insurance: $8,000-$20,000/year**
+Check your pay stub — your employer typically covers 70-80% of the premium. For family plans, the employer contribution can exceed $20K. This is money you'd pay out-of-pocket otherwise.
+
+**401K Match: $4,800-$14,000/year**
+If your company matches 4% of your $120K salary, that's $4,800 in free money. Some companies match up to 6% or even dollar-for-dollar up to $7K. If you're not contributing at least up to the match, you are literally declining a raise.
+
+**PTO: $5,000-$15,000/year**
+Your daily rate × PTO days. At $130K with 25 days PTO, that's $12,500 in value. Unlimited PTO is often worth LESS (people take fewer days).
+
+**Equity/RSUs: $0-$150,000+/year**
+At public companies, RSUs are real cash. At FAANG L5, RSUs can be $80-150K/year. At startups, apply the 10-15% expected value discount.
+
+**Other benefits people forget:**
+- Life/disability insurance: $2-5K/year
+- Professional development budget: $1-5K/year
+- Commuter benefits: $1-3K/year
+- Free meals (top tech): $5-10K/year
+- Wellness stipend: $500-2K/year
+- Parental leave (16+ weeks): $25-50K equivalent value
+
+**Total hidden compensation: $30,000-$150,000+/year**
+
+**The comparison trap:**
+
+Offer A: $118K base + $55K benefits = $173K total
+Offer B: $132K base + $18K benefits = $150K total
+
+The "lower" base salary wins by $23K.
+
+When comparing offers, ALWAYS ask for the total compensation breakdown.
+
+Calculate your full total comp: underchozen.com`,
+  },
+  {
+    id: "qa-age-salary-peak",
+    question: "At what age do salaries typically peak?",
+    category: "Education",
+    answer: `The uncomfortable truth is that salary growth plateaus for most professionals around age 45-50. Here's the data:
+
+**Salary growth by age bracket:**
+
+- Ages 22-30: Rapid growth (10-15% per year, driven by early promotions and job changes)
+- Ages 30-40: Strong growth (6-10% per year, senior-level transitions)
+- Ages 40-50: Slowing growth (3-5% per year, approaching ceiling)
+- Ages 50-55: Plateau (1-3% per year, mostly inflation adjustments)
+- Ages 55+: Often flat or declining (especially after layoff/job change)
+
+**Peak salary age by field:**
+- Tech: ~42 (earlier due to ageism and rapid skill evolution)
+- Finance: ~48 (seniority-driven, bonuses peak later)
+- Healthcare: ~52 (experience is valued longer)
+- Law: ~50 (partner earnings peak)
+- Management/Executive: ~52-55 (C-suite peaks later)
+
+**Why the plateau happens:**
+
+1. Companies view senior employees as "expensive" relative to output
+2. Title inflation masks salary stagnation (you get VP title, not VP money)
+3. Technical skills need constant refreshing (and ageism penalizes those perceived as outdated)
+4. Job-hopping leverage decreases (hiring bias against 50+ candidates)
+
+**How to beat it:**
+
+→ Transition to leadership/strategy (experience becomes the asset, not a liability)
+→ Build expert reputation (conference speaking, thought leadership, advisory)
+→ Negotiate equity and profit-sharing (ownership scales differently than salary)
+→ Stay technically current (eliminating the perception that you're outdated)
+→ Consider consulting (senior expertise commands $200-400+/hour)
+
+Check your market rate at any career stage: underchozen.com`,
+  },
+  {
+    id: "qa-company-size-effect",
+    question: "Do bigger companies really pay more than startups?",
+    category: "Data",
+    answer: `Yes — significantly. But the full picture is more nuanced than just "bigger = more."
+
+**Base salary by company size (mid-level SWE, same city):**
+
+- Startup (< 50 employees): $95K
+- Small company (50-200): $110K
+- Mid-market (200-1,000): $128K
+- Large (1,000-5,000): $142K
+- Enterprise (5,000+): $158K
+
+That's a **$63K spread** for the same job, same skills, same city.
+
+**Why the gap exists:**
+
+1. **Revenue per employee.** A 10,000-person company generating $50B has $5M per head to play with. A 30-person startup with $3M revenue has $100K per head. The math is simple.
+
+2. **Retention competition.** Enterprises compete with other enterprises for talent. They have to match market rate or lose people.
+
+3. **Structured pay bands.** Large companies have formal comp bands reviewed annually against market data. Less room for individual lowballing.
+
+4. **Benefits scale.** Enterprise health plans, 401K matches, and perks add $20-40K in additional value.
+
+**The startup trade-off:**
+
+Startups compensate with:
+- Equity (but 90% of startup equity = $0)
+- Faster title growth (Senior in 2 years vs. 4)
+- Broader scope (you wear many hats)
+- Potential upside if the company succeeds
+
+**The realistic calculation:**
+
+Startup: $95K base + "$150K equity" (expected value: $15K) = $110K real comp
+Enterprise: $158K base + $30K benefits + $20K bonus = $208K real comp
+
+That's nearly a $100K gap.
+
+Know your rate for YOUR company size: underchozen.com`,
+  },
+  {
+    id: "qa-remote-pay-fair",
+    question: "Is it fair for companies to pay remote workers less based on location?",
+    category: "Education",
+    answer: `This is one of the most debated compensation topics right now. Let me present both sides, then the data.
+
+**The company argument:**
+- "We pay market rate for your location"
+- "Cost of living is lower where you live"
+- "We need consistency across our pay structure"
+- 68% of companies now adjust pay by location
+
+**The employee argument:**
+- Output hasn't changed — same work, same results
+- Companies save $15-22K per remote worker in office costs
+- Remote talent competes in a global market, not a local one
+- You didn't move to a cheaper city for fun — you moved because you were priced out of the expensive one
+
+**The math that companies hope you don't do:**
+
+When you go remote from SF to Austin:
+- Your salary cut: -$15K
+- Company's office savings: +$15K
+- Your housing savings: -$30K/year
+- Your tax savings: -$8K/year (Texas has no state income tax)
+- Your net purchasing power change: +$23K
+
+The company saves $15K on you AND cuts your pay by $15K. That's a $30K swing in their favor.
+
+**What's actually fair?**
+
+That depends on your philosophy. But here's what works in negotiation:
+
+1. Know the NATIONAL rate for your role (not location-adjusted)
+2. Negotiate on value delivered, not ZIP code
+3. Calculate your actual purchasing power (not just salary)
+4. Frame it: "My remote work saves the company $X in overhead. I'd like to share in that value."
+
+Compare both location-adjusted AND national rates: underchozen.com`,
+  },
+  {
+    id: "qa-layoff-negotiation",
+    question: "How do I negotiate salary after being laid off?",
+    category: "Tips",
+    answer: `Getting laid off actually gives you MORE negotiation power than most people realize — if you use the right strategy.
+
+**Why layoffs increase your leverage:**
+
+1. You have no current salary to anchor against (the employer can't lowball based on your "existing comp")
+2. Severance gives you financial runway to negotiate patiently
+3. The market recognizes that layoffs aren't performance-based — especially in tech
+4. You can be honest about what you need without burning a bridge with a current employer
+
+**The 5 mistakes to avoid:**
+
+**Mistake 1: Panic-accepting the first offer**
+Your severance is your negotiation window. If you have 3 months severance, you have 3 months to find the RIGHT offer, not the first one.
+
+**Mistake 2: Anchoring to your old salary**
+Your old company underpaid you (or at least didn't overpay you, or they wouldn't have cut you). Anchor to market data, not history.
+
+**Mistake 3: Disclosing your previous salary**
+Say: "I'm targeting the $X-$Y range based on market research and my skill set." That's it.
+
+**Mistake 4: Forgetting to negotiate signing bonus**
+Post-layoff is the BEST time for signing bonuses. "I'd need a $15-20K signing bonus to offset the transition gap" works 60-70% of the time because it's a one-time cost for the employer.
+
+**Mistake 5: Rushing your start date**
+Negotiate a later start: "Can we align on 3-4 weeks out?" Use that time to rest, prepare, and potentially collect additional unemployment benefits (varies by state).
+
+**The reframe:**
+You're not "looking for a job." You're "evaluating opportunities with the benefit of market perspective." Language matters.
+
+Know your post-layoff market value: underchozen.com`,
   },
 ];
 
